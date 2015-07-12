@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <!-- 数据源 -->
+    <session-factory>
+
+        <property name="hibernate.connection.url" >
+			jdbc:mysql://localhost:3306/lzpt?characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false
+        </property>
+
+        <property name="hibernate.connection.driver_class" >
+			com.mysql.jdbc.Driver
+        </property>
+
+        <property name="hibernate.connection.username" >
+			root
+        </property>
+
+        <property name="hibernate.connection.password" >
+			123456
+        </property>
+        <!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+
+        <property name="hibernate.dialect" >
+            org.hibernate.dialect.MySQL5InnoDBDialect        </property>
+
+        <property name="hibernate.show_sql" >
+			true
+        </property>
+
+        <property name="hibernate.hbm2ddl.auto" >
+			update
+        </property>
+        
+        <property name="hibernate.connection.autocommit">true</property>
+
+        <mapping resource="com/kteam/lzpt/entity/mapping/Action.hbm.xml" />
+
+        <mapping resource="com/kteam/lzpt/entity/mapping/Menu.hbm.xml" />
+
+        <mapping resource="com/kteam/lzpt/entity/mapping/Role.hbm.xml" />
+
+        <mapping resource="com/kteam/lzpt/entity/mapping/User.hbm.xml" />
+        
+        <mapping resource="com/kteam/lzpt/entity/mapping/CadreArchive.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/CadreImportantMatters.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/CadreWorkSummary.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/RewardAndPunishment.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/TrainExperience.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/WorkArchive.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/WorkExperience.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/WorkImportantMatters.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/WorkSummary.hbm.xml"/>
+		<mapping resource="com/kteam/lzpt/entity/mapping/Task.hbm.xml"/>
+		<mapping resource="com/kteam/lzpt/entity/mapping/TaskProcess.hbm.xml"/>
+		<mapping resource="com/kteam/lzpt/entity/mapping/SearchWay.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/KeyWordsConfig.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/WorkItem.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/EncourageAppeal.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/PunishAppeal.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/TaskLZCP.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/TaskLZCPResult.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/LeaderLZCP.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/QuarterOutlay.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/YearOutlay.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/WindowInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/Evaluate.hbm.xml"/>
+        
+        <!-- 干部档案扩展 -->
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/MarriageChangeInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/GoAbroadSituation.hbm.xml"/>
+         <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/ChildrenMarryForeigner.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/GoAbroadCredentials.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/FamilyMigrateInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/FamilyJobInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/FamilyCriminalResponsibilityInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/ChildrenMarryHongkong.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/SalaryAndBonusInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/LabourIncomeInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/FamilyCompanyInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/FamilyRegisterEnterpriseInfo.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/FamilyHousePropertyInfo.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/Shares.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/Foundation.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/leader/extend/Futures.hbm.xml"/>
+        
+        
+        <mapping resource="com/kteam/lzpt/entity/mapping/Complain.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/EvaluationSupervision.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/AuditReport.hbm.xml"/> 
+        
+        <mapping resource="com/kteam/lzpt/entity/mapping/Criticism.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/Notice.hbm.xml"/> 
+        
+        <mapping resource="com/kteam/lzpt/entity/mapping/SpecialManage.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/Kickbacks.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/IllegalProject.hbm.xml"/> 
+        
+        <mapping resource="com/kteam/lzpt/entity/mapping/UnitYearScore.hbm.xml"/>
+        
+        <mapping resource="com/kteam/lzpt/entity/mapping/UnitYearBudget.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/GambleChecked.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/ConflictChecked.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/ProjectType.hbm.xml"/>
+        <mapping resource="com/kteam/lzpt/entity/mapping/Project.hbm.xml"/> 
+        <mapping resource="com/kteam/lzpt/entity/mapping/ProjectItem.hbm.xml"/> 
+        
+    </session-factory>
+
+</hibernate-configuration>

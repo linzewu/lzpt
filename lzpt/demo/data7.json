@@ -1,0 +1,8 @@
+{"total":28,"rows":[
+	{"year":"2015","unit":"里田镇","type":"主体责任","score":"91","sysscore":"91","jwscore":"0"},
+	{"year":"2015","unit":"里田镇","type":"监督责任","score":"87","sysscore":"88","jwscore":"1"},
+	{"year":"2015","unit":"沙市镇","type":"主体责任","score":"85","sysscore":"84","jwscore":"1"},
+	{"year":"2015","unit":"沙市镇","type":"监督责任","score":"83","sysscore":"85","jwscore":"2"},
+	{"year":"2015","unit":"高桥镇","type":"主体责任","score":"84","sysscore":"85","jwscore":"1"},
+	{"year":"2015","unit":"高桥镇","type":"监督责任","score":"84","sysscore":"86","jwscore":"2"}
+]}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/menu.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/nav.css">
+
+<script type="text/javascript" src="/lzpt/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/lzpt/js/jquery.easyui.min.js"></script>
+
+<meta charset="UTF-8">
+<title>党风廉政建设责任制检查考核</title>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',split:true,border:false"
+		style="height: 112px; min-width: 1024px; overflow: hidden; width: 1366px; background-image: url(/lzpt/images/bg.jpg);">
+		<img alt="" src="/lzpt/images/top.jpg" style="margin: 0 auto; padding: 0; border: 0px; height: 112px;">
+		<div class="nav">
+			<ul>
+				<li><a href="javaScript:void(0);">党风廉政建设</a></li>
+				<li><a href="javaScript:void(0);">部门及工作项目管理</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-options="region:'south',title:''" style="height: 30px;"></div>
+	<div data-options="region:'west',split:true" title="系统菜单" style="width: 220px;">
+		<div class="menus mpanel" id="dzda" style="">
+			<ul>
+				<li><a href="/lzpt/demo/1.0/jw.html"><img alt="干部廉政档案" src="/lzpt/images/grda.png">工作项目任务分配</a></li>
+				<li><a href="/lzpt/demo/1.0/report1.html"><img alt="单位机构廉政档案" src="/lzpt/images/bmda.png">党风廉政建设责任制检查考核报表</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<div data-options="region:'center'" title="党委主体责任" style="padding: 5px;">
+			<table class="easyui-treegrid" 
+            data-options="
+                url: '/lzpt/demo/1.0/jw.json',
+                rownumbers: true,
+                idField: 'id',
+                toolbar:'#toolbar',
+                treeField: 'name',
+                checkOnSelect:true,
+                singleSelect:true,
+                selectOnCheck:true,
+                border:false,fit:true,fitColumns:true">
+        <thead>
+            <tr>
+            	<th data-options="field:'id',hidden:true"></th>
+                <th data-options="field:'name'" width="220">考核项目</th>
+            </tr>
+        </thead>
+    </table>
+	</div>
+	
+	<div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">任务设置</a>
+    </div>
+</body>
+
+<script>
+       function editUser(){
+    	   window.location.href="setting.html"
+       }
+ </script>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="CadreArchive" table="TM_CadreArchive">
+
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+
+		<property name="cname" column="c_cname" length="50"
+			type="java.lang.String" />
+
+		<property name="filesToJson" column="c_filesToJson" length="2000"
+			type="java.lang.String" />
+
+		<property name="csex" column="c_csex" type="java.lang.Integer" />
+
+		<property name="cbirthday" column="c_cbirthday" type="java.util.Date" />
+
+		<property name="nativeplace" column="c_nativeplace" length="400"
+			type="java.lang.String" />
+
+		<property name="major" column="c_major" length="210"
+			type="java.lang.String" />
+
+		<property name="nation" column="c_nation" length="100"
+			type="java.lang.String" />
+
+		<property name="education" column="c_education" length="50"
+			type="java.lang.String" />
+
+		<property name="joinparty" column="c_joinparty" type="java.util.Date" />
+
+		<property name="worktime" column="c_worktime" type="java.util.Date" />
+
+		<property name="phone" column="c_phone" length="20"
+			type="java.lang.String" />
+
+		<property name="idCard" column="c_id_card" length="20"
+			type="java.lang.String" />
+		
+		<property name="politicalStatus" column="c_political_status"
+			length="100" type="java.lang.String" />
+		
+		<property name="job" column="c_job" length="500" type="java.lang.String" />
+		
+		<property name="workState" column="c_work_state" type="java.lang.Integer" />
+		
+		<property name="marriageState" column="c_marriage_state"
+			type="java.lang.Integer" />
+
+		<many-to-one name="wa" class="com.kteam.lzpt.entity.WorkArchive"
+			column="c_waid" />
+
+	</class>
+
+</hibernate-mapping>

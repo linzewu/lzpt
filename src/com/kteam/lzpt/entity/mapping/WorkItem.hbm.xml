@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="WorkItem"
+        table="TM_WorkItem" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="name"
+            column="c_name"
+            length="255"
+            type="java.lang.String" />
+		
+        
+        <many-to-one name="parent" column="p_id" />
+     
+        <bag
+            name="items" lazy="true" inverse="true">
+            <key column="p_id" />
+            <one-to-many class="com.kteam.lzpt.entity.WorkItem"/>
+        </bag>
+
+       
+    </class>
+
+</hibernate-mapping>

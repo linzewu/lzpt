@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/menu.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/nav.css">
+
+<script type="text/javascript" src="/lzpt/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/lzpt/js/jquery.easyui.min.js"></script>
+
+<meta charset="UTF-8">
+<title>党风廉政建设责任制检查考核</title>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',split:true,border:false"
+		style="height: 112px; min-width: 1024px; overflow: hidden; width: 1366px; background-image: url(/lzpt/images/bg.jpg);">
+		<img alt="" src="/lzpt/images/top41.jpg" style="margin: 0 auto; padding: 0; border: 0px; height: 112px;">
+		<div class="nav">
+			<ul>
+					<li><a href="/lzpt/demo/2.0/lgzr.html">主体责任管理</a></li>
+				<li><a href="/lzpt/demo/2.0/jdzrgl1.html">监督责任管理</a></li>
+				<li><a href="/lzpt/demo/2.0/r1.html">纪委主控台</a></li>
+				<li><a href="#">系统管理</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-options="region:'south',title:''" style="height: 30px;"></div>
+	<div data-options="region:'west',split:true" title="系统菜单" style="width: 220px;">
+		<div class="menus mpanel" id="dzda" style="">
+			<ul>
+				<li><a href="/lzpt/demo/2.0/r1.html"><img alt="" src="/lzpt/images/grda.png">考核项目评估</a></li>
+				<li><a href="#"><img alt="" src="/lzpt/images/gif_47_027.gif">数据仪表盘</a></li>
+				<li><a href="#"><img alt="" src="/lzpt/images/gif_47_067.gif">催办管理</a></li>
+				<li><a href="#"><img alt="" src="/lzpt/images/gif_47_078.gif">随机抽查</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<div data-options="region:'center'" title="纪委主控台" style="padding: 5px;">
+		<div id="tt" class="easyui-tabs"  style="height: 500px">
+		
+			<div title="考核明显" >
+					<table class="easyui-datagrid"
+						data-options="onClickRow:clickRow,url:'/lzpt/demo/data5.json',border:false,singleSelect:true,fit:true,fitColumns:true">
+						<thead>
+							<tr>
+								<th data-options="field:'year'" width="100">年份</th>
+								<th data-options="field:'unit'" width="100">单位名称</th>
+								<th data-options="field:'type'" width="100">考核类型</th>
+								<th data-options="field:'project'" width="100">考核项目</th>
+								<th data-options="field:'overtime'" width="100">完成时间</th>
+								<th data-options="field:'score'" width="100">得分</th>
+							</tr>
+						</thead>
+					</table>
+			</div>
+			<div title="考核统计" >
+					<table class="easyui-datagrid"
+						data-options="url:'/lzpt/demo/data6.json',border:false,singleSelect:true,fit:true,fitColumns:true">
+						<thead>
+							<tr>
+								<th data-options="field:'year'" width="100">年份</th>
+								<th data-options="field:'unit'" width="100">单位名称</th>
+								<th data-options="field:'type'" width="100">考核类型</th>
+								<th data-options="field:'score'" width="100">得分</th>
+							</tr>
+						</thead>
+					</table>
+			</div>
+			<div title="年度考核综合表" >
+				<table class="easyui-datagrid"
+						data-options="url:'/lzpt/demo/data7.json',border:false,singleSelect:true,fit:true,fitColumns:true">
+						<thead>
+							<tr>
+								<th data-options="field:'year'" width="100">年份</th>
+								<th data-options="field:'unit'" width="100">单位名称</th>
+								<th data-options="field:'sysscore'" width="100">系统得分</th>
+								<th data-options="field:'jwscore'" width="100">纪委得分</th>
+								<th data-options="field:'score'" width="100">总得分</th>
+							</tr>
+						</thead>
+					</table>
+			</div>
+		</div>
+	</div>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">任务设置</a>
+	</div>
+</body>
+
+<script>
+	function clickRow(index, row) {
+	}
+
+	function editUser() {
+		window.location.href = "setting.html"
+	}
+</script>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="LeaderLZCP"
+        table="TM_LeaderLZCP">
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String">
+            <generator class="org.hibernate.id.UUIDGenerator"/>
+        </id>
+        
+         <property
+            name="name"
+            column="c_name"
+            type="java.lang.String"/>
+          <property
+            name="zc"
+            column="c_zc"
+            type="java.lang.String"/>
+
+        <property
+            name="satisfiedCount"
+            column="c_satisfiedCount"
+            length="128"
+            type="java.lang.Integer"/>
+        
+       <property
+            name="ordinaryCount"
+            column="c_ordinaryCount"
+            type="java.lang.Integer"/>
+       
+       <property
+            name="unsatisfiedCount"
+            column="c_unsatisfiedCount"
+            type="java.lang.Integer"/>
+       
+       <many-to-one name="tlr" column="c_tlr" />
+       
+    </class>
+
+</hibernate-mapping>

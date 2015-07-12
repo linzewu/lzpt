@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus domainId="BC614EA48CF796C33B13418494232921" >
+
+    <Menu
+        id="BDEC11B66B6F06512C13418498560111"
+        display="1"
+        index="1"
+        pid="1"
+        title="系统管理"
+        url="" >
+
+        <!-- 系统用户start -->
+
+        <Menu
+            id="9CF7F1CA281E5A897C13418498995471"
+            display="1"
+            index="1"
+            pid="2"
+            title="系统用户管理"
+            url="user!userManage.action" >
+
+            <!-- <Power id="1" name="用户管理" command="user!userManage.action" isSynchronism="true"></Power> -->
+
+            <Menu
+                id="9CF7F1CA281E5A897C13418498995472"
+                display="1"
+                index="1"
+                pid="3"
+                title="角色管理"
+                url="role!roleManage.action" >
+
+                <Menu
+                    id="9CF7F1CA281E5A897C13418498995474"
+                    display="1"
+                    index="1"
+                    pid="4"
+                    title="添加角色"
+                    url="role!roleManage.action" >
+
+                    <Action
+                        id="49C230C27EE25A11DC13461673156081"
+                        command="viewAddRole.action"
+                        title="浏览添加角色页面" >
+                    </Action>
+
+                    <Action
+                        id="DDB217E1745C6B218E13461673407991"
+                        command="getAllMenu.action"
+                        title="获取所有菜单" >
+                    </Action>
+
+                    <Action
+                        id="450B4A97AECAB0D24113461673558511"
+                        command="addRole.action"
+                        title="添加角色" >
+                    </Action>
+                </Menu>
+
+                <Menu
+                    id="9CF7F1CA281E5A897C13418498995475"
+                    display="1"
+                    index="1"
+                    pid="4"
+                    title="查询角色"
+                    url="role!roleManage.action" >
+
+                    <Action
+                        id="0DE47A51DB7AF2EC7713461673709091"
+                        command="viewRoleList.action"
+                        title="浏览查询角色页面" >
+                    </Action>
+
+                    <Action
+                        id="77AC11133EB5A83DF313461674589351"
+                        command="roleList.action?pageNo=1"
+                        title="查询角色" >
+                    </Action>
+                </Menu>
+
+                <Menu
+                    id="9CF7F1CA281E5A897C13418498995476"
+                    display="1"
+                    index="1"
+                    pid="4"
+                    title="修改角色"
+                    url="role!roleManage.action" >
+
+                    <Action
+                        id="E19A7D9D22FA24359913461674730241"
+                        command="viewmodifyRole.action"
+                        title="浏览修改角色页面" >
+                    </Action>
+
+                    <Action
+                        id="B0D0495A18A74B8C7C13461674849651"
+                        command="getAllMenu.action"
+                        title="获取所有菜单" >
+                    </Action>
+
+                    <Action
+                        id="71434E6E6AC3CD98BA13461674976171"
+                        command="modifyRole.action"
+                        title="修改角色" >
+                    </Action>
+                </Menu>
+            </Menu>
+
+            <Menu
+                id="9CF7F1CA281E5A897C13418498995473"
+                display="1"
+                index="1"
+                pid="3"
+                title="用户管理"
+                url="role!roleManage.action" >
+
+                <Menu
+                    id="9CF7F1CA281E5A897C13418498995477"
+                    display="1"
+                    index="1"
+                    pid="4"
+                    title="添加用户"
+                    url="role!roleManage.action" >
+
+                    <Action
+                        id="2EFB2BD7D55DDA836413461675106421"
+                        command="viewAddUser.action"
+                        title="浏览添加用户页面" >
+                    </Action>
+
+                    <Action
+                        id="5168F56A755FCBE51713461675340171"
+                        command="addUser.action"
+                        title="添加用户" >
+                    </Action>
+                </Menu>
+
+                <Menu
+                    id="9CF7F1CA281E5A897C13418498995478"
+                    display="1"
+                    index="1"
+                    pid="4"
+                    title="查询用户"
+                    url="role!roleManage.action" >
+
+                    <Action
+                        id="572FAAB94B9749BA9E13461675479121"
+                        command="viewUserList.action"
+                        title="浏览查询用户页面" >
+                    </Action>
+
+                    <Action
+                        id="C8E338F498BC607B7E13461675736761"
+                        command="userList.action?pageNo=1"
+                        title="查询用户" >
+                    </Action>
+
+                    <Power ref="User" >
+                    </Power>
+                </Menu>
+
+                <Menu
+                    id="9CF7F1CA281E5A897C13418498995479"
+                    display="1"
+                    index="1"
+                    pid="4"
+                    title="修改用户"
+                    url="role!roleManage.action" >
+
+                    <Action
+                        id="CB06982A15DCCCBF9013461675881421"
+                        command="viewModifyUser.action"
+                        title="浏览修改用户页面" >
+                    </Action>
+
+                    <Action
+                        id="A2A1C514EA2FA718BF13461676010481"
+                        command="modifyUser.action"
+                        title="修改用户" >
+                    </Action>
+                </Menu>
+            </Menu>
+        </Menu>
+    </Menu>
+
+</menus>

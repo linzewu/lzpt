@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="EncourageAppeal"
+        table="TM_EncourageAppeal" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="etitle"
+            column="c_etitle"
+            length="150"
+            type="java.lang.String" />
+
+        <property
+            name="econtext"
+            column="c_econtext"
+            length="600"
+            type="java.lang.String" />
+        
+        <property
+            name="eremark"
+            column="c_eremark"
+            length="600"
+            type="java.lang.String" />
+
+        <many-to-one name="ewa" class="com.kteam.lzpt.entity.WorkArchive" column="c_waid" />
+        
+        <property
+            name="escores"
+            column="c_escores"
+            type="java.lang.Integer" />
+            
+       <property
+            name="etype"
+            column="c_etype"
+            type="java.lang.Integer" />
+
+        <!-- 公用 -->
+
+        <property
+            name="createUser"
+            column="c_addUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="updateUser"
+            column="c_updateUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="createTime"
+            column="c_addTime"
+            type="java.util.Date" />
+
+        <property
+            name="updateTime"
+            column="c_updateTime"
+            type="java.util.Date" />
+
+        <property
+            name="state"
+            column="c_state"
+            type="java.lang.Integer" />
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity.leader.extend">
+
+	<class name="FamilyHousePropertyInfo" table="TM_Family_House_Property">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		<property name="leaderInfoId" column="c_leaderInfoId" type="java.lang.String" length="128" />
+	
+		<property name="propertyOwner" column="c_propertyOwner"  type="java.lang.String" length="200" />
+		<property name="relation" column="c_relation" type="java.lang.String" length="200" />
+		<property name="houseSource" column="c_houseSource" type="java.lang.Integer"  />
+		<property name="houseWhereabouts" column="c_houseWhereabouts" type="java.lang.Integer"  />
+		<property name="address" column="c_address" type="java.lang.String" length="1000" />
+		
+		<property name="area" column="c_area" type="java.lang.Double" />
+		<property name="propertyType" column="c_propertyType" type="java.lang.Integer" />
+		<property name="buyingTime" column="c_buyingTime" type="java.lang.String" length="100" />
+		<property name="money" column="c_money" type="java.lang.Double"  />
+		
+	</class>
+
+</hibernate-mapping>

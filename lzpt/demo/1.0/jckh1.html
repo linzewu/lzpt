@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/menu.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/nav.css">
+
+<script type="text/javascript" src="/lzpt/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/lzpt/js/jquery.easyui.min.js"></script>
+
+<meta charset="UTF-8">
+<title>党风廉政建设责任制检查考核</title>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',split:true,border:false"
+		style="height: 112px; min-width: 1024px; overflow: hidden; width: 1366px; background-image: url(/lzpt/images/bg.jpg);">
+		<img alt="" src="/lzpt/images/top.jpg" style="margin: 0 auto; padding: 0; border: 0px; height: 112px;">
+		<div class="nav">
+			<ul>
+				<li><a href="javaScript:void(0);">党风廉政建设</a></li>
+				<li><a href="javaScript:void(0);">部门及工作项目管理</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-options="region:'south',title:''" style="height: 30px;"></div>
+	<div data-options="region:'west',split:true" title="系统菜单" style="width: 220px;">
+		<div class="menus mpanel" id="dzda" style="">
+			<ul>
+				<li><a href="/lzpt/demo/1.0/jckh1.html"><img alt="单位机构廉政档案" src="/lzpt/images/bmda.png">基础考核1</a></li>
+				<li><a href="/lzpt/demo/1.0/jckh2.html"><img alt="干部廉政档案" src="/lzpt/images/grda.png">基础考核2</a></li>
+				<li><a href="/lzpt/demo/1.0/jw.html"><img alt="干部廉政档案" src="/lzpt/images/grda.png">工作项目任务分配</a></li>
+				<li><a href="/lzpt/demo/1.0/report1.html"><img alt="单位机构廉政档案" src="/lzpt/images/bmda.png">党风廉政建设责任制检查考核报表</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<div data-options="region:'center'" title="党委主体责任" style="padding: 5px;">
+			 <div class="easyui-tabs">
+        <div title="工作计划" style="padding:10px">
+         		<table style="width: 100%;height: 100%">
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >时间：</td>
+         				<td> <input class="easyui-datebox"></input></td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >工作计划或要点：</td>
+         				<td><textarea style="width: 500px;height: 200px"></textarea></td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >附件：</td>
+         				<td><input type="file"></td>
+         			</tr>
+         		</table>
+        </div>
+        <div title="任务分工/措施" style="padding:10px">
+           	<table style="width: 100%;height: 100%">
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >时间：</td>
+         				<td> <input class="easyui-datebox" required="true"></input></td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" ></td>
+         				<td>
+         					<table class="easyui-datagrid" style="width:505px;height:250px" rownumbers=true
+         							fitColumns=true
+         						   data-options="singleSelect:true,collapsible:true,url:'/lzpt/demo/1.0/fgsx.json',method:'get'">
+						        <thead>
+						            <tr>
+						                <th data-options="field:'date1',width:80">时间</th>
+						                <th data-options="field:'owner',width:100">责任人</th>
+						                <th data-options="field:'items',width:80,align:'right'">分工事项</th>
+						            </tr>
+						        </thead>
+    						</table>
+         				</td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >具体措施：</td>
+         				<td><textarea style="width: 500px;height: 200px"></textarea></td>
+         			</tr>
+         		</table>
+        </div>
+        <div title="工作总结" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+            <table style="width: 100%;height: 100%">
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >时间：</td>
+         				<td> <input class="easyui-datebox"></input></td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >工作总结：</td>
+         				<td><textarea style="width: 500px;height: 200px"></textarea></td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >附件：</td>
+         				<td><input type="file"></td>
+         			</tr>
+         		</table>
+        </div>
+    </div>
+    
+    <div style="margin: 0 auto ;text-align: center; margin-top: 10px;"><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'"
+        onclick="">保存</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'"
+        onclick="">取消</a>
+        </div>
+    
+	</div>
+	
+	
+</body>
+
+<script>
+       function editUser(){
+    	   window.location.href="setting.html"
+       }
+ </script>
+</html>

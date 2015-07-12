@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/menu.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/nav.css">
+
+<script type="text/javascript" src="/lzpt/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/lzpt/js/jquery.easyui.min.js"></script>
+
+<meta charset="UTF-8">
+<title>乡镇落实党风廉政建设责任制检查考核报表</title>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',split:true,border:false"
+		style="height: 112px; min-width: 1024px; overflow: hidden; width: 1366px; background-image: url(/lzpt/images/bg.jpg);">
+		<img alt="" src="/lzpt/images/top.jpg" style="margin: 0 auto; padding: 0; border: 0px; height: 112px;">
+		<div class="nav">
+			<ul>
+				<li><a href="javaScript:void(0);">党风廉政建设</a></li>
+				<li><a href="javaScript:void(0);">部门及工作项目管理</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-options="region:'south',title:''" style="height: 30px;"></div>
+	<div data-options="region:'west',split:true" title="系统菜单" style="width: 220px;">
+		<div class="menus mpanel" id="dzda" style="">
+			<ul>
+				<li><a href="/lzpt/demo/1.0/jw.html"><img alt="干部廉政档案" src="/lzpt/images/grda.png">工作项目任务分配</a></li>
+				<li><a href="/lzpt/demo/1.0/report1.html"><img alt="单位机构廉政档案" src="/lzpt/images/bmda.png">党风廉政建设责任制检查考核报表</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<div data-options="region:'center'" title="部门年度报表" style="padding: 5px;">
+		<table class="easyui-datagrid" title="年度报表"  fitColumns="true"
+            data-options="singleSelect:true,url:'/lzpt/demo/1.0/report1.json',method:'get'">
+        <thead>
+            <tr>
+                <th data-options="field:'itemid',width:80">年份</th>
+                <th data-options="field:'productid',width:80,formatter:formatscort">部门1</th>
+                <th data-options="field:'listprice',width:80,formatter:formatscort">部门2</th>
+                <th data-options="field:'unitcost',width:80,formatter:formatscort">部门3</th>
+                <th data-options="field:'attr1',width:80,formatter:formatscort">部门4</th>
+                <th data-options="field:'status',width:80,formatter:formatscort">部门5</th>
+            </tr>
+        </thead>
+    </table>
+	</div>
+</body>
+<script>
+
+function formatscort(value,rows){
+	return "<a href='/lzpt/demo/1.0/report2.html'>"+value+"</a>";
+}
+
+</script>
+</html>

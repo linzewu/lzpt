@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-12 17:07:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.kteam.lzpt.entity.ProjectItem" table="TM_PROJECTITEM">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="projectId" type="int">
+            <column name="PROJECTID" />
+        </property>
+        <property name="score" type="java.lang.Float">
+            <column name="SCORE" />
+        </property>
+        <property name="data1" type="java.lang.String" >
+            <column name="DATA1" length="8000" />
+        </property>
+        <property name="data2" type="java.lang.String" >
+            <column name="DATA2" length="8000" />
+        </property>
+    </class>
+</hibernate-mapping>

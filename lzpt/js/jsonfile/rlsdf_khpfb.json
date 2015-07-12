@@ -1,0 +1,29 @@
+{
+"total":100,
+"rows":[
+{"town":"禾川镇","setup":"80","arrange":"70","summarize":"77","division":"86","finished":"98","cadreCheck":"86","apply":"87","workable":"98","scores":"87","rank":"1"},  		    
+	{"town":"石桥镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},	   
+	{"town":"坳南乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"曲白乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"才丰乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},
+	{"town":"在中乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"烟阁乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},  
+	{"town":"龙源口镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},  
+	{"town":"三湾乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"里田镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"龙门镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"合岭乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"沙市镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},  
+	{"town":"龙田乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"文竹镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"高溪乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"高桥楼镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"怀忠镇","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}, 
+	{"town":"芦溪乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},  
+	{"town":"高市乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},   
+	{"town":"莲洲乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"},   
+	{"town":"象形乡","setup":"80","arrange":"70","summarize":"77","division":"87","finished":"90","cadreCheck":"86","apply":"85","workable":"94","scores":"83","rank":"2"}
+],"footer":[
+	{"town":"评分依据","setup":"未调整领导小组成员扣分","arrange":"未制定实施意见扣分，未召开会议对实施意见进行部署的扣 分","summarize":"未及时报送工作总结扣 分","division":"未进行任务分解扣 分","finished":"未完成分工任务的酌情扣分","cadreCheck":"未制定检查方案扣 分，未检查扣 分","apply":"未对考核结果运用的扣 分","workable":"在案件办理中应追究领导责任而未给予相应处分的扣分。","scores":"83","rank":"2"}
+]
+}

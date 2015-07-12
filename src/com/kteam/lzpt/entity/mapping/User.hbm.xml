@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="User"
+        table="TM_User" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="userName"
+            column="c_userName"
+            length="32"
+            type="java.lang.String"
+            unique="true" />
+
+        <property
+            name="password"
+            column="c_password"
+            length="64"
+            type="java.lang.String" />
+
+        <property
+            name="name"
+            column="c_name"
+            length="32"
+            type="java.lang.String" />
+        
+         <property
+            name="unitId"
+            column="c_unit"
+            length="64"
+            type="java.lang.String" />
+
+        <property
+            name="lastLoingTime"
+            column="c_lastLoingTime"
+            length="125"
+            type="java.util.Date" />
+
+        <property
+            name="loginTime"
+            column="c_loginTime"
+            length="125"
+            type="java.util.Date" />
+        
+        
+        
+         <bag name="roles" table="TM_User_Role">
+            <key column="c_user_id" not-null="true"/>
+              <many-to-many class="com.kteam.lzpt.entity.Role">
+                  <column name="c_role_id" not-null="true"/>
+              </many-to-many>
+        </bag>
+
+        <!-- 公用 -->
+        <property
+            name="createUser"
+            column="c_addUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="updateUser"
+            column="c_updateUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="createTime"
+            column="c_addTime"
+            type="java.util.Date" />
+
+        <property
+            name="updateTime"
+            column="c_updateTime"
+            type="java.util.Date" />
+
+        <property
+            name="state"
+            column="c_state"
+            type="java.lang.Integer" />
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* login */
+body{margin:0px auto;padding:0px;font-family:"微软雅黑", "宋体", Arial, Helvetica, sans-serif;font-size:12px;overflow:hidden;background:#e3e3e1;}
+.login{margin:0px auto;padding:0px;text-align:center;background:url(../images/body_login_bg.jpg) repeat-x;_position:relative;}
+.login .main{margin:0px auto;padding:0px;text-align:center;width:1004px;height:auto;background:url(../images/bg.jpg) no-repeat;}
+.login .main .main_con{padding-left:385px;padding-top:220px;text-align:left;}
+.login .main .main_con ul{margin:0px auto;padding:0px;list-style:none;}
+.login .main .main_con ul li{width:auto;line-height:30px;margin-top:10px;}
+.login .main .main_con input{width:147px;height:30px;line-height:30px;position:static;border:0px;vertical-align: middle;}
+.login .main .main_con .btn_login{width:64px;height:26px;line-height:22px;text-align:center;margin-left:30px;margin-top:8px;cursor:pointer;background:url(../images/button.jpg) no-repeat;border:0px;color:#fff;font-family:"微软雅黑", "宋体", Arial, Helvetica, sans-serif;}
+.login .main .main_Copyright{margin:0px auto;text-align:center;padding-top:220px;padding-bottom:10px;font-size:8pt;}
+
+
+
+
+
+

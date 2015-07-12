@@ -1,0 +1,23 @@
+.menus li {
+	width: 60px;
+	text-align: center;
+	margin-top: 20px;
+	padding-left: 20px;
+}
+
+.menus ul {
+	list-style-type: none;
+}
+
+.menus li a img {
+	width: 50px;
+	height: 50px;
+	border: 0;
+	margin: 0px;
+}
+
+.menus li a {
+	line-height: 20px;
+	text-decoration: none;
+	color: #15428B;
+}

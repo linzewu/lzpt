@@ -1,0 +1,10 @@
+body, html, input{margin:0; padding:0;  font-family:"microsoft YaHei", arial}
+body, html{width:100%; height:100% ;background:#0099cc; }
+img{border: none;}
+.bg{position: absolute; width:100%; height: 100%; z-index: 1;}
+input{height: 34px; width:245px; border: none;vertical-align: middle;text-indent: 35px; outline: none}
+.container{ position:absolute;width:100%; height: 100%;z-index:999; }
+.logo{width:794px; height:47px;position:relative;top: 22%; left:50%; margin-left: -397px; background: url("../images/logo.png") center  no-repeat; }
+.list {position:absolute; top:100px; }
+.list ul li{width:135px; height: 117px;list-style: none;float: left; margin-right: 10px;}
+

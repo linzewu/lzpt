@@ -1,0 +1,21 @@
+label{color:#890C1A;}
+th{text-align:right}
+
+
+
+.fileInfo div{
+	margin: 0px;
+	left: 0px;
+	background-color: #E0ECF9;
+	
+}
+
+
+
+.fileInfo div  a{
+	margin-left: 10px;
+}
+
+.A0{color: red;}
+.A1{color: blue;}
+.A2{color:green; }

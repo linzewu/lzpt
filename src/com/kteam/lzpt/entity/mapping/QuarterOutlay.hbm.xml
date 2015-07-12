@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="QuarterOutlay" table="TM_QuarterOutlay">
+
+		<id name="id" column="c_id" type="java.lang.String">
+
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+
+		<property name="qoyear" column="c_qoyear" type="java.lang.Integer" />
+
+		<property name="qoquarter" column="c_qoquarter" type="java.lang.Integer" />
+
+		<many-to-one name="wa" class="com.kteam.lzpt.entity.WorkArchive" column="t_waid" />
+
+		<property name="publicTime" column="c_publicTime" type="java.util.Date" />
+
+		<property name="trafficMon" column="c_trafficMon" type="java.lang.Double" />
+
+		<property name="stayMon" column="c_stayMon" type="java.lang.Double" />
+
+		<property name="foodMon" column="c_foodMon" type="java.lang.Double" />
+
+		<property name="otherBusiness" column="c_otherBusiness" type="java.lang.Double" />
+
+		<property name="trainMon" column="c_trainMon" type="java.lang.Double" />
+
+		<property name="bidMon" column="c_bidMon" type="java.lang.Double" />
+
+		<property name="otherAbroadMon" column="c_otherAbroadMon" type="java.lang.Double" />
+
+		<property name="buyCarMon" column="c_buyCarMon" type="java.lang.Double" />
+
+		<property name="fixCarMon" column="c_fixCarMon" type="java.lang.Double" />
+		<property name="totalReceptionCosts" column="c_totalReceptionCosts" type="java.lang.Double" />
+		<property name="totalEmigrateCosts" column="c_totalEmigrateCosts" type="java.lang.Double" />
+
+		<!-- 公用 -->
+
+		<property name="createUser" column="c_addUser" length="50" type="java.lang.String" />
+
+		<property name="updateUser" column="c_updateUser" length="50" type="java.lang.String" />
+
+		<property name="createTime" column="c_addTime" type="java.util.Date" />
+
+		<property name="updateTime" column="c_updateTime" type="java.util.Date" />
+
+		<property name="state" column="c_state" type="java.lang.Integer" />
+	</class>
+
+</hibernate-mapping>

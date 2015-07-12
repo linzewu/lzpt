@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="ProjectType" table="TM_ProjectType">
+		<id name="id" column="id">
+			<generator class="assigned" />
+		</id>
+		<property name="name"  length="900"
+			type="java.lang.String" />
+		<property name="group" column="c_group"/>
+		
+		<property name="projectScore" column="projectScore" length="6" precision="4"/>
+		<property name="maxScore" column="maxScore" length="6" precision="4" />
+		<property name="minus" column="minus" length="1"  />
+	</class>
+
+</hibernate-mapping>

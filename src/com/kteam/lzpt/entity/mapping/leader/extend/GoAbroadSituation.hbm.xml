@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity.leader.extend">
+
+	<class name="GoAbroadSituation" table="TM_Go_Abroad_Situation">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		
+		<property name="startDate" column="c_startDate" type="java.util.Date" />
+		<property name="endDate" column="c_endDate" type="java.util.Date"/>
+		<property name="toCountry" column="c_toCountry" type="java.lang.String" length="100"/>
+		<property name="reason" column="c_reason" type="java.lang.String" length="500"/>
+		<property name="approveOrganization" column="c_approveOrganization" type="java.lang.String" length="300"/>
+		<property name="entrustOrganization" column="c_entrustOrganization" type="java.lang.String" length="300"/>
+		<property name="leaderInfoId" column="c_leaderInfoId" type="java.lang.String" length="128" />
+	
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,158 @@
+/* CSS Document */
+@charset "gb2312";
+body {
+font-family: "ËÎÌו";
+font-size: 12px;
+line-height: normal;
+font-weight: normal;
+margin: 0px;
+padding: 0px;
+color: #454545;
+background:#143c5f;
+}
+dl,dd,h1,h2,h3,h4,h5,h6,form{
+padding:0; margin:0;
+}
+P {
+margin: 0px;
+padding: 0px;
+}
+select{
+margin: 0px;
+padding: 0px;
+}
+img{
+border-style: none;
+}
+ul {
+padding: 0px;
+list-style-image: none;
+list-style-type: none;
+margin: 0px;
+}
+li {
+margin: 0px;
+padding: 0px;
+list-style-image: none;
+list-style-type: none;
+} 
+body,td,th {
+color: #4d4a4b;
+}
+a{
+color: #4d4a4b;
+text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}.main {
+	height: 604px;
+	width: 1034px;
+	margin-top: 6px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+.main_1 {
+	float: left;
+	height: 215px;
+	width: 1034px;
+	background-image: url(../images/bg_03.jpg);
+	background-repeat: no-repeat;
+}
+.main_2 {
+	background-image: url(../images/bg_05.jpg);
+	background-repeat: no-repeat;
+	float: left;
+	height: 389px;
+	width: 1034px;
+	color: #000000;
+}
+.bom {
+	background-color: #1c3647;
+	height: 70px;
+	width: 1034px;
+	line-height: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+.dl {
+	float: left;
+	height: 181px;
+	width: 262px;
+	margin-left: 158px;
+	margin-top: 17px;
+	display: inline;
+}
+.xtdl {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	float: left;
+	height: 24px;
+	width: 213px;
+	color: #7f7f7f;
+}
+.yhm {
+	float: left;
+	height: 21px;
+	width: 236px;
+	line-height:21px;
+	margin-top: 10px;
+}
+.t1 {
+	height: 17px;
+	width: 157px;
+}
+.mm {
+	float: left;
+	height: 21px;
+	width: 236px;
+	line-height:21px;
+	background-image: url(../images/1_07.png);
+	background-repeat: no-repeat;
+	background-position: 213px 5px;
+	margin-top: 18px;
+}
+.yzm {
+	float: left;
+	height: 21px;
+	width: 236px;
+	margin-top: 14px; 
+	
+}
+.t2 {
+	height: 17px;
+	width: 62px;
+}.sub {
+	float: left;
+	height: 20px;
+	width: 225px;
+	margin-top: 18px;
+}
+.s1 {
+	float: left;
+	height: 22px;
+	width: 66px;
+	margin-left: 38px;
+	text-align: center;
+	display: inline;
+}
+.s2 {
+	float: left;
+	height: 22px;
+	width: 66px;
+	margin-left: 49px;
+	text-align: center;
+	display: inline;
+}
+.s1_1 {
+	height: 22px;
+	width: 46px;
+	text-align:center
+}

@@ -1,0 +1,27 @@
+{
+"total":100,
+"rows":[
+{"town":"禾川镇","enforcelaw":"91","ingovernment":"89","accusation":"98","t1":"97","scores":"95"},  		    
+	{"town":"石桥镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},	   
+	{"town":"坳南乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"曲白乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"才丰乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},
+	{"town":"在中乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"烟阁乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},  
+	{"town":"龙源口镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},  
+	{"town":"三湾乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"里田镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"龙门镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"合岭乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"沙市镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},  
+	{"town":"龙田乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"文竹镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"高溪乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"高桥楼镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"怀忠镇","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}, 
+	{"town":"芦溪乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},  
+	{"town":"高市乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},   
+	{"town":"莲洲乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"},   
+	{"town":"象形乡","enforcelaw":"88","ingovernment":"92","accusation":"90","t1":"91","scores":"88"}
+				]
+}

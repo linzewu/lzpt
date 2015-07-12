@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/dataCode.js"></script>
+<style type="text/css">
+#context{
+ width: 90%; border: solid 1px #909090 ;
+ margin-left: auto;margin-right: auto;
+ border-radius: 15px;
+}
+
+#title{
+font-size: 50px;
+text-align: center;
+}
+.cutting{
+height:1px;
+ width:90%;
+ background:red;
+ overflow:hidden;
+ margin-left: auto;margin-right: auto;
+}
+
+#message{
+	width: 80%;
+	margin-left: auto;
+	margin-right:auto;
+	 overflow:hidden;
+	 padding-top: 20px;
+}
+.last{
+	text-align: right;
+}
+
+.firt{
+	font-size: 88px;
+	line-height: 120px;
+}
+
+p{margin:5px 0px 0px 0px;}
+
+
+</style>
+
+<meta charset="UTF-8">
+<title>永新县廉政大屏检控系统</title>
+</head>
+<body >
+<div id="context" >
+	<input type="hidden" id="key"   />
+	<h1 id="title">永新县廉政大屏检控系统</h1>
+	<div class="cutting"></div>
+	<div id="message"  style="font-family: arial, 'courier new', courier, 宋体, monospace; color: rgb(51, 51, 51); font-size: 34px;line-height: 44px;">
+		<marquee id="mq" direction="up" scrollamount="2"   behavior="scroll" >
+			数据加载中。。。。。
+		</marquee>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript">
+	var heigth = window.innerHeight * 0.9;
+	var marginTop = window.innerHeight * 0.05;
+	$("#context").css("height",heigth+"px");
+	$("#context").css("margin-top",marginTop+"px");
+	$("#message").css("height",heigth*0.75);
+	$("#mq").css("height",heigth*0.72);
+	
+	var ccMessage=[];
+	var ncMessage=[];
+	
+	var isInit=true;
+	
+	function refreshData(){
+		$.getJSON("dp!getMessage.action", function(data){
+			ccMessage=data.ccMessage;
+			ncMessage=data.ncMessage;
+			if(isInit){
+				switchData();
+				console.log(isInit);
+				isInit=false;
+			}
+		});
+	}
+	var index=0;
+	var count=0
+	function  switchData(){
+		var data=ccMessage.length==0?ncMessage:converData(ccMessage);
+		if(index>=data.length){
+			index=0;
+		}
+		$("#key").val(data[index].id);
+		$("#mq").html(data[index].contents);
+		$("#title").text(data[index].title);
+		index++;
+	}
+	
+	function converData(param){
+		console.log(param);
+		var datas=[];
+		$.each(param,function(i,n){
+			var data={};
+			data.id=n.id;
+			data.title="廉政远程批评警告";
+			
+			var unit=getLabelByid("workUnit",n.unit);
+			
+			var contents="";
+			var str=n.contents.split(",");
+			
+			for(var j=0;j<str.length;j++){
+				contents=contents+getLabelByid("irregularities",str[j]);
+				if(j!=str.length-1){
+					contents=contents+",";
+				}
+			}
+			var jobNumber=n.jobNumber;
+			if(jobNumber==null){
+				jobNumber="";
+			}
+			if(jobNumber!=""){
+				jobNumber+="号";
+			}
+			
+			var currentDate=new Date();
+			var firt="<p class='firt'>&nbsp;&nbsp;&nbsp;&nbsp;"
+			var last="<p class='last'>永新县纪委办公室</p>";
+			var rq="<p class='last'>"+currentDate.getFullYear()+"年"+(currentDate.getMonth()+1)+"月"+currentDate.getDate()+"日</p>";
+			data.contents=firt+unit+jobNumber+"工作人员"+contents+"。特此批评警告！<p>"+last+rq;
+			
+			datas.push(data)
+		});
+	
+		return datas;
+	}
+	
+	
+	
+	$(function(){
+		refreshData();
+	});
+	
+	
+	window.setInterval(refreshData,1000*60*1.5);
+	
+	window.setInterval(switchData,1000*60*2);
+	
+	
+</script>
+
+</html>

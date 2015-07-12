@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="SpecialManage" table="TM_SpecialManage">
+
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+
+		<property name="unitId" column="c_unitId" length="120"
+			type="java.lang.String" />
+		
+		<property name="name" column="c_name" length="200"
+			type="java.lang.String" />
+		
+		<property name="idCard" column="c_idCard" length="60"
+			type="java.lang.String" />
+		
+		<property name="sex" column="c_sex"  type="java.lang.Integer" />
+		<property name="age" column="c_age"  type="java.lang.Integer" />
+		
+		<property name="job" column="c_job" length="200"
+			type="java.lang.String" />
+		
+		<property name="level" column="c_level"  type="java.lang.Integer" />
+
+	</class>
+
+</hibernate-mapping>

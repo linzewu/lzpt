@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="AuditReport" table="TM_AuditReport">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		
+		<property name="auditType" column="c_auditType" length="5"
+			type="java.lang.Integer" />
+		
+		<property name="unitName" column="c_unitName" length="300"
+			type="java.lang.String" />
+		<property name="userName" column="c_userName" type="java.lang.String"  length="100"/>
+	
+		<property name="remark" column="c_remark" type="java.lang.String" length="1000"/>
+
+		
+		<property name="files" column="c_files" length="2000"
+			type="java.lang.String" />
+		
+	
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="CadreImportantMatters"
+        table="TM_CadreImportantMatters" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+        
+        <property
+            name="years"
+            column="c_years"
+            type="java.lang.Integer" />
+
+        <property
+            name="encourage"
+            column="c_encourage"
+            type="text" />
+
+        <property
+            name="punish"
+            column="c_punish"
+            type="text" />
+            
+       <property
+            name="yearOfCheck"
+            column="c_yearOfCheck"
+            type="text" />
+            
+       <property
+            name="reject"
+            column="c_reject"
+            type="text" />
+            
+       <property
+            name="marriage"
+            column="c_marriage"
+            type="text" />
+            
+       <property
+            name="manage"
+            column="c_manage"
+            type="text" />
+            
+       <property
+            name="housing"
+            column="c_housing"
+            type="text" />
+            
+       <property
+            name="joining"
+            column="c_joining"
+            type="text" />
+            
+       <property
+            name="goabroad"
+            column="c_goabroad"
+            type="text" />
+            
+        <property
+            name="crime"
+            column="c_crime"
+            type="text" />
+            
+        <property
+            name="jobs"
+            column="c_jobs"
+            type="text" />
+            
+        <property
+            name="others"
+            column="c_others"
+            type="text" />
+
+
+    </class>
+
+</hibernate-mapping>

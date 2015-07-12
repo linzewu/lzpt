@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/js/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/menu.css">
+<link rel="stylesheet" type="text/css" href="/lzpt/css/nav.css">
+
+<script type="text/javascript" src="/lzpt/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/lzpt/js/jquery.easyui.min.js"></script>
+
+<meta charset="UTF-8">
+<title>党风廉政建设责任制检查考核</title>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',split:true,border:false"
+		style="height: 112px; min-width: 1024px; overflow: hidden; width: 1366px; background-image: url(/lzpt/images/bg.jpg);">
+		<img alt="" src="/lzpt/images/top41.jpg" style="margin: 0 auto; padding: 0; border: 0px; height: 112px;">
+		<div class="nav">
+			<ul>
+						<li><a href="/lzpt/demo/2.0/lgzr.html">主体责任管理</a></li>
+				<li><a href="/lzpt/demo/2.0/jdzrgl1.html">监督责任管理</a></li>
+				<li><a href="/lzpt/demo/2.0/r1.html">纪委主控台</a></li>
+				<li><a href="#">系统管理</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-options="region:'south',title:''" style="height: 30px;"></div>
+	<div data-options="region:'west',split:true" title="系统菜单" style="width: 220px;">
+		<div class="menus mpanel" id="dzda" style="">
+			<ul>
+				<li><a href="/lzpt/demo/2.0/lgzr.html"><img alt="" src="/lzpt/images/grda.png">基础工作项目</a></li>
+				<li><a href="/lzpt/demo/2.0/zdkhxm.html"><img alt="" src="/lzpt/images/bmda.png">重点考核项目</a></li>
+				<li><a href="/lzpt/demo/2.0/jw.html"><img alt="" src="/lzpt/images/gif_47_030.gif">考核项目设置</a></li>
+			</ul> 
+		</div> 
+
+	</div>
+	<div data-options="region:'center'" title="党委主体责任" style="padding: 5px;">
+		<div class="easyui-tabs">
+		        <div title="重视执纪执法" style="padding:10px 0 0 50px" >
+		         	<h4>纪检书记其他分管工作（纪检工作除外）</h4>
+		         	<hr style="width: 90%;border:solid 1px red; " align="left">
+			         	<table style="width: 100%;height: 100%">
+		         			<tr>
+		         				<td style="width: 15%;padding-right: 45px;" align="right" >第一项工作内容：</td>
+		         				<td> <input style="width: 500px;"></input></td>
+		         			</tr>
+		         			<tr>
+		         				<td style="width: 15%;padding-right: 45px;" align="right" >第一项工作内容：</td>
+		         				<td><input style="width: 500px;"></input></td>
+		         			</tr>
+	         		</table>
+	         		
+	         		
+	         		<h4>纪委“十有”规范化建设</h4>
+		         	<hr style="width: 90%;border:solid 1px red; " align="left">
+			         	<table style="width: 90%;height: 100%">
+		         			<tr>
+		         				<td style="width: 15%;" align="right" >纪委副书记姓名：</td>
+		         				<td> <input style="width: 180px;"></input></td>
+		         				<td style="width: 15%;" align="right" >任职日期：</td>
+		         				<td> <input style="width: 180px;" class="easyui-datebox"></input></td>
+		         			</tr>
+		         			<tr>
+		         				<td style="width: 15%;" align="right" >办公办案设备：</td>
+		         				<td colspan="3"><textarea style="width: 650px;height: 100px"></textarea></td>
+		         			</tr>
+		         			
+		         			<tr>
+		         				<td style="width: 15%;" align="right" >办案经费：</td>
+		         				<td colspan="3"><input style="width: 180px;" ></input></td>
+		         			</tr>
+		         			
+	         		</table>
+		        </div>
+		        
+		        
+		        <div title="听取汇报" style="padding:10px">
+		        			<table style="width: 100%;height: 100%">
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >时间：</td>
+         				<td> <input class="easyui-datebox"></input></td>
+         			</tr>
+         			
+         				<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >汇报对象：</td>
+         				<td> <input ></input></td>
+         			</tr>
+         			
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >汇报记录：</td>
+         				<td><textarea style="width: 500px;height: 200px"></textarea></td>
+         			</tr>
+         			<tr>
+         				<td style="width: 15%;padding-right: 25px;" align="right" >附件：</td>
+         				<td><input type="file"></td>
+         			</tr>
+         		</table>
+		        </div>
+   		 </div>
+   		 <div style="margin: 0 auto ;text-align: center; margin-top: 10px;"><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'"
+        onclick="">保存</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'"
+        onclick="">取消</a>
+        </div>				
+	</div>
+	<div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">任务设置</a>
+    </div>
+</body>
+
+<script>
+		function clickRow(index,row){
+			window.location.href="jckh1.html"
+		}
+	
+       function editUser(){
+    	   window.location.href="setting.html"
+       }
+ </script>
+</html>

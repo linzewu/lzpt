@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity.leader.extend">
+
+	<class name="FamilyMigrateInfo" table="TM_Family_Migrate">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		<property name="leaderInfoId" column="c_leaderInfoId" type="java.lang.String" length="128" />
+		
+		<property name="appellation" column="c_appellation" type="java.lang.String"  length="200"/>
+		<property name="name" column="c_name" type="java.lang.String"  length="200"/>
+		<property name="migrateCountry" column="c_migrateCountry" type="java.lang.String"  length="600"/>
+		<property name="migrateType" column="c_migrateType" type="java.lang.Integer" />
+		<property name="migrateInfoDate" column="c_migrateInfoDate" type="java.util.Date" />
+		<property name="migrateCity" column="c_migrateCity" type="java.lang.String" length="600" />
+	</class>
+
+</hibernate-mapping>

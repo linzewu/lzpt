@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity.leader.extend">
+
+	<class name="FamilyCompanyInfo" table="TM_Family_Company">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		<property name="leaderInfoId" column="c_leaderInfoId" type="java.lang.String" length="128" />
+		
+		<property name="appellation" column="c_appellation" type="java.lang.String"  length="200"/>
+		<property name="name" column="c_name" type="java.lang.String"  length="200"/>
+		
+		<property name="companyName" column="c_companyName" type="java.lang.String"  length="600"/>
+		<property name="scope" column="c_scope" type="java.lang.String"  length="2000"/>
+		<property name="registerCapital" column="c_registerCapital" type="java.lang.Double"  />
+		<property name="capital" column="c_capital" type="java.lang.Double"  />
+		<property name="capitalScale" column="c_capitalScale" type="java.lang.Double"  />
+	</class>
+
+</hibernate-mapping>

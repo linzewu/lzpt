@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="Notice" table="TM_Notice">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		
+		<property name="title" column="c_title" length="300"
+			type="java.lang.String" />
+		
+		<property name="contents" column="c_contents" 
+			type="text" />
+		<property name="isAvail" column="c_isAvail" type="java.lang.String"  length="5"/>
+		
+	
+	</class>
+
+</hibernate-mapping>

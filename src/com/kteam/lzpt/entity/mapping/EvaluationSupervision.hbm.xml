@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="EvaluationSupervision" table="TM_EvaluationSupervision">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		
+		<property name="year" column="c_year" length="20"
+			type="java.lang.String" />
+		
+		<property name="month" column="c_month" 
+			type="java.lang.Integer" />
+		
+		<property name="unit" column="c_unit" 
+			type="java.lang.Integer" />
+		
+		<property name="score" column="c_score" 
+			type="java.lang.Integer" />
+		
+		<property name="evaluateExplain" column="c_evaluateExplain" length="2000"
+			type="java.lang.String" />
+		
+		<property name="evaluateName" column="c_evaluateName" length="200"
+			type="java.lang.String" />
+		
+		<property name="evaluateAccount" column="c_evaluateAccount" length="200"
+			type="java.lang.String" />
+		
+		<property name="evaluateDate" column="c_evaluateDate"
+			type="java.util.Date" />
+	
+	</class>
+
+</hibernate-mapping>

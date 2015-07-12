@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="Task"
+        table="TM_Task" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="title"
+            column="c_title"
+            length="128"
+            type="java.lang.String"/>
+
+        <property
+            name="context"
+            column="c_context"
+            type="text" />
+
+        <property
+            name="remark"
+            column="c_remark"
+            length="512"
+            type="java.lang.String" />
+
+        <property
+            name="filesToJson"
+            column="c_filesToJson"
+            length="2000"
+            type="java.lang.String" />
+        
+        
+        <property
+            name="delayFraction"
+            column="c_delayFraction"
+            type="java.lang.Integer" />
+        
+        <property
+            name="status"
+            column="c_status"
+            type="java.lang.Integer" />
+          
+         <property
+            name="type"
+            column="c_type"
+            type="java.lang.Integer" />
+         
+         <property
+            name="percentage"
+            column="c_percentage"
+            type="java.lang.Integer" />
+
+        <property
+            name="startDate"
+            column="c_startDate"
+            type="java.util.Date" />
+        
+        <property
+            name="endDate"
+            column="c_endDate"
+            type="java.util.Date" />
+        
+         <property
+            name="lastDate"
+            column="c_lastDate"
+            type="java.util.Date" />
+        
+        <bag name="units" table="TM_TASK_UNIT">
+            <key column="c_task_id"></key>
+            <many-to-many class="com.kteam.lzpt.entity.WorkArchive">
+                <column name="c_unit_name"></column>
+            </many-to-many>
+        </bag>
+        
+        <bag name="tasksProcess" inverse="true" cascade="all">
+           <key column="task_id"></key>
+           <one-to-many class="com.kteam.lzpt.entity.TaskProcess"/>
+        </bag>
+        
+        <many-to-one name="workItem" column="workItem_id"></many-to-one>
+        
+        <!-- 公用 -->
+        <property
+            name="createUser"
+            column="c_addUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="updateUser"
+            column="c_updateUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="createTime"
+            column="c_addTime"
+            type="java.util.Date" />
+
+        <property
+            name="updateTime"
+            column="c_updateTime"
+            type="java.util.Date" />
+
+        <property
+            name="state"
+            column="c_state"
+            type="java.lang.Integer" />
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+{"total":7,"rows":[
+	{"name":"项目名称","value":"结合实际研究制定年度党风廉政建设工作计划，明确责任分工、目标要求和具体措施，并按计划推动落实。","group":"基本信息","editor":"text"},
+	{"name":"评分标准","value":"有落实党风廉政建设工作计划或要点（0.1分），有推动工作的任务分工和具体措施（0.2分），有工作总结（0.2分）","group":"基本信息","editor":"text"},
+	{"name":"牵头单位","value":"县纪委","group":"检查考核对象","editor":"text"},
+	{"name":"考核单位","value":"农业局、工商局、财政局","group":"检查考核对象","editor":"text"},
+	{"name":"年", "value":"", "group":"任务提醒周期","editor":"text"},
+	{"name":"月", "value":"每月25号提醒", "group":"任务提醒周期","editor":"text"},
+	{"name":"周", "value":"", "group":"任务提醒周期","editor":"text"},
+	{"name":"日", "value":"", "group":"任务提醒周期","editor":"text"},
+	{"name":"邮箱地址，多个以逗号隔开", "value":"bill@gmail.com","group":"推送方式","editor":"text"},
+	{"name":"短信号码，多个以逗号隔开", "value":"13800138000","group":"推送方式","editor":"text"},
+	{"name":"落实党风廉政建设工作计划或要点","value":"类型：大文本，分数：0.1","group":"考核指标","editor":"text"},
+	{"name":"推动工作的任务分工和具体措施","value":"类型：附件，分数：0.2","group":"考核指标","editor":"text"},
+	{"name":"工作总结","value":"类型：大文本，分数：0.2","group":"考核指标","editor":"text"}
+]}

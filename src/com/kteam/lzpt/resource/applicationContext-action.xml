@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd        	
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           	http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	    
+	   <bean id="userAction" class="com.kteam.lzpt.web.action.UserAction" scope="prototype">
+	       <property name="userManager" ref="userManager"></property>
+	   </bean>
+	    <bean id="roleAction" class="com.kteam.lzpt.web.action.RoleAction" scope="prototype">
+	       <property name="roleManager" ref="roleManager"></property>
+	   </bean>
+	   <bean id="workArchiveAction" class="com.kteam.lzpt.web.action.WorkArchiveAction" scope="prototype">
+	       <property name="workArchiveManager" ref="workArchiveManager"></property>
+	   </bean>
+	   
+	   <bean id="cadreArchiveAction" class="com.kteam.lzpt.web.action.CadreArchiveAction" scope="prototype">
+	       <property name="cadreArchiveManager" ref="cadreArchiveManager"></property>
+	   </bean>
+	   
+	    <bean id="taskAction" class="com.kteam.lzpt.web.action.TaskAction" scope="prototype">
+	       <property name="taskManager" ref="taskManager"></property>
+	   </bean>
+	   
+	    <bean id="searchWayAction" class="com.kteam.lzpt.web.action.SearchWayAction" scope="prototype">
+	       <property name="searchWayManager" ref="searchWayManager"></property>
+	   </bean>
+	   
+	   <bean id="keyWordsConfigAction" class="com.kteam.lzpt.web.action.KeyWordsConfigAction" scope="prototype">
+	       <property name="keyWordsConfigManager" ref="keyWordsConfigManager"></property>
+	       <property name="searchWayManager" ref="searchWayManager"></property>
+	   </bean>
+	   
+	   <bean id="caseCheckAction" class="com.kteam.lzpt.web.action.CaseCheckAction" scope="prototype">
+	       <property name="taskManager" ref="taskManager"></property>
+	   </bean>
+	   
+	   <bean id="encourageAppealAction" class="com.kteam.lzpt.web.action.EncourageAppealAction" scope="prototype">
+	       <property name="encourageAppealManager" ref="encourageAppealManager"></property>
+	   </bean>
+	   
+	   <bean id="punishAppealAction" class="com.kteam.lzpt.web.action.PunishAppealAction" scope="prototype">
+	       <property name="punishAppealManager" ref="punishAppealManager"></property>
+	   </bean>
+	   
+	   <bean id="taskLZCPAction" class="com.kteam.lzpt.web.action.TaskLZCPAction" scope="prototype">
+	       <property name="taskLZCPManager" ref="taskLZCPManager"></property>
+	       <property name="cadreArchiveManager" ref="cadreArchiveManager"></property>
+	   </bean>
+	   
+	   <bean id="panelAction" class="com.kteam.lzpt.web.action.PanelAction" scope="prototype">
+	       <property name="taskManager" ref="taskManager"></property>
+	   </bean>
+	   
+	   <bean id="quarterOutlayAction" class="com.kteam.lzpt.web.action.QuarterOutlayAction" scope="prototype">
+	       <property name="qom" ref="quarterOutlayManager"></property>
+	   </bean>
+	   
+	   <bean id="yearOutlayAction" class="com.kteam.lzpt.web.action.YearOutlayAction" scope="prototype">
+	       <property name="yom" ref="yearOutlayManager"></property>
+	   </bean>
+	   
+	   <bean id="windowInfoAction" class="com.kteam.lzpt.web.action.WindowInfoAction" scope="prototype">
+	       <property name="wim" ref="windowInfoManager"></property>
+	   </bean>
+	   
+	   
+	   <bean id="evaluateAction" class="com.kteam.lzpt.web.action.EvaluateAction" scope="prototype">
+	       <property name="em" ref="evaluateManager"></property>
+	       <property name="wm" ref="windowInfoManager"></property>
+	   </bean>
+	   
+	   <bean id="baseManagerAction" class="com.kteam.lzpt.web.action.BaseManagerAction" scope="prototype">
+	       <property name="baseManager" ref="baseManager"></property>
+	   </bean>
+	   
+	   <bean id="dpMessageAction" class="com.kteam.lzpt.web.action.DPMessageAction" scope="prototype">
+	       <property name="baseManager" ref="baseManager"></property>
+	   </bean>
+	   
+</beans>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="Menu"
+        table="TM_Menu" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="assigned" />
+        </id>
+
+        <property
+            name="title"
+            column="c_title"
+            length="60"
+            type="java.lang.String" />
+
+        <property
+            name="url"
+            column="c_url"
+            length="200"
+            type="java.lang.String" />
+
+        <many-to-one
+            name="parent"
+            cascade="delete"
+            class="com.kteam.lzpt.entity.Menu"
+            column="c_pid" />
+
+        <bag
+            name="subMenus"
+            inverse="true"
+            order-by="index" >
+            <key column="c_pid" />
+
+            <one-to-many class="com.kteam.lzpt.entity.Menu" />
+        </bag>
+
+        <property
+            name="index"
+            column="c_index"
+            length="6"
+            type="java.lang.Integer" />
+
+        <property
+            name="level"
+            column="c_level"
+            length="6"
+            type="java.lang.Integer" />
+
+        <property
+            name="display"
+            column="c_display"
+            length="6"
+            type="java.lang.Integer" />
+
+        <bag
+            name="actions"
+            table="TM_Menu_Action" >
+
+            <key column="c_menu_id" >
+            </key>
+
+            <many-to-many
+                class="com.kteam.lzpt.entity.Action"
+                column="c_action_id" />
+        </bag>
+
+        <!-- 公用 -->
+
+        <property
+            name="createUser"
+            column="c_addUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="updateUser"
+            column="c_updateUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="createTime"
+            column="c_addTime"
+            type="java.util.Date" />
+
+        <property
+            name="updateTime"
+            column="c_updateTime"
+            type="java.util.Date" />
+
+        <property
+            name="state"
+            column="c_state"
+            type="java.lang.Integer" />
+    </class>
+
+</hibernate-mapping>

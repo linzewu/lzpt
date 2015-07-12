@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inits>
+
+    <role>
+
+        <data
+            domainid="BC614EA48CF796C33B13418494232921"
+            roleName="超级管理员" />
+    </role>
+
+    <user>
+
+        <data
+            password="123456"
+            userName="admin" />
+    </user>
+
+</inits>

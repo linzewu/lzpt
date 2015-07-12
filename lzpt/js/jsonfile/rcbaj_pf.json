@@ -1,0 +1,27 @@
+{
+"total":100,
+"rows":[
+{"town":"禾川镇","taskCount":"10","finishCount":"10","quotaCount":"0","score":"100","rank":"1"},   		    
+	{"town":"石桥镇","taskCount":"10","finishCount":"10","quotaCount":"0","score":"100","rank":"1"},	   
+	{"town":"坳南乡","taskCount":"10","finishCount":"9","quotaCount":"1","score":"90","rank":"2"}, 
+	{"town":"曲白乡","taskCount":"10","finishCount":"9","quotaCount":"1","score":"90","rank":"2"}, 
+	{"town":"才丰乡","taskCount":"9","finishCount":"8","quotaCount":"1","score":"89","rank":"3"},
+	{"town":"在中乡","taskCount":"9","finishCount":"8","quotaCount":"1","score":"89","rank":"3"}, 
+	{"town":"烟阁乡","taskCount":"9","finishCount":"8","quotaCount":"1","score":"89","rank":"3"},  
+	{"town":"龙源口镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"},  
+	{"town":"三湾乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"里田镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"龙门镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"合岭乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"沙市镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"},  
+	{"town":"龙田乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"文竹镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"高溪乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"高桥楼镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"怀忠镇","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}, 
+	{"town":"芦溪乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"},  
+	{"town":"高市乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"},   
+	{"town":"莲洲乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"},   
+	{"town":"象形乡","taskCount":"10","finishCount":"8","quotaCount":"2","score":"80","rank":"4"}
+				]
+}

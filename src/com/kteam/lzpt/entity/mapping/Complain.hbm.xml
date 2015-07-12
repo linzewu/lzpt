@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="Complain" table="TM_Complain">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		
+		<property name="state" column="c_state" length="2000"
+			type="java.lang.Integer" />
+		
+		<property name="createUserName" column="c_createUserName" length="100"
+			type="java.lang.String" />
+		<property name="createAccount" column="c_createAccount" type="java.lang.String"  length="100"/>
+	
+		<property name="createDate" column="c_createDate" type="java.util.Date" />
+
+		<property name="unitName" column="c_unitName" length="400"
+			type="java.lang.String" />
+
+		<property name="name" column="c_name" length="100"
+			type="java.lang.String" />
+
+		<property name="level" column="c_level" 	type="java.lang.Integer" />
+
+		<property name="duties" column="c_duties" length="300"
+			type="java.lang.String" />
+
+		<property name="complainType" column="c_complainType" type="java.lang.Integer" />
+
+		<property name="complainContext" column="c_complainContext" type="java.lang.String" />
+
+		<property name="files" column="c_files" length="2000"
+			type="java.lang.String" />
+		
+		<property name="law" column="c_law" length="200"
+			type="java.lang.String" />
+		
+		<property name="processResults" column="c_processResults"
+			type="text" />
+		<property name="processInfo" column="c_processInfo"
+			type="text" />
+		
+	</class>
+
+</hibernate-mapping>

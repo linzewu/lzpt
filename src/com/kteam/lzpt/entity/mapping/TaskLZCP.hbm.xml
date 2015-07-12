@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="TaskLZCP"
+        table="TM_TaskLZCP" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="title"
+            column="c_title"
+            length="128"
+            type="java.lang.String"/>
+        
+       <property
+            name="date"
+            column="c_date"
+            type="java.lang.String"/>
+       
+       <property
+            name="remark"
+            column="c_remark"
+            length="500"
+            type="java.lang.String"/>
+        
+        <property
+            name="lastDate"
+            column="c_lastDate"
+            type="java.util.Date"/>
+     	
+        
+        <!-- 公用 -->
+        <property
+            name="createUser"
+            column="c_addUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="updateUser"
+            column="c_updateUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="createTime"
+            column="c_addTime"
+            type="java.util.Date" />
+
+        <property
+            name="updateTime"
+            column="c_updateTime"
+            type="java.util.Date" />
+
+        <property
+            name="state"
+            column="c_state"
+            type="java.lang.Integer" />
+    </class>
+
+</hibernate-mapping>

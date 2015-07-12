@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd        	
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           	http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+    
+   	   <bean id="hibernateTemplate"  
+	        	class="org.springframework.orm.hibernate3.HibernateTemplate">  
+	        <property name="sessionFactory">  
+	            <ref bean="sessionFactory" />  
+	        </property>  
+	    </bean>  
+	    
+	   <bean id="userManager" class="com.kteam.lzpt.manager.impl.UserManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="roleManager" class="com.kteam.lzpt.manager.impl.RoleManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="workArchiveManager" class="com.kteam.lzpt.manager.impl.WorkArchiveManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="cadreArchiveManager" class="com.kteam.lzpt.manager.impl.CadreArchiveManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   	   <bean id="taskManager" class="com.kteam.lzpt.manager.impl.TaskManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="searchWayManager" class="com.kteam.lzpt.manager.impl.SearchWayManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="keyWordsConfigManager" class="com.kteam.lzpt.manager.impl.KeyWordsConfigManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="punishAppealManager" class="com.kteam.lzpt.manager.impl.PunishAppealManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="encourageAppealManager" class="com.kteam.lzpt.manager.impl.EncourageAppealManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	    <bean id="taskLZCPManager" class="com.kteam.lzpt.manager.impl.TaskLZCPManagerIpml">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	    <bean id="quarterOutlayManager" class="com.kteam.lzpt.manager.impl.QuarterOutlayManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="yearOutlayManager" class="com.kteam.lzpt.manager.impl.YearOutlayManagerImpl">
+	   		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="windowInfoManager" class="com.kteam.lzpt.manager.impl.WindowInfoManagerImpl">
+	        <property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="evaluateManager" class="com.kteam.lzpt.manager.impl.EvaluateManagerImpl">
+	        <property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+	   <bean id="baseManager" class="com.kteam.lzpt.manager.impl.BaseManagerImpl">
+	        <property name="hibernateTemplate" ref="hibernateTemplate" />
+	   </bean>
+	   
+</beans>

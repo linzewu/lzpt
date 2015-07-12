@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity.leader.extend">
+
+	<class name="ChildrenMarryForeigner" table="TM_Children_Marry_Foreigner">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		
+		
+		<property name="callName" column="c_callName" type="java.lang.String" length="50"/>
+		<property name="userName" column="c_userName" type="java.lang.String" length="50"/>
+		<property name="childrenPartnerName" column="c_childrenPartnerName" type="java.lang.String" length="50"/>
+		<property name="nationality" column="c_nationality" type="java.lang.String" length="100"/>
+		<property name="workUnit" column="c_workUnit" type="java.lang.String" length="100"/>
+		<property name="business" column="c_business" type="java.lang.String" length="100"/>
+		<property name="registerDate" column="c_registerDate" type="java.util.Date" />
+		<property name="leaderInfoId" column="c_leaderInfoId" type="java.lang.String" length="128" />
+	
+	</class>
+
+</hibernate-mapping>

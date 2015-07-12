@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity.leader.extend">
+
+	<class name="FamilyJobInfo" table="TM_Family_Job">
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+		<property name="leaderInfoId" column="c_leaderInfoId" type="java.lang.String" length="128" />
+		
+		<property name="appellation" column="c_appellation" type="java.lang.String"  length="200"/>
+		<property name="name" column="c_name" type="java.lang.String"  length="200"/>
+		<property name="idCard" column="c_idCard" type="java.lang.String"  length="100"/>
+		<property name="unit" column="c_unit" type="java.lang.String"  length="600"/>
+		<property name="duties" column="c_duties" type="java.lang.String"  length="600"/>
+		<property name="unitType" column="c_unitType" type="java.lang.Integer" />
+	</class>
+
+</hibernate-mapping>

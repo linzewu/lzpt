@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity">
+
+	<class name="IllegalProject" table="TM_IllegalProject">
+
+		<id name="id" column="c_id" type="java.lang.String">
+			<generator class="org.hibernate.id.UUIDGenerator" />
+		</id>
+
+		<property name="specialManageId" column="c_specialManageId" length="120"
+			type="java.lang.String" />
+		
+		
+		<property name="projectName" column="c_projectName" length="1000"
+			type="java.lang.String" />
+		
+		<property name="checkInfo" column="c_checkInfo" length="1000"
+			type="java.lang.String" />
+		
+		<property name="correctionInfo" column="c_correctionInfo" length="4000"
+			type="java.lang.String" />
+		
+		<property name="relatedCheckInfo" column="c_relatedCheckInfo" length="4000"
+			type="java.lang.String" />
+		
+		<property name="relatedCorrectionInfo" column="c_relatedCorrectionInfo" length="4000"
+			type="java.lang.String" />
+		
+		<property name="checkedDate" column="c_checkedDate"  type="java.util.Date" />
+		
+		<property name="handInDate" column="c_handInDate"  type="java.util.Date" />
+		
+		<property name="handInMoney" column="c_handInMoney"  type="java.lang.Double" />
+		<property name="isExist" column="c_isExist"  type="java.lang.Integer" />
+	</class>
+
+</hibernate-mapping>

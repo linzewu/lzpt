@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="WorkArchive"
+        table="TM_WorkArchive" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="wname"
+            column="c_wname"
+            length="150"
+            type="java.lang.String" />
+
+        <property
+            name="zipcode"
+            column="c_zipcode"
+            length="20"
+            type="java.lang.String" />
+            
+       <property
+            name="address"
+            column="c_address"
+            length="300"
+            type="java.lang.String" />
+            
+       <property
+            name="principal"
+            column="c_principal"
+            length="100"
+            type="java.lang.String" />
+            
+       <property
+            name="phone"
+            column="c_phone"
+            length="50"
+            type="java.lang.String" />
+            
+       <property
+            name="peoNum"
+            column="c_peoNum"
+            length="100"
+            type="java.lang.Integer" />
+            
+       <bag name="caList" table="tm_WA_CA" inverse="true">
+            <key column="c_waid"/>
+        	<one-to-many class="com.kteam.lzpt.entity.CadreArchive"/>
+        </bag>
+        
+      <bag name="wsList" table="tm_WA_WS" cascade="all">
+            <key column="c_wsid"/>
+        	<one-to-many class="com.kteam.lzpt.entity.WorkSummary" />
+        </bag>
+        
+      <bag name="wimList" table="tm_WA_WIM" cascade="all">
+            <key column="c_wimid" />
+        	<one-to-many class="com.kteam.lzpt.entity.WorkImportantMatters"/>
+        </bag>
+        
+      <bag name="subWorkArchives" inverse="true" >
+            <key column="c_waid" />
+            <one-to-many class="com.kteam.lzpt.entity.WorkArchive" />
+        </bag>
+            
+     <!--<many-to-one name="wim" unique="true" cascade="all" column="c_wimid"></many-to-one>-->
+      
+
+    </class>
+
+</hibernate-mapping>

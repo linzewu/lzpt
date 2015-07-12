@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="TaskProcess"
+        table="TM_TaskProcess" >
+        
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="processTitle"
+            column="c_processTitle"
+            length="128"
+            type="java.lang.String"/>
+
+        <property
+            name="processContext"
+            column="c_processContext"
+            type="text" />
+
+        <property
+            name="processRemark"
+            column="c_processRemark"
+            length="512"
+            type="java.lang.String" />
+
+        <property
+            name="processfilesJson"
+            column="c_processfilesJson"
+            length="2000"
+            type="java.lang.String" />
+        
+        <property
+            name="processState"
+            column="c_processState"
+            type="java.lang.Integer" />
+        
+         <property
+            name="systemScore"
+            column="c_systemScore"
+            type="java.lang.Integer" />
+         
+         <property
+            name="score"
+            column="c_score"
+            type="java.lang.Integer" />
+         
+         <property
+            name="scoreRemark"
+            column="c_scoreRemark"
+            length="250"
+            type="java.lang.String" />
+        
+        
+         <property
+            name="processDate"
+            column="c_processDate"
+            type="java.util.Date" />
+        
+         <many-to-one name="task" column="task_id"/>
+         
+         <many-to-one name="unit" column="unit_id" />
+         
+        <!-- 公用 -->
+        <property
+            name="createUser"
+            column="c_addUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="updateUser"
+            column="c_updateUser"
+            length="50"
+            type="java.lang.String" />
+
+        <property
+            name="createTime"
+            column="c_addTime"
+            type="java.util.Date" />
+
+        <property
+            name="updateTime"
+            column="c_updateTime"
+            type="java.util.Date" />
+
+        <property
+            name="state"
+            column="c_state"
+            type="java.lang.Integer" />
+    </class>
+
+</hibernate-mapping>

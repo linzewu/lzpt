@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.kteam.lzpt.entity" >
+
+    <class
+        name="RewardAndPunishment"
+        table="TM_RewardAndPunishment" >
+
+        <id
+            name="id"
+            column="c_id"
+            type="java.lang.String" >
+
+            <generator class="org.hibernate.id.UUIDGenerator" />
+        </id>
+
+        <property
+            name="rtype"
+            column="c_rtype"
+            type="java.lang.Integer" />
+
+        <property
+            name="subject"
+            column="c_subject"
+            length="210"
+            type="java.lang.String" />
+            
+       <property
+            name="rdate"
+            column="c_rdate"
+            type="java.util.Date" />
+            
+       <property
+            name="detail"
+            column="c_detail"
+            type="text" />
+            
+
+    </class>
+
+</hibernate-mapping>

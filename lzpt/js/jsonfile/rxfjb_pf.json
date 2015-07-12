@@ -1,0 +1,27 @@
+{
+"total":100,
+"rows":[
+{"town":"禾川镇","perfect":"91","finish":"80","suitable":"87","accept":"82","surpass":"85","send":"90","totals":"95"},  		    
+	{"town":"石桥镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},	   
+	{"town":"坳南乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"曲白乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"才丰乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},
+	{"town":"在中乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"烟阁乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},  
+	{"town":"龙源口镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},  
+	{"town":"三湾乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"里田镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"龙门镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"合岭乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"沙市镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},  
+	{"town":"龙田乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"文竹镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"高溪乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"高桥楼镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"怀忠镇","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}, 
+	{"town":"芦溪乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},  
+	{"town":"高市乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},   
+	{"town":"莲洲乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"},   
+	{"town":"象形乡","perfect":"87","finish":"89","suitable":"83","accept":"80","surpass":"82","send":"87","totals":"90"}
+				]
+}
