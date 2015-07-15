@@ -2,38 +2,42 @@ package com.kteam.lzpt.entity;
 
 public class ProjectItem {
 	
-	private int id;
+	private Integer id;
 	
-	private int projectId;
+	private Integer projectId;
 	
 	private Float score;
 	
 	private String data;
 	
-	private String data1;
+	private String piname;
 	
-	private String data2;
+	
 	
 	
 
-	public String getData() {
-		
-		return data1+data2;
+
+	public String getPiname() {
+		return piname;
 	}
 
-	public int getId() {
+	public void setPiname(String piname) {
+		this.piname = piname;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getProjectId() {
+	public Integer getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(int projectId) {
+	public void setProjectId(Integer projectId) {
 		this.projectId = projectId;
 	}
 
@@ -45,20 +49,13 @@ public class ProjectItem {
 		this.score = score;
 	}
 
-	public String getData1() {
-		return data1;
+	public String getData() {
+		return data;
 	}
 
-	public void setData1(String data1) {
-		this.data1 = data1;
-	}
-
-	public String getData2() {
-		return data2;
-	}
-
-	public void setData2(String data2) {
-		this.data2 = data2;
+	public void setData(String data) {
+		this.data = data;
 	}
 	
+
 }

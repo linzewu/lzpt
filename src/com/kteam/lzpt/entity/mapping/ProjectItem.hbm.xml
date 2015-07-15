@@ -11,14 +11,16 @@
         <property name="projectId" type="int">
             <column name="PROJECTID" />
         </property>
+        
         <property name="score" type="java.lang.Float">
             <column name="SCORE" />
         </property>
-        <property name="data1" type="java.lang.String" >
-            <column name="DATA1" length="8000" />
+        <property name="data" type="text" >
+            <column name="DATA"  />
         </property>
-        <property name="data2" type="java.lang.String" >
-            <column name="DATA2" length="8000" />
+        
+        <property name="piname" type="string" >
+            <column name="piname"  />
         </property>
     </class>
 </hibernate-mapping>

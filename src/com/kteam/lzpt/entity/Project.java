@@ -5,7 +5,7 @@ import java.util.Date;
 public class Project {
 	private static final long serialVersionUID = 1L;
 	
-	private int id;
+	private Integer id;
 	
 	private String year;
 	
@@ -18,12 +18,24 @@ public class Project {
 	private Integer isCheck;
 	
 	private Integer projectType;
+	
+	private Date checkDate;
+	
+	
+	
+	public Date getCheckDate() {
+		return checkDate;
+	}
 
-	public int getId() {
+	public void setCheckDate(Date checkDate) {
+		this.checkDate = checkDate;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

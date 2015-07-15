@@ -112,6 +112,102 @@ function removeFile(e,id) {
 }
 
 
+
+function ajaxFileUpload2(id) {
+	$.ajaxFileUpload({
+		url : 'upload!uploadFile.action',
+		secureuri : false,
+		fileElementId : id,
+		dataType : 'json',
+		success : function(data, status) {
+			console.log(data)
+			if (data[0].message == "success") {
+				
+				createUploadDiv2(id,data[1],true);
+				
+				var ufjVla = $("#"+id+"Json").val();
+				
+				
+				if(ufjVla.length>5){
+					ufjVla=ufjVla.substring(5,ufjVla.length);
+				}
+				var jsonData=null;
+				if(""!=ufjVla){
+					jsonData = $.parseJSON(ufjVla);
+				}else{
+					jsonData=[];
+				}
+				jsonData.push(data[1]);
+				$("#"+id+"Json").val("data_"+JSON.stringify(jsonData)+"");
+				
+				console.log( $("#"+id+"Json").val());
+			}
+			if (data[0].message == "error") {
+				$.messager.show({
+					title : '错误！',
+					msg : "上传文件出错，请检查你的附件大小是否大于20M，如果不是，请联系管理员！"
+				});
+			}
+		},
+		error : function(data, status, e) {
+			$.messager.show({
+				title : '错误！',
+				msg : "状态" + status + "错误信息：" + e
+			});
+		}
+	});
+}
+
+function createUploadDiv2(id,data,isdelete){
+
+	var del = "<a href='javaScript:void(0)' onClick=\"removeFile2('"+id+"',this,'" + data.id
+	+ "');\">删除</a>";
+	
+	var fn=encodeURI(encodeURI(data.filename));
+	
+	var download="<a href='upload!download.action?fileId="+data.id+"&fn="+fn+"'\">下载</a>";
+	
+	$("#"+id).parent().find(".fileInfo").append("<div>" + data.filename + (isdelete==true?del:"") +download + "</div>");
+	
+}
+
+
+function removeFile2(filejsonId,e,id) {
+	$.ajax({
+		type : "POST",
+		url : "upload!deleteUploadFile.action",
+		data : {'fileId':id},
+		success : function(msg) {
+			if(msg=="success"){
+				var ufjVla = $("#"+filejsonId+"Json").val();
+				var index=-1;
+				ufjVla=ufjVla.substring(5,ufjVla.length);
+				var jsonData=$.parseJSON(ufjVla);
+				$.each(jsonData,function(i,n){
+					if(n.id==id){
+						index=i;
+					}
+				});
+				if(index!=-1){
+					jsonData.splice(index,1);
+				}
+				$("#"+filejsonId+"Json").val("data_"+JSON.stringify(jsonData));
+				$(e).parent().remove();
+				console.log( $("#"+filejsonId+"Json").val());
+			}
+			else{
+				$.messager.show({
+					title : '提示！',
+					msg : "删除失败"
+				});
+			}
+		}
+	});
+}
+
+
+
+
 function loadInfo(url,actionType,beid,formId,callback){
 	$.post(url,{'be.actionType':actionType,'be.id':beid},function(data){
 		if(data.state==200){
@@ -343,4 +439,3 @@ function deleteData(actionType,id) {
 	
 	return $.parseJSON(text);
 }
-

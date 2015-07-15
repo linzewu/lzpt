@@ -9,6 +9,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Service;
 
 import com.kteam.lzpt.entity.Project;
+import com.kteam.lzpt.entity.ProjectItem;
 import com.kteam.lzpt.entity.ProjectType;
 import com.kteam.lzpt.manager.IProjectManager;
 
@@ -55,6 +56,27 @@ public class ProjectManagerImpl implements IProjectManager {
 		
 		List list=hibernateTemplate.findByNamedParam(sb.toString(), paramNames.toArray(new String[paramNames.size()]), values.toArray());
 		return list;
+	}
+
+	@Override
+	public ProjectItem savePojectItem(ProjectItem projectItem) {
+		
+		return this.hibernateTemplate.merge(projectItem);
+		
+	}
+
+	@Override
+	public Project savePoject(Project project) {
+		
+		return this.hibernateTemplate.merge(project);
+	}
+
+	@Override
+	public List<ProjectItem> getProjectItem(Integer pid) {
+		
+		List<ProjectItem> pi = this.hibernateTemplate.findByNamedParam("From ProjectItem where projectId=:pid",new String[]{"pid"},new Object[]{pid});
+		
+		return pi;
 	}
 
 }

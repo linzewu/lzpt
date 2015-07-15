@@ -34,3 +34,9 @@
 .fileInfo div  a{
 	margin-left: 10px;
 }
+
+
+.projectTitle{
+	font-size: 18px;
+	color: orange;
+}
