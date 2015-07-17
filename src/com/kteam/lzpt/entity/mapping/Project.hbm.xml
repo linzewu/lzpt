@@ -17,10 +17,7 @@
 		<property name="createUser" column="createUser" length="255"  />
 		<property name="isCheck" column="isCheck" length="11"  />
 		<property name="projectType" column="projectType" length="11"  />
-		
 		<property name="checkDate" column="checkDate" />
-		
-		<property name="page" column="page" />
 	</class>
 
 </hibernate-mapping>

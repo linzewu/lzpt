@@ -15,11 +15,13 @@
 
 var projectType;
 var projectTypeId;
+var projectPage;
 
 function ptClickRow(index,row){
 	
 	projectType=row.name;
 	projectTypeId=row.id;
+	projectPage=row.page;
 	
 	$("body").layout("panel","center").panel("refresh","plist.jsp");
 	

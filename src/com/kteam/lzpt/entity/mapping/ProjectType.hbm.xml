@@ -15,6 +15,7 @@
 		<property name="projectScore" column="projectScore" length="6" precision="4"/>
 		<property name="maxScore" column="maxScore" length="6" precision="4" />
 		<property name="minus" column="minus" length="1"  />
+		<property name="page" column="page" /> 
 	</class>
 
 </hibernate-mapping>

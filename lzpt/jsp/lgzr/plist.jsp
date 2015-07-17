@@ -110,7 +110,7 @@ function toAdd(){
 			title: tabName,
 			selected: true,
 			closable:true,
-			href:"ztzr1.jsp"
+			href:projectPage
 		});
 		
 	}else{
@@ -141,7 +141,7 @@ function initEidt(data){
 			title: tabName,
 			selected: true,
 			closable:true,
-			href:"ztzr1.jsp"
+			href:projectPage
 		})
 	}else{
 		$("#proTab").tabs("select",tabName);
