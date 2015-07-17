@@ -15,9 +15,20 @@ public class ProjectType  {
 	private Float maxScore;
 	
 	private Integer minus;
+	
+	private String page;
+	
 
 	public int getId() {
 		return id;
+	}
+
+	public String getPage() {
+		return page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
 	}
 
 	public void setId(int id) {
@@ -65,5 +76,5 @@ public class ProjectType  {
 	}
 	
 	
-
+	
 }
