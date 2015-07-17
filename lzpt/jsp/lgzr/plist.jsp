@@ -104,7 +104,7 @@ function queryProject(){
 function toAdd(){
 	var tabName=projectType;
 	var isAdd = !$("#proTab").tabs("exists",tabName);
-	
+	pid=null;
 	if(isAdd){
 		$("#proTab").tabs('add',{
 			title: tabName,
@@ -112,7 +112,7 @@ function toAdd(){
 			closable:true,
 			href:"ztzr1.jsp"
 		});
-		pid=null;
+		
 	}else{
 		$("#proTab").tabs("select",tabName);
 		var tab = $('#proTab').tabs('getSelected');

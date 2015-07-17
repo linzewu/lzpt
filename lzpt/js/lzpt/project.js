@@ -16,27 +16,40 @@ function formBind(formName){
 	    onSubmit: function(){
 	    	$('#'+formName).find("input[name='pro.projectType']").val(projectTypeId);
 	    	$('#'+formName).find("input[name='pro.id']").val(pid);
+	    	
 	    	var formData=$("#"+formName).serializeObject();
-	    	var editorConifg=pconfig[formName];
-	    	if(editorConifg){
-	    	 	var config = editorConifg['edit'];
-	    	 	if(config){
-	    	 		config=config.split(",")
-	    	 		$.each(config,function(i,n){
+	    	
+	    	var config=pconfig[formName];
+	    	//获取editor 的值
+	    	if(config){
+	    	 	var editorConifg  = config['edit'];
+	    	 	if(editorConifg){
+	    	 		editorConifg=editorConifg.split(",")
+	    	 		$.each(editorConifg,function(i,n){
 	    	 			var editor =  CKEDITOR.instances[n];
 	    		    	formData[n]=editor.document.getBody().getHtml();
 	    	 		});
 	    	 	}
 	    	 	
+		    	//获取grid value
+	    	 	var gridConfig=config['grid']
+	    	 	
+	    	 	if(gridConfig){
+	    	 		gridConfig=gridConfig.split(",");
+	    	 		$.each(gridConfig,function(i,n){
+	    	 			var griddata = $("#"+n).datagrid("getRows");
+	    	 			//$("#"+formName+" input[name='"+n+"']").val();
+	    	 			formData[n]=JSON.stringify(griddata);
+	    	 		})
+	    	 	}
 	    	}
+	    	
 	    	var strData = JSON.stringify(formData);
 	    	console.log(strData);
 	    	$('#'+formName).find("input[name='pi.data']").val(strData);
 	    },
 	    success:function(data){
-	    	
 	    	var json=$.parseJSON(data);
-	    	
 	    	 if (json["success"]){
 	    		 pid = json.data.projectId;
 	    		 var tab = $('#proTab').tabs('getSelected');
@@ -69,6 +82,8 @@ function  loadProjectInfo(){
 				
 				var edit=config['edit'];
 				
+				var grid=config['grid'];
+				
 				if(uploadfile){
 					var ufjVla = $("#"+uploadfile+"Json").val();
 					if(ufjVla.length>5){
@@ -86,20 +101,92 @@ function  loadProjectInfo(){
 				}
 				
 				if(edit){
-					var editor =  CKEDITOR.instances[edit];
+					edit=edit.split(",")
+					console.log(edit)
+					$.each(edit,function(index,eid){
+						var editor =  CKEDITOR.instances[eid];
+						
+						var ehtml= $("#"+n.piname).find("[name="+eid+"]").val();
+						if(editor.document){
+							editor.document.getBody().setHtml(ehtml);
+						}
+					});
 					
-					var ehtml= $("#"+n.piname).find("[name="+edit+"]").val();
 					
-					if(editor.document){
-						editor.document.getBody().setHtml(ehtml);
-					}
 				}
 				
-				
-				
+				if(grid){
+					
+					var griddata=$.parseJSON($("#"+n.piname).find("input[name='"+grid+"']").val());
+					console.log(griddata);
+					$("#"+grid).datagrid("loadData",griddata);
+				}
 			}
 			
 		});
 	});
-	
 }
+
+var gridMap={};
+
+var eindex = 'editIndex';
+function endEditing(gid){
+	
+	 if(!gridMap[gid]){
+		 gridMap[gid]={};
+	 }
+	
+	var editIndex=gridMap[gid][eindex];
+    if (editIndex == undefined){return true}
+    if ($('#'+gid).datagrid('validateRow', editIndex)){
+        $('#'+gid).datagrid('endEdit', editIndex);
+        gridMap[gid][eindex] = undefined;
+        
+        return true;
+    } else {
+        return false;
+    }
+}
+function onClickCell(index, field){
+    if (editIndex != index){
+        if (endEditing()){
+            $('#dg').datagrid('selectRow', index)
+                    .datagrid('beginEdit', index);
+            var ed = $('#dg').datagrid('getEditor', {index:index,field:field});
+            ($(ed.target).data('textbox') ? $(ed.target).textbox('textbox') : $(ed.target)).focus();
+            editIndex = index;
+        } else {
+            $('#dg').datagrid('selectRow', editIndex);
+        }
+    }
+}
+function append(gid){
+	 if (endEditing(gid)){
+		   $('#'+gid).datagrid('appendRow',{});
+		   var editIndex=$('#'+gid).datagrid('getRows').length-1;
+		   gridMap[gid][eindex] = editIndex;
+		   $('#'+gid).datagrid('selectRow', editIndex)
+		            .datagrid('beginEdit', editIndex);
+	 }
+}
+function removeit(gid){
+	
+	var editIndex= gridMap[gid][eindex];
+    if (editIndex == undefined){return}
+    $('#'+gid).datagrid('cancelEdit', editIndex)
+            .datagrid('deleteRow', editIndex);
+    gridMap[gid][eindex] = undefined;
+}
+function accept(gid){
+    if (endEditing(gid)){
+        $('#'+gid).datagrid('acceptChanges');
+    }
+}
+function reject(gid){
+    $('#'+gid).datagrid('rejectChanges');
+    if(!gridMap[gid]){
+    	gridMap[gid][eindex] = undefined;
+    }
+    
+}
+
