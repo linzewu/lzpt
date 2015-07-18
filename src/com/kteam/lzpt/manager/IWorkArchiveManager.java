@@ -22,4 +22,6 @@ public interface IWorkArchiveManager {
 	public Map<String,Object> getWimAndWs(String id);
 	
 	public List<WorkArchive> getWorkArchives();
+	
+	public List<WorkArchive> getSimpleUnits();
 }

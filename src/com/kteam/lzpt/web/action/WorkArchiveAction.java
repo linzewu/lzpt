@@ -2,6 +2,7 @@ package com.kteam.lzpt.web.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -10,13 +11,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import net.sf.ezmorph.object.DateMorpher;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import net.sf.json.JsonConfig;
-import net.sf.json.util.JSONUtils;
-import net.sf.json.util.PropertyFilter;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -28,6 +22,13 @@ import com.kteam.lzpt.entity.WorkArchive;
 import com.kteam.lzpt.entity.WorkImportantMatters;
 import com.kteam.lzpt.entity.WorkSummary;
 import com.kteam.lzpt.manager.IWorkArchiveManager;
+
+import net.sf.ezmorph.object.DateMorpher;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import net.sf.json.util.JSONUtils;
+import net.sf.json.util.PropertyFilter;
 
 public class WorkArchiveAction extends BaseAction {
 	
@@ -323,6 +324,49 @@ public class WorkArchiveAction extends BaseAction {
 					}			
 				}
 			});
+			JSONArray jsonArray = JSONArray.fromObject(workArchive,config);
+
+			pw.print(jsonArray.toString());
+		} catch (IOException e) {
+			
+			log.error("查询单位列表异常",e);
+		}
+	}
+	
+	
+	public void querySimpleUnits() {
+		try {
+			HttpServletResponse response = ServletActionContext.getResponse();
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter pw;
+
+			pw = response.getWriter();
+
+			List<WorkArchive> workArchive = this.getWorkArchiveManager().getSimpleUnits();
+			
+			
+			HttpSession session=ServletActionContext.getRequest().getSession();
+			
+			User user =(User) session.getAttribute("user");
+			
+			Role role = user.getDefaultRole();
+			
+			if("乡镇单位管理员".equals(role.getRoleName())){
+				
+				for(WorkArchive w:workArchive)
+				{
+					if(w.getId().equals(user.getUnitId())){
+						workArchive=new ArrayList<WorkArchive>();
+						workArchive.add(w);
+						break;
+					}
+				}
+			}
+			
+			JsonConfig config = new JsonConfig();
+			//转换日期格式
+			config.registerJsonValueProcessor(Date.class, new DateJsonValueProcessor());
+			
 			JSONArray jsonArray = JSONArray.fromObject(workArchive,config);
 
 			pw.print(jsonArray.toString());

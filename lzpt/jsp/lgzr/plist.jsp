@@ -12,6 +12,7 @@
 					<th data-options="field:'createTime'" width="100">上报时间</th>
 					<th data-options="field:'createUser'" width="100">上报人</th>
 					<th data-options="field:'isCheck'" width="100"  formatter="isCheckFormatter">是否已被审阅</th>
+					<th data-options="field:'score'" width="100">得分</th>
 				</tr>
 			</thead>
 		</table>
@@ -42,10 +43,12 @@ function isCheckFormatter(value){
 
 var pid=null;
 
+var score=null;
+
 function unitFormatter(value,row,index){
 	var wname;
 	$.each(units,function(i,n){
-		if(n.id=value){
+		if(n.id==value){
 			wname=n.wname;
 			return false;
 		}
@@ -156,14 +159,21 @@ function pClickRow(index,row){
 
 function toDel(){
 	var row = $("#projectList").datagrid("getSelected");
-	
 	if(!row){
 		$.messager.alert("提醒","请选择项目。");
 		return ;
 	}else{
 		$.messager.confirm('确认', '您确认要删除该数据。', function(r){
 			if (r){
-				
+				var url="project!delProject.action";
+				var queryParam={};
+				queryParam['pro.id']=row.id;
+				$.post(url,queryParam,function(data){
+					if(data.success){
+						$.messager.alert("提示","删除成功");
+						$("#projectList").datagrid("reload");
+					}
+				});
 			}
 		});
 	}

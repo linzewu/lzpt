@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import com.kteam.lzpt.entity.Project;
 import com.kteam.lzpt.entity.ProjectItem;
 import com.kteam.lzpt.entity.ProjectType;
+import com.kteam.lzpt.entity.Role;
 import com.kteam.lzpt.entity.User;
 import com.kteam.lzpt.manager.IProjectManager;
 import com.opensymphony.xwork2.Action;
@@ -90,6 +91,18 @@ public class ProjectAaction {
 	}
 	
 	public String getProjects(){
+		
+
+		HttpSession session=ServletActionContext.getRequest().getSession();
+		
+		User user =(User) session.getAttribute("user");
+		
+		Role role = user.getDefaultRole();
+		
+		if("乡镇单位管理员".equals(role.getRoleName())){
+			pro.setUnit(user.getUnitId());
+		}
+		
 		List<Project> projects = projectManager.getProjec(pro);
 		jsonMap=new HashMap();
 		jsonMap.put("total", projects.size());
@@ -98,9 +111,6 @@ public class ProjectAaction {
 	}
 	
 	public String saveProjectItem(){
-		
-		System.out.println(pro.getId());
-		System.out.println(pi.getId());
 		
 		initProject();
 		
@@ -121,12 +131,16 @@ public class ProjectAaction {
 		
 		User user =  (User)session.getAttribute("user");
 		
+		if(pro.getId()!=null){
+			pro=this.getProjectManager().getProject(pro.getId());
+		}
+		
+		if(pi.getId()==null){
+			pro.setScore((pro.getScore()==null?0:pro.getScore()) + pi.getScore());
+		}
 		pro.setUnit(user.getUnitId());
-		
 		pro.setCreateTime(new Date());
-		
 		pro.setCreateUser(user.getUserName());
-		
 		pro.setIsCheck(0);
 		
 		if(pi.getData()!=null){
@@ -136,18 +150,23 @@ public class ProjectAaction {
 				pro.setYear(date.substring(0,4));
 			}
 		}
-		
 	}
 	
 	public String getProjectItem(){
 		
 		List<ProjectItem> pis = projectManager.getProjectItem(pi.getProjectId());
-		
 		jsonMap=new HashMap();
 		jsonMap.put("data", pis);
-		
 		return Action.SUCCESS;
 	}
 	
+	public String delProject(){
+		
+		projectManager.deleteproject(pro);
+		jsonMap=new HashMap();
+		jsonMap.put(Action.SUCCESS,true);
+		
+		return Action.SUCCESS;
+	}
 
 }

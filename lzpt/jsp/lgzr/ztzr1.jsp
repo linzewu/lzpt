@@ -35,10 +35,11 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
+			<input type="hidden" name="pi.score" value="0.1">
 			<input type="hidden" name="pi.piname" value="pi1">
 		</form> 
 	</div>
-	<div title="任务分工/措施">
+	<div title="任务分工/措施" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 			<form id="pi2" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				<tr>
@@ -87,11 +88,12 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
+			<input type="hidden" name="pi.score" value="0.2">
 			<input type="hidden" name="pi.piname" value="pi2">
 		</form> 
 		
 	</div>
-	<div title="工作总结">
+	<div title="工作总结" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi3" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				<tr>
@@ -112,7 +114,6 @@
 						</pre>
 					</td>
 				</tr>
-				
 			</table>
 			<div align="center">
 					<a href="javascript:void(0);" onclick="$('#pi3').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
@@ -121,6 +122,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
+			<input type="hidden" name="pi.score" value="0.2">
 			<input type="hidden" name="pi.piname" value="pi3">
 		</form> 
 	</div>

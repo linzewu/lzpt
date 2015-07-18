@@ -57,6 +57,8 @@ public class ProjectManagerImpl implements IProjectManager {
 		List list=hibernateTemplate.findByNamedParam(sb.toString(), paramNames.toArray(new String[paramNames.size()]), values.toArray());
 		return list;
 	}
+	
+	
 
 	@Override
 	public ProjectItem savePojectItem(ProjectItem projectItem) {
@@ -77,6 +79,24 @@ public class ProjectManagerImpl implements IProjectManager {
 		List<ProjectItem> pi = this.hibernateTemplate.findByNamedParam("From ProjectItem where projectId=:pid",new String[]{"pid"},new Object[]{pid});
 		
 		return pi;
+	}
+
+	@Override
+	public void deleteproject(Project project) {
+		
+		List<ProjectItem> pis = this.getProjectItem(project.getId());
+		
+		this.hibernateTemplate.deleteAll(pis);
+		
+		this.hibernateTemplate.delete(project);
+		
+		
+	}
+
+	@Override
+	public Project getProject(Integer id) {
+		
+		return this.hibernateTemplate.get(Project.class, id);
 	}
 
 }

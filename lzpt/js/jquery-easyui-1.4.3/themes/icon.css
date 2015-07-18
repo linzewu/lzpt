@@ -94,3 +94,19 @@
 .icon-large-chart{
 	background:url('icons/large_chart.png') no-repeat center center;
 }
+
+.icon-home {
+	background: url('icons/application_home.png') no-repeat ;
+}
+
+.icon-usergo {
+	background: url('icons/user_go.png') no-repeat ;
+}
+
+.icon-lock{
+	background: url('icons/lock_1.png') no-repeat ;
+}
+
+.icon-lock-open {
+	background: url('icons/lock_open.png') no-repeat ;
+}

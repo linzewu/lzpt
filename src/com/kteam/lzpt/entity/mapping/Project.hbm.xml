@@ -18,6 +18,7 @@
 		<property name="isCheck" column="isCheck" length="11"  />
 		<property name="projectType" column="projectType" length="11"  />
 		<property name="checkDate" column="checkDate" />
+		<property name="score" column="score" />
 	</class>
 
 </hibernate-mapping>

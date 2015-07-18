@@ -154,4 +154,12 @@ public class WorkArchiveManagerImpl extends HibernateDaoSupport implements
 		return workArchive;
 	}
 
+	@Override
+	public List<WorkArchive> getSimpleUnits() {
+		
+		List<WorkArchive> workArchive = this.getHibernateTemplate().find("Select new WorkArchive(id,wname) from WorkArchive");
+		
+		return workArchive;
+	}
+
 }

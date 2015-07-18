@@ -17,6 +17,10 @@ function formBind(formName){
 	    	$('#'+formName).find("input[name='pro.projectType']").val(projectTypeId);
 	    	$('#'+formName).find("input[name='pro.id']").val(pid);
 	    	
+	    	if(!$("#"+formName).form("validate")){
+	    		return false;
+	    	}
+	    	
 	    	var formData=$("#"+formName).serializeObject();
 	    	
 	    	var config=pconfig[formName];
@@ -171,8 +175,20 @@ function append(gid){
 }
 function removeit(gid){
 	
+	if(!gridMap[gid]){
+		 gridMap[gid]={};
+	}
 	var editIndex= gridMap[gid][eindex];
-    if (editIndex == undefined){return}
+	
+    if (editIndex == undefined){
+    	
+    	var rowIndex =  $('#'+gid).datagrid("getRowIndex",$('#'+gid).datagrid("getSelected"));
+    	
+    	console.log(rowIndex)
+    	 $('#'+gid).datagrid('deleteRow', rowIndex);
+    	
+    	return
+    }
     $('#'+gid).datagrid('cancelEdit', editIndex)
             .datagrid('deleteRow', editIndex);
     gridMap[gid][eindex] = undefined;

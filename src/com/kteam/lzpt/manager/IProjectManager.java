@@ -17,5 +17,8 @@ public interface IProjectManager {
 	public Project savePoject(Project Project);
 	
 	public List<ProjectItem> getProjectItem(Integer pid);
-
+	
+	public void deleteproject(Project project);
+	
+	public Project getProject(Integer id);
 }

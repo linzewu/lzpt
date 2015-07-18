@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,7 +90,7 @@ jQuery.prototype.serializeObject=function(){
 			getProjectType('主体责任管理  >> 基础工作考核项目 ','1');
 		});
 		$("#m2").bind("click",function(){
-			getProjectType('主体责任管理  >> 重点考核项目','2')
+			getProjectType('主体责任管理  >> 重点考核项目','2');
 		});
 		initUnit();
 	});
@@ -96,7 +98,7 @@ jQuery.prototype.serializeObject=function(){
 	var units;
 	
 	function initUnit(){
-		var url="/lzpt/workArchive!queryWorkArchives.action";
+		var url="/lzpt/workArchive!querySimpleUnits.action";
 		
 		$.getJSON(url,function(data){
 			units=data;

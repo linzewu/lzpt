@@ -43,6 +43,14 @@ public class WorkArchive {
 	
 	//干部集合
 	private List<WorkArchive> subWorkArchives;
+	
+	public WorkArchive(){}
+	
+	public WorkArchive(String id,String wname){
+		this.id=id;
+		this.wname=wname;
+	}
+	
 
 	public String getId() {
 		return id;
