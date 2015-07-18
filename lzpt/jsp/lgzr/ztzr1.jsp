@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<script>
-
-</script>
 <div class="easyui-tabs">
 	<div title="工作计划" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi1" method="post">
@@ -127,6 +123,8 @@
 		</form> 
 	</div>
 </div>
+
+<div class="projectTitle">评分标准：有落实党风廉政建设工作计划或要点（0.1分），有推动工作的任务分工和具体措施（0.2分），有工作总结（0.2分）</div>
 
 <script type="text/javascript">
 
