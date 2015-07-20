@@ -24,6 +24,14 @@ public class Project {
 	private Float score;
 	
 	
+	public Project(){}
+	
+	public Project(String year,String unit,Double score){
+		this.year=year;
+		this.unit=unit;
+		this.score=score.floatValue();
+	}
+	
 	
 	public Float getScore() {
 		return score;

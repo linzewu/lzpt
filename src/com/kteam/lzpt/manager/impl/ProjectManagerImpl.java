@@ -99,4 +99,42 @@ public class ProjectManagerImpl implements IProjectManager {
 		return this.hibernateTemplate.get(Project.class, id);
 	}
 
+	@Override
+	public List<Project> getYearReport(Project project) {
+		
+		StringBuffer sb=new StringBuffer("SELECT new Project(year,unit,sum(score))  FROM Project where 1=1");
+		
+		List<String> paramNames=new ArrayList<String>();
+		List values=new ArrayList();
+		
+		if(project!=null){
+			if(project.getYear()!=null){
+				sb.append(" and year=:year");
+				paramNames.add("year");
+				values.add(project.getYear());
+			}
+			
+			if(project.getUnit()!=null){
+				sb.append(" and unit=:unit");
+				paramNames.add("unit");
+				values.add(project.getUnit());
+			}
+		}
+		
+		sb.append(" group by year,unit");
+		
+		List list=hibernateTemplate.findByNamedParam(sb.toString(), paramNames.toArray(new String[paramNames.size()]), values.toArray());
+		return list;
+	}
+
+	@Override
+	public List<ProjectType> getProjectTypeAll() {
+		
+		String sql="From ProjectType";
+		
+		List<ProjectType> pts = hibernateTemplate.find(sql);
+		
+		return pts;
+	}
+
 }

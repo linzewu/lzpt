@@ -168,5 +168,24 @@ public class ProjectAaction {
 		
 		return Action.SUCCESS;
 	}
+	
+	public String getYearReport(){
+		
+		List<Project> report = projectManager.getYearReport(pro);
+		
+		jsonMap=new HashMap();
+		jsonMap.put("total", report.size());
+		jsonMap.put("rows", report);
+		
+		return Action.SUCCESS;
+	}
+	
+	public String getAllProjectType(){
+		
+		List<ProjectType> pts = projectManager.getProjectTypeAll();
+		jsonMap=new HashMap();
+		jsonMap.put("data", pts);
+		return Action.SUCCESS;
+	}
 
 }

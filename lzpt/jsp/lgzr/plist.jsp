@@ -32,29 +32,12 @@
  </div>
 <script>
 
-function isCheckFormatter(value){
-	if(value==0){
-		return "未审阅";
-	}
-	if(value==1){
-		return "已审阅";
-	}
-}
 
 var pid=null;
 
 var score=null;
 
-function unitFormatter(value,row,index){
-	var wname;
-	$.each(units,function(i,n){
-		if(n.id==value){
-			wname=n.wname;
-			return false;
-		}
-	});
-	return wname;
-}
+
 
 $(function(){
 	$("#projectList").datagrid({
@@ -64,22 +47,7 @@ $(function(){
 	$("#year").combobox({
 		valueField: 'label',
 		textField: 'value',
-		data:[{
-			label:'2014',
-			value:2014
-		},{
-			label:'2015',
-			value:2015
-		},{
-			label:'2016',
-			value:2016
-		},{
-			label:'2017',
-			value:2017
-		},{
-			label:'2018',
-			value:2018
-		}]
+		data:years
 	});
 });
 
@@ -100,7 +68,6 @@ function queryProject(){
 	}
 	
 	$("#projectList").datagrid("reload",params);
-	 
 }
 
 

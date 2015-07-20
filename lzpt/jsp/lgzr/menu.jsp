@@ -115,8 +115,9 @@
 		<ul>
 			<li><a id="n1" href="javascript:void(0)" >主体责任管理</a></li>
 			<li><a  id="n2" href="javascript:void(0)" >监督责任管理</a></li>
-			<li><a href="/lzpt/demo/2.0/r1.html">纪委主控台</a></li>
-			<li><a href="#">系统管理</a></li>
+			<% if(!"乡镇单位管理员".equals(roleName)){ %>
+				<li><a id="n3" href="javascript:void(0)">纪委主控台</a></li>
+			<% } %>
 		</ul>
 	</div>
 </div>
