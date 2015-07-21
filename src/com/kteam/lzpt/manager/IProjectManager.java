@@ -21,4 +21,8 @@ public interface IProjectManager {
 	public void deleteproject(Project project);
 	
 	public Project getProject(Integer id);
+	
+	public List<Project> getYearReport(Project pro);
+	
+	public List<ProjectType> getProjectTypeAll();
 }

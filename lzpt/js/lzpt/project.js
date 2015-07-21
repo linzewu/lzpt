@@ -206,3 +206,45 @@ function reject(gid){
     
 }
 
+function unitFormatter(value,row,index){
+	var wname;
+	$.each(units,function(i,n){
+		if(n.id==value){
+			wname=n.wname;
+			return false;
+		}
+	});
+	return wname;
+}
+
+function isCheckFormatter(value){
+	if(value==0){
+		return "未审阅";
+	}
+	if(value==1){
+		return "已审阅";
+	}
+}
+
+
+var projectTypes;
+
+$.post("/lzpt/project!getAllProjectType.action",function(data){
+	
+	projectTypes=data.data;
+});
+
+
+function formatterProject(projectType){
+	var name;
+	$.each(projectTypes,function(i,n){
+		if(n.id==projectType){
+			name=n.name;
+			return false;
+		}
+	});
+	
+	return name;
+	
+	
+}

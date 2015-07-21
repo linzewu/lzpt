@@ -44,58 +44,71 @@ jQuery.prototype.serializeObject=function(){
 
 
 
-
-
-
 	function getProjectType(name,group){
+		
 		$("body").layout("panel","center").panel("setTitle",name);
+		
 		if($("#projectType").length>0){
 			$("#projectType").datagrid("reload",{"pt.group":group});
 		}else{
 			$("body").layout("panel","center").panel("refresh","ptlist.jsp?group="+group);
 		}
 	}
-	
-	function setN1Click(){
-		$("#m1").unbind("click");
-		$("#m2").unbind("click");
-		$("#m1").bind("click",function(){
-			getProjectType('主体责任管理  >> 基础工作考核项目 ','1');
-		});
-		$("#m2").bind("click",function(){
-			getProjectType('主体责任管理  >> 重点考核项目','2')
-		});
-		
-		$("#m1").click();
-	}
-	
-	function setN2Click(){
-		$("#m1").unbind("click");
-		$("#m2").unbind("click");
-		
-		$("#m1").bind("click",function(){
-			getProjectType('监督责任管理  >> 基础工作考核项目 ','3');
-		});
-		$("#m2").bind("click",function(){
-			getProjectType('监督责任管理  >> 重点考核项目','4')
-		});
-		$("#m1").click();
-	}
-	
 	$(function(){
-		$("#n1").bind("click",setN1Click);
-		$("#n2").bind("click",setN2Click);
+		$.each(nave,function(key,nave){
+			
+			$("#"+key).bind("click",function(){
+				var ul=$(".mpanel ul");
+				ul.empty();
+				$.each(nave.menus,function(i,menu){
+					var temple=$("<li><a href=\"javascript:void(0)\" ><img></a></li>");
+					
+					temple.find("img").attr("src",menu.icon);
+					temple.find("a").bind("click",menu.callbak)
+					temple.find("a").append(menu.title);
+					ul.append(temple);
+					if(i==0){
+						temple.find("a").click();
+					}
+				});
+			});
+			if(nave.isFirst){
+				$("#"+key).click();
+			}
+		});
 		
-		$("#m1").bind("click",function(){
-			getProjectType('主体责任管理  >> 基础工作考核项目 ','1');
-		});
-		$("#m2").bind("click",function(){
-			getProjectType('主体责任管理  >> 重点考核项目','2');
-		});
 		initUnit();
 	});
 	
 	var units;
+	
+	function getUnit(id){
+		var unit;
+		 $.each(units,function(i,n){
+				if(n.id==id){
+					unit=n.wname;
+					return false;
+				} 
+			 });
+		 return unit;
+	}
+	
+	var years=[{
+		label:'2014',
+		value:2014
+	},{
+		label:'2015',
+		value:2015
+	},{
+		label:'2016',
+		value:2016
+	},{
+		label:'2017',
+		value:2017
+	},{
+		label:'2018',
+		value:2018
+	}];
 	
 	function initUnit(){
 		var url="/lzpt/workArchive!querySimpleUnits.action";
@@ -103,7 +116,67 @@ jQuery.prototype.serializeObject=function(){
 		$.getJSON(url,function(data){
 			units=data;
 		});
-		
+	}
+	
+	function toPage(title,url,param){
+		$("body").layout("panel","center").panel("setTitle",title);
+		if(param){
+			$("body").layout("panel","center").panel({"queryParams":param});
+		}
+		$("body").layout("panel","center").panel("refresh",url);
+	}
+	
+	
+	var nave={
+		"n1":{
+			isFirst:true,
+			menus:[{
+				"icon":"/lzpt/images/grda.png",
+				"title":"基础工作项目",
+				callbak:function(){
+					getProjectType('主体责任管理  >> 基础工作考核项目 ','1');
+				}
+			},{
+				"icon":"/lzpt/images/bmda.png",
+				"title":"重点考核项目",
+				callbak:function(){
+					getProjectType('主体责任管理  >> 重点考核项目','2');
+				}
+			}]
+		},
+		"n2":{
+			menus:[{
+				"icon":"/lzpt/images/grda.png",
+				"title":"基础工作项目",
+				callbak:function(){
+					getProjectType('监督责任管理  >> 基础工作考核项目 ','3');
+				}
+			},{
+				"icon":"/lzpt/images/bmda.png",
+				"title":"重点考核项目",
+				callbak:function(){
+					getProjectType('监督责任管理  >> 重点考核项目','4')
+				}
+			}]
+		},
+		"n3":{
+			menus:[{
+				"icon":"/lzpt/images/grda.png",
+				"title":"考核项目评估",
+				callbak:function(){
+					toPage("纪委主控台>>考核项目评估","report.jsp");
+				}
+			},{
+				"icon":"/lzpt/images/gif_47_027.gif",
+				"title":"数据仪表盘"
+			},{
+				"icon":"/lzpt/images/gif_47_067.gif",
+				"title":"催办管理"
+			},{
+				"icon":"/lzpt/images/gif_47_078.gif",
+				"title":"随机抽查"
+			}]
+		}
 	}
 	
 </script>
@@ -111,7 +184,7 @@ jQuery.prototype.serializeObject=function(){
 </head>
 <body class="easyui-layout">
 	<%@ include  file="menu.jsp"%>
-<div data-options="region:'center'" title="主体责任管理  >> 基础工作考核项目" style="padding: 5px;" href="ptlist.jsp?group=1">
+<div data-options="region:'center'" title="主体责任管理  >> 基础工作考核项目" style="padding: 5px;">
 </div>
 </body>
 </html>
