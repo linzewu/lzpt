@@ -1,27 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<script>
-
-</script>
 <div class="easyui-tabs">
-	<div title="党风廉政建设工作会议" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
-		<form id="pi4" method="post">
+	<div title="反腐倡廉工作计划" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+		<form id="pi32" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				<tr>
 					<td class="info_title"><label for="date">时间:</label></td>
 					<td class="info2"><input name="date"
 						class="easyui-datebox" required="required" /></td>
 				</tr>
+				
 				<tr>
-					<td class="info_title"><label for="date">会议主题:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
+					<td class="info_title"><label for="principal">年度反腐倡廉工作要点或计划：</label></td>
+					<td class="info2"><textarea  id="principal" name="principal"></textarea></td>
 				</tr>
+				
+				
 				<tr>
-					<td class="info_title"><label for="plan0">会议纪要:</label></td>
-					<td class="info2"><textarea  id="plan0" name="plan0"></textarea></td>
+					<td class="info_title"><label for="zxqk">执行情况:</label></td>
+					<td class="info2"><textarea  id="zxqk" name="zxqk"></textarea></td>
 				</tr>
+				
+				
 				<tr>
 					<td class="info_title">附件：</td>
 					<td class="info2">
@@ -34,29 +34,34 @@
 				
 			</table>
 			<div align="center">
-					<a href="javascript:void(0);" onclick="$('#pi4').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+					<a href="javascript:void(0);" onclick="$('#pi32').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
 			</div>
 			<input type="hidden" name="pro.id">
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
 			<input type="hidden" name="pi.score" value="0.2">
-			<input type="hidden" name="pi.piname" value="pi4">
+			<input type="hidden" name="pi.piname" value="pi32">
 		</form> 
 	</div>
 	
-	<div title="解决党风廉政建设工作问题" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
-		<form id="pi5" method="post">
+	<div title="惩防体系建设规划" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+		<form id="pi33" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				<tr>
-					<td class="info_title"><label for="date">处理时间:</label></td>
+					<td class="info_title"><label for="date">时间:</label></td>
 					<td class="info2"><input name="date"
 						class="easyui-datebox" required="required" /></td>
 				</tr>
 
 				<tr>
-					<td class="info_title"><label for="solution">解决方案或结果:</label></td>
-					<td class="info2"><textarea  id="solution" name="solution"></textarea></td>
+					<td class="info_title"><label for="report">惩防体系建设规划:</label></td>
+					<td class="info2"><textarea  id="report" name="report"></textarea></td>
+				</tr>
+				
+				<tr>
+					<td class="info_title"><label for="zxqk2">执行情况:</label></td>
+					<td class="info2"><textarea  id="zxqk2" name="zxqk2"></textarea></td>
 				</tr>
 				<tr>
 					<td class="info_title">附件：</td>
@@ -70,28 +75,26 @@
 				
 			</table>
 			<div align="center">
-					<a href="javascript:void(0);" onclick="$('#pi5').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+					<a href="javascript:void(0);" onclick="$('#pi33').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
 			</div>
 			<input type="hidden" name="pro.id">
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
 			<input type="hidden" name="pi.score" value="0.3">
-			<input type="hidden" name="pi.piname" value="pi5">
+			<input type="hidden" name="pi.piname" value="pi33">
 		</form> 
 	</div>
 	
-
-	
 </div>
 
-<div class="projectTitle">年初（3月）有专题分析研究党风廉政建设工作会议记录（0.2分），年中（7.10前）有解决党风廉政建设工作中的问题会议记录，并及时向上级纪委汇报（0.3分）</div>
+<div class="projectTitle">有年度反腐倡廉工作要点或计划（0.1分），有惩防体系建设规划（0.2分），没有出现案件（0.2分），有1件案件扣0.3分，每多1件扣0.3分，扣完为止。</div>
 
 <script type="text/javascript">
 
 var pconfig={
-		"pi4":{"uploadfile":"uploadFile","edit":"plan0"},
-		"pi5":{"uploadfile":"uploadFile","edit":"solution"}
+		"pi32":{"uploadfile":"uploadFile","edit":"principal,zxqk"},
+		"pi33":{"uploadfile":"uploadFile","edit":"report,zxqk2"},
 	};
 	
 
