@@ -23,6 +23,8 @@ public class Project {
 	
 	private Float score;
 	
+	private Integer state;
+	
 	
 	public Project(){}
 	
@@ -33,6 +35,15 @@ public class Project {
 	}
 	
 	
+	
+	public Integer getState() {
+		return state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
 	public Float getScore() {
 		return score;
 	}

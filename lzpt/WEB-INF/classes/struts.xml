@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<constant name="struts.multipart.maxSize" value="20971520" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="main" extends="struts-default" namespace="/">
+
+		<action name="index">
+			<result>
+				WEB-INF/jsp/index.jsp			</result>
+		</action>
+
+		<action name="dfzfjd">
+			<result>
+				WEB-INF/jsp/dfzfjd.jsp
+			</result>
+		</action>
+		
+		<action name="gbdn" >
+            <result>
+				WEB-INF/jsp/gbdn.jsp
+            </result>
+        </action>
+        
+		<action name="ycpp" >
+            <result>
+				WEB-INF/jsp/ycpp.jsp
+            </result>
+        </action>
+        
+		<action name="tsjb" >
+            <result>
+				WEB-INF/jsp/tsjb.jsp
+            </result>
+        </action>
+
+		<action name="user!*" class="userAction" method="{1}">
+			<result name="list">WEB-INF/jsp/user_list.jsp</result>
+			<result type="redirect" name="toLogin">/</result>
+			<result name="indexlogin">WEB-INF/jsp/login.jsp</result>
+			<result name="loginSuccess" type="redirect">index.action</result>
+		</action>
+
+		<action name="role!*" class="roleAction" method="{1}">
+			<result name="list">WEB-INF/jsp/role_list.jsp</result>
+		</action>
+
+		<action name="workArchive!*" class="workArchiveAction" method="{1}">
+			<result name="list">WEB-INF/jsp/unit_list.jsp</result>
+			<result name="addUnit">WEB-INF/jsp/unit_add.jsp</result>
+			<result name="unitInfo">WEB-INF/jsp/unit_info.jsp</result>
+			<result name="updateUnit">WEB-INF/jsp/unit_edit.jsp</result>
+		</action>
+
+		<action name="cadreArchive!*" class="cadreArchiveAction" method="{1}">
+			<result name="list">WEB-INF/jsp/leader_list.jsp</result>
+			<result name="addLeader">WEB-INF/jsp/leader_add.jsp</result>
+			<result name="leaderInfo">WEB-INF/jsp/leader_info.jsp</result>
+			<result name="updateleader">WEB-INF/jsp/leader_edit.jsp</result>
+		</action>
+
+		<action name="task!*" class="taskAction" method="{1}">
+			<result name="list">WEB-INF/jsp/task_list.jsp</result>
+			<result name="processList">WEB-INF/jsp/process_list.jsp</result>
+			<result name="addTask">WEB-INF/jsp/task_add.jsp</result>
+			<result name="taskInfo">WEB-INF/jsp/task_info.jsp</result>
+			<result name="taskprocessInfo">WEB-INF/jsp/taskprocess_info.jsp</result>
+			<result name="taskModify">WEB-INF/jsp/task_modify.jsp</result>
+			<result name="processOverList">WEB-INF/jsp/process_over_list.jsp</result>
+			<result name="taskprocessOverInfo">WEB-INF/jsp/taskprocess_over_info.jsp</result>
+			<result name="overList">WEB-INF/jsp/task_over_list.jsp</result>
+			<result name="fileSearch">WEB-INF/jsp/fileSearch.jsp</result>
+		</action>
+
+		<action name="upload!*" class="com.kteam.lzpt.web.action.UploadAction" method="{1}"></action>
+
+		<action name="searchWay!*" class="searchWayAction" method="{1}">
+			<result name="list">WEB-INF/jsp/searchWay_list.jsp</result>
+		</action>
+
+		<action name="keyWordsConfig!*" class="keyWordsConfigAction" method="{1}">
+			<result name="list">WEB-INF/jsp/keyWordsConfig_list.jsp</result>
+			<result name="keyWordInfo">WEB-INF/jsp/KeyWordsConfigInfo.jsp</result>
+		</action>
+
+		<action name="caseCheck!*" class="caseCheckAction" method="{1}">
+			<result name="list1">WEB-INF/jsp/rcbaj_pf.jsp</result>
+			<result name="list2">WEB-INF/jsp/rdflzjs_pf.jsp</result>
+			<result name="list3">WEB-INF/jsp/rldbz_mzcp.jsp</result>
+			<result name="list4">WEB-INF/jsp/rldgb_mzcp.jsp</result>
+			<result name="list5">WEB-INF/jsp/rldlsdf_cphz.jsp</result>
+			<result name="list6">WEB-INF/jsp/rlsdf_khpfb.jsp</result>
+
+			<result name="list7">WEB-INF/jsp/rxdgz_pf.jsp</result>
+			<result name="list8">WEB-INF/jsp/rxfjb_pf.jsp</result>
+			<result name="list9">WEB-INF/jsp/rxz_kh.jsp</result>
+			<result name="list10">WEB-INF/jsp/rzxjc_pf.jsp</result>
+			<result name="list11">WEB-INF/jsp/rxzndkh.jsp</result>
+			<result name="list12">WEB-INF/jsp/lzcp.jsp</result>
+		</action>
+
+		<action name="encourageAppeal!*" class="encourageAppealAction" method="{1}">
+			<result name="list">WEB-INF/jsp/EncourageAppeal_list.jsp</result>
+			<result name="toadd">WEB-INF/jsp/EncourageAppeal_Add.jsp</result>
+			<result name="toinfo">WEB-INF/jsp/EncourageAppealInfo.jsp</result>
+			<result name="tomodify">WEB-INF/jsp/EncourageAppeal_Edit.jsp</result>
+
+			<result name="list1">WEB-INF/jsp/PunishAppeal_list.jsp</result>
+			<result name="toadd1">WEB-INF/jsp/PunishAppeal_Add.jsp</result>
+			<result name="tomodify1">WEB-INF/jsp/PunishAppeal_Edit.jsp</result>
+			<result name="toinfo1">WEB-INF/jsp/PunishAppealInfo.jsp</result>
+		</action>
+		<action name="punishAppeal!*" class="punishAppealAction" method="{1}">
+			<result name="list">WEB-INF/jsp/PunishAppeal_list.jsp</result>
+			<result name="toadd">WEB-INF/jsp/PunishAppeal_Add.jsp</result>
+			<result name="tomodify">WEB-INF/jsp/PunishAppeal_Edit.jsp</result>
+			<result name="toinfo">WEB-INF/jsp/PunishAppealInfo.jsp</result>
+		</action>
+
+		<action name="taskLzcp" class="taskLZCPAction" method="{1}">
+			<result name="taskList">WEB-INF/jsp/tasklzcp_list.jsp</result>
+			<result name="taskLzcpresult_list">WEB-INF/jsp/tasklzcpresult_list.jsp</result>
+		</action>
+
+
+		<action name="c_panel" class="panelAction" method="{1}">
+			<result name="panel">WEB-INF/jsp/count_panel.jsp</result>
+		</action>
+
+		<action name="quarterOutlay!*" class="quarterOutlayAction" method="{1}">
+			<result name="list">WEB-INF/jsp/quarterOutlay.jsp</result>
+			<result name="report">WEB-INF/jsp/quarterOutlayReport.jsp</result>
+			<result name="toadd">WEB-INF/jsp/quarterOutlay_add.jsp</result>
+			<result name="tomodify">WEB-INF/jsp/quarterOutlay_edit.jsp</result>
+			<result name="toinfo">WEB-INF/jsp/quarterOutlay_info.jsp</result>
+			<result name="tocheck">WEB-INF/jsp/outlayCheck.jsp</result>
+		</action>
+
+		<action name="yearOutlay!*" class="yearOutlayAction" method="{1}">
+			<result name="list">WEB-INF/jsp/yearOutlay_List.jsp</result>
+			<result name="toadd">WEB-INF/jsp/yearOutlay_add.jsp</result>
+			<result name="tomodify">WEB-INF/jsp/yearOutlay_edit.jsp</result>
+			<result name="toinfo">WEB-INF/jsp/yearOutlay_info.jsp</result>
+			<result name="tocompare">WEB-INF/jsp/yearOutlayCompare.jsp</result>
+		</action>
+
+		<action name="win!*" class="windowInfoAction" method="{1}">
+			<result name="list">WEB-INF/jsp/win_list.jsp</result>
+		</action>
+
+		<action name="evaluate!*" class="evaluateAction" method="{1}">
+			<result name="list">WEB-INF/jsp/win_evaluate.jsp</result>
+			<result name="yearList">WEB-INF/jsp/win_evaluate_year.jsp</result>
+		</action>
+
+		<action name="baseManager!*!*" class="baseManagerAction" method="{1}">
+			<result name="success">WEB-INF/jsp/{1}.jsp</result>
+		</action>
+		
+		<action name="toPage!*!*">
+			<result name="success">WEB-INF/jsp/{1}/{2}.jsp</result>
+		</action>
+		
+		<action name="dp!*" class="dpMessageAction" method="{1}">
+		</action>
+		
+	</package>
+	
+	<package name="json" namespace="/" extends="json-default">  
+        <action name="project!*" class="projectAction" method="{1}">
+		     <result type="json">
+		          <param name="root">jsonMap</param> 
+		     </result>
+		</action>
+    </package>  
+
+</struts>

@@ -3,8 +3,10 @@ package com.kteam.lzpt.manager;
 import java.util.List;
 
 import com.kteam.lzpt.entity.Project;
+import com.kteam.lzpt.entity.ProjectConsole;
 import com.kteam.lzpt.entity.ProjectItem;
 import com.kteam.lzpt.entity.ProjectType;
+import com.kteam.lzpt.entity.User;
 
 public interface IProjectManager {
 	
@@ -25,4 +27,8 @@ public interface IProjectManager {
 	public List<Project> getYearReport(Project pro);
 	
 	public List<ProjectType> getProjectTypeAll();
+	
+	public void saveProjectConsole(ProjectConsole pc,User user);
+	
+	public List<ProjectConsole> getProjectConsole();
 }

@@ -4,13 +4,16 @@ public class ProjectType  {
 	
 	private static final long serialVersionUID = 1L;
 	
+	public static final Integer MINUS_FALSE=0;
+	public static final Integer MINUS_TRUE=1;
+	
 	private int id;
 	
 	private String name;
 	
 	private int group;
 	
-	private Float projectScore;
+	private Float defaultScore;
 	
 	private Float maxScore;
 	
@@ -50,13 +53,15 @@ public class ProjectType  {
 	public void setGroup(int group) {
 		this.group = group;
 	}
+	
 
-	public Float getProjectScore() {
-		return projectScore;
+
+	public Float getDefaultScore() {
+		return defaultScore;
 	}
 
-	public void setProjectScore(Float projectScore) {
-		this.projectScore = projectScore;
+	public void setDefaultScore(Float defaultScore) {
+		this.defaultScore = defaultScore;
 	}
 
 	public Float getMaxScore() {

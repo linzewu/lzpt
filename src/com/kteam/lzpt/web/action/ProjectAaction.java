@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.kteam.lzpt.entity.Project;
+import com.kteam.lzpt.entity.ProjectConsole;
 import com.kteam.lzpt.entity.ProjectItem;
 import com.kteam.lzpt.entity.ProjectType;
 import com.kteam.lzpt.entity.Role;
@@ -36,9 +37,21 @@ public class ProjectAaction {
 	
 	private ProjectItem pi;
 	
+	private ProjectConsole pc;
+	
 	private Map jsonMap;
 	
 	
+	
+	
+	public ProjectConsole getPc() {
+		return pc;
+	}
+
+	public void setPc(ProjectConsole pc) {
+		this.pc = pc;
+	}
+
 	public IProjectManager getProjectManager() {
 		return projectManager;
 	}
@@ -187,5 +200,26 @@ public class ProjectAaction {
 		jsonMap.put("data", pts);
 		return Action.SUCCESS;
 	}
+	
+	public String saveProjectConsole(){
+		
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		User user =  (User)session.getAttribute("user");
+		
+		this.projectManager.saveProjectConsole(pc, user);
+		jsonMap=new HashMap();
+		jsonMap.put(Action.SUCCESS,true);
+		return Action.SUCCESS;
+	}
+	
+	
+	public String getConsoleList(){
+		List consoleList = this.projectManager.getProjectConsole();
+		jsonMap=new HashMap();
+		jsonMap.put("total", consoleList.size());
+		jsonMap.put("rows", consoleList);
+		return Action.SUCCESS;
+	}
+	
 
 }

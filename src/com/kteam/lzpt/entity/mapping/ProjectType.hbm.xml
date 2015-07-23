@@ -12,7 +12,7 @@
 			type="java.lang.String" />
 		<property name="group" column="c_group"/>
 		
-		<property name="projectScore" column="projectScore" length="6" precision="4"/>
+		<property name="defaultScore" column="defaultScore" length="6" precision="4"/>
 		<property name="maxScore" column="maxScore" length="6" precision="4" />
 		<property name="minus" column="minus" length="1"  />
 		<property name="page" column="page" /> 

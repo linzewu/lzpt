@@ -20,9 +20,9 @@
 	</div>
 </div>
   <div id="ft" style="padding:2px 5px;">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="toAdd()">添加</a>
+       <!--  <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="toAdd()">添加</a> -->
         <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="toEidt()">修改</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toDel()">删除</a>
+<!--         <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toDel()">删除</a> -->
  </div>
  <div id="tb" style="padding:2px 5px;">
                             年份: <input id="year" class="easyui-combobox" panelHeight="auto" style="width:100px" />

@@ -107,7 +107,7 @@
         <mapping resource="com/kteam/lzpt/entity/mapping/ProjectType.hbm.xml"/>
         <mapping resource="com/kteam/lzpt/entity/mapping/Project.hbm.xml"/> 
         <mapping resource="com/kteam/lzpt/entity/mapping/ProjectItem.hbm.xml"/> 
-        
+        <mapping resource="com/kteam/lzpt/entity/mapping/ProjectConsole.hbm.xml"/> 
     </session-factory>
 
 </hibernate-configuration>

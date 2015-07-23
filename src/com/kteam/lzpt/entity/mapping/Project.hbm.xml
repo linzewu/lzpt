@@ -19,6 +19,7 @@
 		<property name="projectType" column="projectType" length="11"  />
 		<property name="checkDate" column="checkDate" />
 		<property name="score" column="score" />
+		<property name="state" column="state" />
 	</class>
 
 </hibernate-mapping>

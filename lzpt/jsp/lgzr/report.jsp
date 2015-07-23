@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
  
-<div id="tt" class="easyui-tabs"  style="height: 500px">
+<div id="tt" class="easyui-tabs"  style="height: 480px">
 	<div title="年度考核综合表" >
 		<table class="easyui-datagrid" id="yearReport"
 				data-options="url:'/lzpt/project!getYearReport.action',border:false,singleSelect:true,fit:true,fitColumns:true,toolbar:'#tb'">

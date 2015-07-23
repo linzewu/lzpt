@@ -16,6 +16,7 @@
 
 <script type="text/javascript" src="/lzpt/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/lzpt/js/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/lzpt/js/jquery-easyui-1.4.3/datagrid-groupview.js"></script>
 
 <script type="text/javascript" src="/lzpt/js/ckeditor_4.5.1_basic/ckeditor.js"></script>
 <script type="text/javascript" src="/lzpt/js/upload/ajaxfileupload.js"></script>
@@ -175,9 +176,17 @@ jQuery.prototype.serializeObject=function(){
 			},{
 				"icon":"/lzpt/images/gif_47_078.gif",
 				"title":"随机抽查"
-			}]
+			},{
+				"icon":"/lzpt/images/gif_47_029.gif",
+				"title":"考核项目控制台",
+				callbak:function(){
+					toPage("纪委主控台>>考核项目控制台","console.jsp");
+				}
+			} ]
 		}
 	}
+	
+	var groupConfig={"1":"主体责任 >>基础工作项目","2":"主体责任>>重点考核项目","3":"监督责任>>基础工作项目","4":"监督责任>>重点考核项目"};
 	
 </script>
 
