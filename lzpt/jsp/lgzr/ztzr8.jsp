@@ -160,7 +160,7 @@
 var pconfig={
 		"pi18":{"uploadfile":"uploadFile","grid":"rwfg","edit":"perform"},
 		"pi19":{"uploadfile":"uploadFile2","edit":"minutes"},
-		"pi20":{"uploadfile":"uploadFile3","grid":"zcgbaj"}
+		"pi20":{"uploadfile":"uploadFile3","grid":"zcgbaj","score":{"type":"count","grid":"zcgbaj","score":-0.3}}
 	}; 
 	
 

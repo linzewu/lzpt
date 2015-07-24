@@ -53,7 +53,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="5">
+			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi35">
 		</form> 
 	</div>
@@ -65,7 +65,7 @@
 <script type="text/javascript">
 
 var pconfig={
-		"pi35":{"uploadfile":"uploadFile","grid":"rwfg"}
+		"pi35":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"count","grid":"rwfg","score":-2}}
 	}; 
 	
 

@@ -100,13 +100,13 @@
 	
 </div>
 
-<div class="projectTitle">党政主要负责人作出廉政承若（0.2分），单位没有违反廉洁从政规定案件（0.3分），有1件案件扣0.5分</div>
+<div class="projectTitle">评分标准：党政主要负责人作出廉政承若（0.2分），单位没有违反廉洁从政规定案件（0.3分），有1件案件扣0.3分，每多1件扣0.3分，扣完为止</div>
 
 <script type="text/javascript">
 
 var pconfig={
 		"pi11":{"uploadfile":"uploadFile","edit":"honest"},
-		"pi12":{"uploadfile":"uploadFile3","grid":"rwfg"}
+		"pi12":{"uploadfile":"uploadFile3","grid":"rwfg","score":{"type":"count","grid":"rwfg","score":-0.3}}
 	};
 	
 

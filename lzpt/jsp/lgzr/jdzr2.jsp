@@ -142,7 +142,7 @@
 var pconfig={
 		"pi47":{"uploadfile":"uploadFile","edit":"division"},
 		"pi48":{"uploadfile":"uploadFile2","edit":"work1,work2,work3"},
-		"pi49":{"uploadfile":"uploadFile3","grid":"rwfg"}
+		"pi49":{"uploadfile":"uploadFile3","grid":"rwfg","score":{"type":"count","grid":"rwfg","score":-0.3}}
 	};
 	
 

@@ -99,7 +99,7 @@
 
 var pconfig={
 		"pi23":{"uploadfile":"uploadFile","edit":"deci,rule"},
-		"pi24":{"uploadfile":"uploadFile2","grid":"rwfg"}
+		"pi24":{"uploadfile":"uploadFile2","grid":"rwfg","score":{"type":"count","grid":"rwfg","score":-0.3}}
 	};
 	
 

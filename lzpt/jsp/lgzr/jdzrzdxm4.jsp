@@ -52,7 +52,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="2">
+			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi59">
 		</form> 
 	</div>

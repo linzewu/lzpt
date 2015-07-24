@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <script type="text/javascript">
 
-var sf=[{label:'未掌握或不报告案件线索',value:'未掌握或不报告案件线索',score:5},{label:'办案安全事故',value:'办案安全事故',score:7},{label:'办案安全事故人员死亡',value:'办案安全事故人员死亡',score:13}];
+var sf=[{label:'未掌握或不报告案件线索',value:'未掌握或不报告案件线索',score:-5},{label:'办案安全事故',value:'办案安全事故',score:-7},{label:'办案安全事故人员死亡',value:'办案安全事故人员死亡',score:-13}];
 </script>
 <div class="easyui-tabs">
 	<div title="查办案件工作、线索处置和落实案件查办" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
@@ -54,7 +54,7 @@ var sf=[{label:'未掌握或不报告案件线索',value:'未掌握或不报告�
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="13">
+			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi55">
 		</form> 
 		
@@ -68,7 +68,7 @@ var sf=[{label:'未掌握或不报告案件线索',value:'未掌握或不报告�
 <script type="text/javascript">
 
 var pconfig={
-		"pi55":{"uploadfile":"uploadFile","grid":"rwfg"}
+		"pi55":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f1",data:sf}}
 	};
 	
 
