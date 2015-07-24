@@ -82,7 +82,7 @@ function getScore(sconfig){
 	if(sconfig['callback']){
 		score=callback.call();
 		
-	}if(type=="count"){
+	}else if(type=="count"){
 		var grid = sconfig['grid'];
 		if(grid){
 			var count = $("#"+grid).datagrid("getRows").length;
