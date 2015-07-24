@@ -70,10 +70,7 @@
 
 var pconfig={
 		"pi34":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f2",data:sf}}
-	}; 
-	
-
-	
+	};
 
 $(function(){
 	$.each(pconfig,function(key,data){
