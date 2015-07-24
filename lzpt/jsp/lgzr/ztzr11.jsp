@@ -16,7 +16,7 @@
 						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >时间</th>
 						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:true}}">会议主持人</th>
 						      	        <th data-options="field:'f3',width:200, editor:{type:'textbox',options:{ required:true}}">会议主题</th>
-						      	        <th data-options="field:'f4',width:400, editor:{type:'textbox',options:{ required:true}}">会议记录</th>
+						      	        <th data-options="field:'f4',width:400, editor:{type:'textbox',options:{ required:true}}">会议记录（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>

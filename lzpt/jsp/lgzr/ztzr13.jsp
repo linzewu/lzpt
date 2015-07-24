@@ -16,7 +16,7 @@
 						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >受理时间</th>
 						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:true}}">来访群众</th>
 						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:true}}">受理人</th>
-						      	        <th data-options="field:'f4',width:450, editor:{type:'textbox',options:{ required:false}}">来访事件</th>
+						      	        <th data-options="field:'f4',width:450, editor:{type:'textbox',options:{ required:false}}">来访事件（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>
@@ -65,7 +65,7 @@
 						        <thead>
 						            <tr>
 						                <th data-options="field:'f4',width:100, editor:{type:'datebox',options:{ required:true}}" >处理时间</th>
-						      	        <th data-options="field:'f5',width:600, editor:{type:'textbox',options:{ required:false}}">处理结果</th>
+						      	        <th data-options="field:'f5',width:600, editor:{type:'textbox',options:{ required:false}}">处理结果（详情上传附件,填写附件名）</th>
 						      	        <th data-options="field:'f6',width:100, editor:{type:'datebox',options:{ required:false}}">向上级报告时间</th>
 						            </tr>
 						        </thead>

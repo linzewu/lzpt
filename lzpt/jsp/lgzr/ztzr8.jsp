@@ -15,7 +15,7 @@
 						            <tr>
 						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >时间</th>
 						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:true}}">责任人</th>
-						      	        <th data-options="field:'f3',width:550, editor:{type:'textbox',options:{ required:true}}">一岗双责履行情况</th>
+						      	        <th data-options="field:'f3',width:550, editor:{type:'textbox',options:{ required:true}}">一岗双责履行情况（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>
@@ -117,7 +117,7 @@
 						            <tr>
 						                <th data-options="field:'f4',width:100, editor:{type:'datebox',options:{ required:true}}" >立案时间</th>
 						      	        <th data-options="field:'f5',width:100, editor:{type:'textbox',options:{ required:false}}">违纪人员</th>
-						      	        <th data-options="field:'f6',width:550, editor:{type:'textbox',options:{ required:false}}">违纪情况</th>
+						      	        <th data-options="field:'f6',width:550, editor:{type:'textbox',options:{ required:false}}">违纪情况（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>

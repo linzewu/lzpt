@@ -15,7 +15,7 @@
 						            <tr>
 						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >上级通知时间</th>
 						      	        <th data-options="field:'f2',width:200, editor:{type:'textbox',options:{ required:false}}">上级单位</th>
-						      	        <th data-options="field:'f3',width:450, editor:{type:'textbox',options:{ required:false}}">通知内容概述</th>
+						      	        <th data-options="field:'f3',width:450, editor:{type:'textbox',options:{ required:false}}">通知内容概述（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>
@@ -47,7 +47,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="0.1">
+			<input type="hidden" name="pi.score" value="0.2">
 			<input type="hidden" name="pi.piname" value="pi21">
 		</form> 
 	</div>
@@ -65,7 +65,7 @@
 						            <tr>
 						                <th data-options="field:'f4',width:100, editor:{type:'datebox',options:{ required:true}}" >活动开展时间</th>
 						      	        <th data-options="field:'f5',width:200, editor:{type:'textbox',options:{ required:false}}">教育活动主题</th>
-						      	        <th data-options="field:'f6',width:450, editor:{type:'textbox',options:{ required:false}}">活动总结概述</th>
+						      	        <th data-options="field:'f6',width:450, editor:{type:'textbox',options:{ required:false}}">活动总结概述（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>

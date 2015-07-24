@@ -60,7 +60,7 @@
 						            <tr>
 						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >案件时间</th>
 						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:false}}">违纪人员</th>
-						      	        <th data-options="field:'f3',width:550, editor:{type:'textbox',options:{ required:false}}">案件记录</th>
+						      	        <th data-options="field:'f3',width:550, editor:{type:'textbox',options:{ required:false}}">案件记录（详情上传附件,填写附件名）</th>
 						            </tr>
 						        </thead>
 						    </table>
