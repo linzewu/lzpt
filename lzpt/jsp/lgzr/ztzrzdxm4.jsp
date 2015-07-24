@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 	
 <script type="text/javascript">
-	var sf=[{label:'中央部委通报批评',value:'中央部委通报批评',score:5},{label:'省委（政府）通报批评',value:'省委（政府）通报批评',score:4},{label:'市委（政府）通报批评',value:'市委（政府）通报批评',score:3},{label:'县委（政府）通报批评',value:'县委（政府）通报批评',score:2}];
+	var sf=[{label:'中央部委通报批评',value:'中央部委通报批评',score:-5},{label:'省委（政府）通报批评',value:'省委（政府）通报批评',score:-4},{label:'市委（政府）通报批评',value:'市委（政府）通报批评',score:-3},{label:'县委（政府）通报批评',value:'县委（政府）通报批评',score:-2}];
 </script>
 <div class="easyui-tabs">
 	<div title="依法行政履职尽责情况" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
@@ -57,7 +57,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="10">
+			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi37">
 		</form> 
 	</div>
@@ -69,7 +69,7 @@
 <script type="text/javascript">
 
 var pconfig={
-		"pi37":{"uploadfile":"uploadFile","grid":"rwfg"}
+		"pi37":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f4",data:sf}}
 	}; 
 	
 

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 	
 <script type="text/javascript">
-	var sf=[{label:'主要负责人违纪',value:'主要负责人违纪',score:3},{label:'主要负责人违纪并移送司法',value:'主要负责人违纪并移送司法',score:6},{label:'其他科级干部违纪',value:'其他科级干部违纪',score:2},{label:'其他科级干部违纪并移送司法',value:'其他科级干部违纪并移送司法',score:4}];
+	var sf=[{label:'主要负责人违纪',value:'主要负责人违纪',score:-3},{label:'主要负责人违纪并移送司法',value:'主要负责人违纪并移送司法',score:-6},{label:'其他科级干部违纪',value:'其他科级干部违纪',score:-2},{label:'其他科级干部违纪并移送司法',value:'其他科级干部违纪并移送司法',score:-4}];
 </script>
 <div class="easyui-tabs">
 	<div title="管好班子带好队伍" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
@@ -56,7 +56,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="10">
+			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi36">
 		</form> 
 	</div>
@@ -68,7 +68,7 @@
 <script type="text/javascript">
 
 var pconfig={
-		"pi36":{"uploadfile":"uploadFile","grid":"rwfg"}
+		"pi36":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f4",data:sf}}
 	}; 
 	
 
