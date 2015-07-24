@@ -12,6 +12,8 @@ public interface IProjectManager {
 	
 	public List<ProjectType> getProjectType(int group);
 	
+	public ProjectType getProjectTypeObject(int id);
+	
 	public List<Project> getProjec(Project project);
 	
 	public ProjectItem savePojectItem(ProjectItem projectItem);

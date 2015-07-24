@@ -208,4 +208,10 @@ public class ProjectManagerImpl implements IProjectManager {
 		return pcs;
 	}
 
+	@Override
+	public ProjectType getProjectTypeObject(int id) {
+		
+		return 	this.hibernateTemplate.get(ProjectType.class, id);
+	}
+
 }

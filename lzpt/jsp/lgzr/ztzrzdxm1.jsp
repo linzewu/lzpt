@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <script type="text/javascript">
-	var sf=[{label:'中央部委查办',value:'中央部委查办',score:5},{label:'省委、省政府、省纪委直接查办',value:'省委、省政府、省纪委直接查办',score:5},{label:'省委、省政府、省纪委督办,市纪委直接查办',value:'省委、省政府、省纪委督办,市纪委直接查办',score:3},{label:'市纪委、市委、市政府督办，县纪委直接查办',value:'市纪委、市委、市政府督办，县纪委直接查办',score:2}];
+	var sf=[{label:'中央部委查办',value:'中央部委查办',score:-5},{label:'省委、省政府、省纪委直接查办',value:'省委、省政府、省纪委直接查办',score:-5},{label:'省委、省政府、省纪委督办,市纪委直接查办',value:'省委、省政府、省纪委督办,市纪委直接查办',score:-3},{label:'市纪委、市委、市政府督办，县纪委直接查办',value:'市纪委、市委、市政府督办，县纪委直接查办',score:-2}];
 </script>	
 	
 <div class="easyui-tabs">
@@ -69,7 +69,7 @@
 <script type="text/javascript">
 
 var pconfig={
-		"pi34":{"uploadfile":"uploadFile","grid":"rwfg"}
+		"pi34":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f2",data:sf}}
 	}; 
 	
 

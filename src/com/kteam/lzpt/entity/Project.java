@@ -25,6 +25,8 @@ public class Project {
 	
 	private Integer state;
 	
+	private String scoreInfo;
+	
 	
 	public Project(){}
 	
@@ -36,6 +38,14 @@ public class Project {
 	
 	
 	
+	public String getScoreInfo() {
+		return scoreInfo;
+	}
+
+	public void setScoreInfo(String scoreInfo) {
+		this.scoreInfo = scoreInfo;
+	}
+
 	public Integer getState() {
 		return state;
 	}

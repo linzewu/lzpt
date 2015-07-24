@@ -1,9 +1,9 @@
 package com.kteam.lzpt.web.action;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -125,11 +125,12 @@ public class ProjectAaction {
 	
 	public String saveProjectItem(){
 		
-		initProject();
 		
-		pro = projectManager.savePoject(pro);
+//		pro = projectManager.savePoject(pro);
 		pi.setProjectId(pro.getId());
 		pi = projectManager.savePojectItem(pi);
+		
+		setProjectScore();
 		
 		jsonMap=new HashMap();
 		jsonMap.put("data", pi);
@@ -138,31 +139,47 @@ public class ProjectAaction {
 		return Action.SUCCESS;
 	}
 	
-	private void initProject(){
+	private void setProjectScore(){
 		
-		HttpSession session = ServletActionContext.getRequest().getSession();
+		pro=this.getProjectManager().getProject(pro.getId());
 		
-		User user =  (User)session.getAttribute("user");
+		pt=this.getProjectManager().getProjectTypeObject(pro.getProjectType());
 		
-		if(pro.getId()!=null){
-			pro=this.getProjectManager().getProject(pro.getId());
+		if(pro.getScoreInfo()==null||"".equals(pro.getScoreInfo().trim())){
+			Map scoreInfoMap=new HashMap();
+			scoreInfoMap.put(pi.getId().toString(), pi.getScore());
+			String str = JSONObject.fromObject(scoreInfoMap).toString();
+			pro.setScoreInfo(str);
+			pro.setScore(pt.getDefaultScore()+pi.getScore());
+		}else{
+			String strInfo=pro.getScoreInfo();
+			JSONObject jo = JSONObject.fromObject(strInfo);
+			jo.put(pi.getId().toString(), pi.getScore());
+			Set<String> set = jo.keySet();
+			
+			Float score=pt.getDefaultScore();
+			
+			for(String key:set){
+				Double d=jo.getDouble(key);
+				score+=d.floatValue();
+			}
+//			score=score<0f?0f:score;
+			
+			pro.setScore(score);
+			
+			pro.setScoreInfo(jo.toString());
 		}
-		
-		if(pi.getId()==null){
-			pro.setScore((pro.getScore()==null?0:pro.getScore()) + pi.getScore());
-		}
-		pro.setUnit(user.getUnitId());
-		pro.setCreateTime(new Date());
-		pro.setCreateUser(user.getUserName());
 		pro.setIsCheck(0);
 		
-		if(pi.getData()!=null){
-			JSONObject jo= JSONObject.fromObject(pi.getData());
-			String date=(String)jo.get("date");
-			if(date!=null&&date.length()>4){
-				pro.setYear(date.substring(0,4));
-			}
+		if(pro.getScore()<0){
+			pro.setScore(0f);
 		}
+		
+		if(pro.getScore()>pt.getMaxScore()){
+			pro.setScore(pt.getMaxScore());
+		}
+		
+		this.projectManager.savePoject(pro);
 	}
 	
 	public String getProjectItem(){

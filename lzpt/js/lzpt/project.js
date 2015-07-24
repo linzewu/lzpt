@@ -42,10 +42,18 @@ function formBind(formName){
 	    	 		gridConfig=gridConfig.split(",");
 	    	 		$.each(gridConfig,function(i,n){
 	    	 			var griddata = $("#"+n).datagrid("getRows");
-	    	 			//$("#"+formName+" input[name='"+n+"']").val();
 	    	 			formData[n]=JSON.stringify(griddata);
 	    	 		})
 	    	 	}
+	    	 	
+	    	 	var scoreConfig=config['score'];
+	    	 	
+	    	 	if(scoreConfig){
+	    	 		var score=getScore(scoreConfig);
+	    	 		formData['pi.score']=score;
+	    	 		$("#"+formName).find("input[name='pi.score']").val(score);
+	    	 	}
+	    	 	
 	    	}
 	    	
 	    	var strData = JSON.stringify(formData);
@@ -63,6 +71,40 @@ function formBind(formName){
 	         }
 	    }
 	});
+}
+
+function getScore(sconfig){
+	
+	var score=0;
+	
+	var type= sconfig['type'];
+	
+	if(sconfig['callback']){
+		score=callback.call();
+		
+	}if(type=="count"){
+		var grid = sconfig['grid'];
+		if(grid){
+			var count = $("#"+grid).datagrid("getRows").length;
+			score=sconfig['score']*count;
+		}
+	}else if(type=="colunm"){
+		var grid = sconfig['grid'];
+		var colunm=sconfig['colunm'];
+		var array=sconfig['data'];
+		var rows = $("#"+grid).datagrid("getRows");
+		$.each(rows,function(index,row){
+			var itemScore=0;
+			$.each(array,function(i,item){
+				if(row[colunm]==item.value){
+					itemScore=item.score;
+					return false;
+				}
+			});
+			score+=itemScore;
+		});
+	}
+	return score;
 }
 
 function  loadProjectInfo(){
