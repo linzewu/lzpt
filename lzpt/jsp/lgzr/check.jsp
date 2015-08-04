@@ -198,7 +198,24 @@ function checkSave(){
 			});
 		}
 	});
+}
+
+function queryProject(){
 	
+	var year2=$("#year2").combobox("getValue");
+	var unit2=$("#unit2").combobox("getValue");
+	
+	var queryParams ={'pro.isCheck':1};
+	
+	if(year2&&year2!=""){
+		queryParams['pro.year']=year2;
+	}
+	
+	if(unit2&&unit2!=""){
+		queryParams['pro.unit']=unit2;
+	}
+	
+	$("#checkedList").datagrid("reload",queryParams);
 }
 
 
@@ -254,7 +271,7 @@ function checkSave(){
  </div>
  
 <div id="tb2" style="padding:2px 5px;">
-                            年份: <input id="year2" class="easyui-combobox" panelHeight="auto" style="width:100px" />
+                            年份: <input id="year2" class="easyui-combobox" panelHeight="auto" style="width:100px" data-options="data:years"  valueField="value" textField="label"  />
                             单位: 
         <input id="unit2" class="easyui-combobox" panelHeight="auto" style="width:100px" data-options="data:units"   valueField="id" textField="wname"   />
         <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="queryProject()">查询</a>

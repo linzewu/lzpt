@@ -179,6 +179,7 @@ a:hover {color:#000000;text-decoration:none;}
 					if(roleName.equals("纪委")){
 				%>
 				<li><a href="javaScript:void(0);" onclick="showMenu('dzda','workArchive!toPage.action?pageName=list')">廉政电子档案系统</a></li>
+				<li><a href="javaScript:void(0);"  onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li>
 				<%
 					}else{
 				%>
@@ -196,6 +197,14 @@ a:hover {color:#000000;text-decoration:none;}
 						alt="干部廉政档案" src="${basePath}images/grda.png" />干部廉政档案</a></li>
 			 <li><a href="javascript:void(0)" onclick="topage('workArchive!toPage.action?pageName=list',this)"><img
 						alt="单位机构廉政档案" src="${basePath}images/bmda.png" />单位机构廉政档案</a></li>
+			</ul>
+		</div>
+		<div class="menus mpanel" id="zxzl" style="display: none;">
+			<ul>
+				<li><a href="javascript:void(0)" onclick="topage('baseManager!SpecialManageList!toPage.action',this)"><img
+						alt="专项治理" src="${basePath}images/grda.png" />专项治理</a></li>
+				<li><a href="javascript:void(0)" onclick="topage('baseManager!SpecialManageReport!toPage.action',this)"><img
+						alt="专项治理" src="${basePath}images/gif_47_084.gif" />统计报表</a></li>
 			</ul>
 		</div>
 	</div>
