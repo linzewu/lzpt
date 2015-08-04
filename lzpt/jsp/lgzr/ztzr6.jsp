@@ -98,7 +98,7 @@
 	
 </div>
 
-<div class="projectTitle">党政主要负责人作出廉政承若（0.2分），单位没有违反廉洁从政规定案件（0.3分），有1件案件扣0.5分</div>
+<div class="projectTitle">评分标准：党政主要负责人作出廉政承若（0.2分），单位没有违反廉洁从政规定案件（0.3分），有1件案件扣0.5分</div>
 
 <script type="text/javascript">
 

@@ -107,6 +107,9 @@
 	
 </div>
 
+<div class="projectTitle">评分标准：此项工作由县委办、县政府办、县纪委监察局、县委组织部、县信访局负责评分，并上报到本系统。出现落实不力问题的乡镇此项不得分。</div>
+
+
 
 <script type="text/javascript">
 

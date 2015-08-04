@@ -58,6 +58,8 @@
 	
 </div>
 
+<div class="projectTitle">评分标准：此项工作由县财政局负责评分，并上报到本系统。</div>
+
 
 <script type="text/javascript">
 

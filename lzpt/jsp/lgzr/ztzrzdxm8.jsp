@@ -58,6 +58,8 @@
 	
 </div>
 
+<div class="projectTitle">评分标准：此项工作由县政府办公室、县编办、县政府法制办负责评分，并上报到本系统。</div>
+
 
 <script type="text/javascript">
 

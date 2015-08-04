@@ -61,6 +61,8 @@
 	
 </div>
 
+<div class="projectTitle">评分标准：认真贯彻执行《中国共产党党员领导干部廉洁从政若干准则》，科级干部违反“8项禁止52个不准”被查实的，一人次扣2分，扣完为止。</div>
+
 
 <script type="text/javascript">
 

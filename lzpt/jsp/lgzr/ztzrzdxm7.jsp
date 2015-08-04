@@ -53,6 +53,8 @@
 	
 </div>
 
+<div class="projectTitle">评分标准：此项工作由县政府办公室、县发改委和县效能办负责评分，并上报到本系统。出现问题被通报或有违纪案件的乡镇此项不得分。</div>
+
 
 <script type="text/javascript">
 

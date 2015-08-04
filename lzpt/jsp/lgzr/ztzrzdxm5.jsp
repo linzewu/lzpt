@@ -60,6 +60,8 @@
 	
 </div>
 
+<div class="projectTitle">评分标准：此项工作由县委组织部负责评分，并上报到本系统。出现违纪案件的乡镇此项不得分。</div>
+
 
 <script type="text/javascript">
 
