@@ -168,7 +168,7 @@ jQuery.prototype.serializeObject=function(){
 				}
 			},{
 				"icon":"/lzpt/images/bmda.png",
-				"title":"重点考核项目",
+				"title":"重点工作考核项目",
 				callbak:function(){
 					getProjectType('监督责任管理  >> 重点考核项目','4')
 				}
