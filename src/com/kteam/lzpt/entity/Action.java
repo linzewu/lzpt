@@ -15,6 +15,7 @@ package com.kteam.lzpt.entity;
  */
 public class Action extends BaseEntity {
 	
+	
 	//主键 id 序列号
 	private String id;
 	

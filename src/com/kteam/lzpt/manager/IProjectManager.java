@@ -33,4 +33,6 @@ public interface IProjectManager {
 	public void saveProjectConsole(ProjectConsole pc,User user);
 	
 	public List<ProjectConsole> getProjectConsole();
+	
+	public List<Project> getUncheckProjectList(Integer maxResults,Project project);
 }

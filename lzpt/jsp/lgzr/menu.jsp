@@ -8,6 +8,7 @@
 <%
 	User user=(User)session.getAttribute("user");
 	if(user==null){
+		session.setAttribute("gotoPage", "/lzpt/jsp/lgzr/main.jsp");
 		response.sendRedirect("/lzpt/user!toPage.action?pageName=indexlogin");
 		return;
 	}

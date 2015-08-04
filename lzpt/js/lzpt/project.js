@@ -57,7 +57,7 @@ function formBind(formName){
 	    	}
 	    	
 	    	var strData = JSON.stringify(formData);
-	    	console.log(strData);
+//	    	console.log(strData);
 	    	$('#'+formName).find("input[name='pi.data']").val(strData);
 	    },
 	    success:function(data){
@@ -148,7 +148,7 @@ function  loadProjectInfo(){
 				
 				if(edit){
 					edit=edit.split(",")
-					console.log(edit)
+//					console.log(edit)
 					$.each(edit,function(index,eid){
 						var editor =  CKEDITOR.instances[eid];
 						
@@ -164,7 +164,7 @@ function  loadProjectInfo(){
 				if(grid){
 					
 					var griddata=$.parseJSON($("#"+n.piname).find("input[name='"+grid+"']").val());
-					console.log(griddata);
+//					console.log(griddata);
 					$("#"+grid).datagrid("loadData",griddata);
 				}
 			}
@@ -226,7 +226,7 @@ function removeit(gid){
     	
     	var rowIndex =  $('#'+gid).datagrid("getRowIndex",$('#'+gid).datagrid("getSelected"));
     	
-    	console.log(rowIndex)
+//    	console.log(rowIndex)
     	 $('#'+gid).datagrid('deleteRow', rowIndex);
     	
     	return

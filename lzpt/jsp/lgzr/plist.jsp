@@ -22,6 +22,7 @@
   <div id="ft" style="padding:2px 5px;">
        <!--  <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="toAdd()">添加</a> -->
         <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="toEidt()">修改</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="openCheckIfno()">查看审阅信息</a>
 <!--         <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toDel()">删除</a> -->
  </div>
  <div id="tb" style="padding:2px 5px;">
@@ -30,7 +31,38 @@
         <input id="unit" class="easyui-combobox" panelHeight="auto" style="width:100px" data-options="data:units"   valueField="id" textField="wname" />
         <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="queryProject()">查询</a>
  </div>
+ 
+ <div id="checkWin" class="easyui-window" style="width:80%;height:300px" title="审阅" data-options="iconCls:'icon-edit',modal:true,closed:true">
+        <table class="base_table" cellpadding="0"  cellspacing="0" style="width: 98%" id="checkTable">
+        	<tr>
+				<td class="info_title"><label for="check">审核意见:</label></td>
+				<td class="info2"><input id="check" type="text" class="easyui-textbox" style="width:600px;height: 50px;" data-options="multiline:true,readonly:true" prompt="请输入审核意见" >
+			</tr>
+			<tr><td class="info_title"><label >审核得分:</label></td><td><input id="checkScore" name="checkScore" class="easyui-numberbox" prompt="请输入审核得分"  data-options="readonly:true"></td></tr>
+		</table>
+</div>
+ 
 <script>
+
+function openCheckIfno(){
+	var row = $("#projectList").datagrid("getSelected");
+	if(!row){
+		$.messager.alert("提醒","请选择一个项目。");
+		return ;
+	}
+	
+	if(row.isCheck==0){
+		$.messager.alert("提醒","该项目未审阅。");
+		return ;
+	}
+	
+	var obj=$.parseJSON(row.checkInfo);
+	
+	$("#check").textbox("setValue",obj.check);
+	$("#checkScore").textbox("setValue",obj.checkScore);
+	
+	$("#checkWin").window("open");
+}
 
 
 var pid=null;

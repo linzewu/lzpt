@@ -21,6 +21,7 @@
 		<property name="score" column="score" />
 		<property name="state" column="state" />
 		<property name="scoreInfo" column="scoreInfo" length="2000" />
+		<property name="checkInfo" column="checkInfo" length="2000" />
 	</class>
 
 </hibernate-mapping>

@@ -111,6 +111,20 @@ jQuery.prototype.serializeObject=function(){
 		value:2018
 	}];
 	
+	var quantity=[{
+		label:'10',
+		value:10
+	},{
+		label:'20',
+		value:20
+	},{
+		label:'50',
+		value:50
+	},{
+		label:'全部',
+		value:0
+	}];
+	
 	function initUnit(){
 		var url="/lzpt/workArchive!querySimpleUnits.action";
 		
@@ -175,7 +189,10 @@ jQuery.prototype.serializeObject=function(){
 				"title":"催办管理"
 			},{
 				"icon":"/lzpt/images/gif_47_078.gif",
-				"title":"随机抽查"
+				"title":"随机抽查",
+				callbak:function(){
+					toPage("纪委主控台>>随机抽查","check.jsp");
+				}
 			},{
 				"icon":"/lzpt/images/gif_47_029.gif",
 				"title":"考核项目控制台",

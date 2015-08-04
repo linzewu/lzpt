@@ -323,7 +323,7 @@ var conflictChecked=new baseEntityManager('ConflictChecked','ConflictChecked');
 		</div>
 		
 		
-		<div title="专项治理 违规赌博自查自纠登记表">
+		<div title="专项治理 参与赌博自查自纠登记表">
 				<input name="isInit" value="false" hidden="true" tableId="GambleChecked">
 			<table id="GambleChecked"
 				data-options="

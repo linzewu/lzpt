@@ -5,6 +5,10 @@ import java.util.Date;
 public class Project {
 	private static final long serialVersionUID = 1L;
 	
+	public static final Integer CHECKED=1;
+	
+	public static final Integer UNCHECK=0;
+	
 	private Integer id;
 	
 	private String year;
@@ -27,7 +31,19 @@ public class Project {
 	
 	private String scoreInfo;
 	
+	private String checkInfo;
 	
+	
+	
+	
+	public String getCheckInfo() {
+		return checkInfo;
+	}
+
+	public void setCheckInfo(String checkInfo) {
+		this.checkInfo = checkInfo;
+	}
+
 	public Project(){}
 	
 	public Project(String year,String unit,Double score){

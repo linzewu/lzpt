@@ -203,7 +203,7 @@
 
 
 			</div>
-			<div title="廉政工作总结" style="padding: 5px;">
+			<div title="述责述廉报告" style="padding: 5px;">
 				<div style="margin-left: auto; margin-right: auto; vertical-align: middle; width: 750px; min-height: 400px;">
 					<div style="margin-top: 20px; margin-left: 50px; margin-bottom: 30px;">
 						<input id="cwsyears" style="width: 650px" /> <input id="workSummaryId" type="hidden" />

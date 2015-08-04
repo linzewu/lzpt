@@ -41,9 +41,17 @@ public class ProjectAaction {
 	
 	private Map jsonMap;
 	
+	private Integer maxResults;
 	
 	
-	
+	public Integer getMaxResults() {
+		return maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+	}
+
 	public ProjectConsole getPc() {
 		return pc;
 	}
@@ -145,6 +153,11 @@ public class ProjectAaction {
 		
 		pt=this.getProjectManager().getProjectTypeObject(pro.getProjectType());
 		
+		//如果已被审阅则不重新计算
+		if(pro.getIsCheck()==Project.CHECKED){
+			return;
+		}
+		
 		if(pro.getScoreInfo()==null||"".equals(pro.getScoreInfo().trim())){
 			Map scoreInfoMap=new HashMap();
 			scoreInfoMap.put(pi.getId().toString(), pi.getScore());
@@ -169,7 +182,7 @@ public class ProjectAaction {
 			
 			pro.setScoreInfo(jo.toString());
 		}
-		pro.setIsCheck(0);
+//		pro.setIsCheck(0);
 		
 		if(pro.getScore()<0){
 			pro.setScore(0f);
@@ -238,5 +251,34 @@ public class ProjectAaction {
 		return Action.SUCCESS;
 	}
 	
+	public String getUncheckProject(){
+		
+		List<Project> projectList = projectManager.getUncheckProjectList(maxResults,pro);
+		
+		jsonMap=new HashMap();
+		jsonMap.put("total", projectList.size());
+		jsonMap.put("rows", projectList);
+		
+		return Action.SUCCESS;
+	}
+	
+	
+	public String saveProjectCheck(){
+		
+		Project project = this.getProjectManager().getProject(pro.getId());
+		
+		project.setCheckInfo(pro.getCheckInfo());
+		
+		project.setScore(pro.getScore());
+		
+		project.setIsCheck(Project.CHECKED);;
+		
+		this.getProjectManager().savePoject(project);
+		
+		jsonMap=new HashMap();
+		jsonMap.put(Action.SUCCESS,true);
+	
+		return Action.SUCCESS;
+	}
 
 }

@@ -8,7 +8,10 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.type.StandardBasicTypes;
+import org.hibernate.type.Type;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Service;
@@ -59,6 +62,12 @@ public class ProjectManagerImpl implements IProjectManager {
 				sb.append(" and unit=:unit");
 				paramNames.add("unit");
 				values.add(project.getUnit());
+			}
+			
+			if(project.getIsCheck()!=null){
+				sb.append(" and isCheck=:isCheck");
+				paramNames.add("isCheck");
+				values.add(project.getIsCheck());
 			}
 
 		}
@@ -157,18 +166,18 @@ public class ProjectManagerImpl implements IProjectManager {
 				List<ProjectType> pts = this.hibernateTemplate.find("From ProjectType");
 
 				for (ProjectType pt : pts) {
-					
+
 					List<Project> projests = this.hibernateTemplate.findByNamedParam(
 							"From Project where year=:year and unit=:unit and projectType=:projectType",
 							new String[] { "year", "unit", "projectType" },
 							new Object[] { pc.getYear(), wa.getId(), pt.getId() });
-					
-					Project project=null;
-					
-					if(projests!=null&&projests.size()>0){
+
+					Project project = null;
+
+					if (projests != null && projests.size() > 0) {
 						project = (Project) projests.get(0);
 					}
-					
+
 					if (project == null) {
 						project = new Project();
 						project.setCreateTime(new Date());
@@ -202,16 +211,67 @@ public class ProjectManagerImpl implements IProjectManager {
 
 	@Override
 	public List<ProjectConsole> getProjectConsole() {
-		
+
 		List<ProjectConsole> pcs = this.hibernateTemplate.find("From ProjectConsole ");
-		
+
 		return pcs;
 	}
 
 	@Override
 	public ProjectType getProjectTypeObject(int id) {
-		
-		return 	this.hibernateTemplate.get(ProjectType.class, id);
+
+		return this.hibernateTemplate.get(ProjectType.class, id);
+	}
+
+	public List<Project> getUncheckProjectList(final Integer maxResults, final Project project) {
+
+		List<Project> list = this.hibernateTemplate.execute(new HibernateCallback<List<Project>>() {
+			@Override
+			public List<Project> doInHibernate(Session session) throws HibernateException, SQLException {
+
+				StringBuilder sql = new StringBuilder("from Project where  isCheck=0 ");
+
+				List<Object> params = new ArrayList<Object>();
+
+				List<Type> types = new ArrayList<Type>();
+
+				if (project != null) {
+
+					if (project.getYear() != null && !"".equals(project.getYear().trim())) {
+						sql.append(" and year=?");
+						params.add(project.getYear());
+						types.add(StandardBasicTypes.STRING);
+					}
+
+					if (project.getProjectType() != null) {
+						sql.append(" and projectType=?");
+						params.add(project.getProjectType());
+						types.add(StandardBasicTypes.INTEGER);
+					}
+
+					if (project.getUnit() != null) {
+						sql.append(" and unit=?");
+						params.add(project.getUnit());
+						types.add(StandardBasicTypes.STRING);
+					}
+				}
+
+				sql.append(" order by RAND()");
+				Query query = session.createQuery(sql.toString());
+				
+				if (maxResults == null) {
+					query.setMaxResults(0);
+				}else if(maxResults != 0){
+					query.setMaxResults(maxResults);
+				}
+				
+				query.setParameters(params.toArray(), 	types.toArray(new Type[types.size()]));
+
+				return query.list();
+			}
+		});
+		return list;
+
 	}
 
 }

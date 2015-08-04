@@ -231,7 +231,7 @@
 						</div>
 					</div>
 			</div>
-			<div title="廉政工作总结" style="padding: 5px;">
+			<div title="述责述廉报告" style="padding: 5px;">
 				<div
 					style="margin-left: auto; margin-right: auto; vertical-align: middle; width: 750px; min-height: 400px;">
 					<div
@@ -277,7 +277,7 @@ $(function() {
 		   }
 	  }
 	  
-	  //廉政工作总结拖动的按钮可用
+	  //述责述廉报告拖动的按钮可用
 	$("#cwsyears").removeAttr("disabled");
 	$("#cwsyears").slider({
 		"showTip" : true,
