@@ -185,9 +185,6 @@ jQuery.prototype.serializeObject=function(){
 				"icon":"/lzpt/images/gif_47_027.gif",
 				"title":"数据仪表盘"
 			},{
-				"icon":"/lzpt/images/gif_47_067.gif",
-				"title":"催办管理"
-			},{
 				"icon":"/lzpt/images/gif_47_078.gif",
 				"title":"随机抽查",
 				callbak:function(){
