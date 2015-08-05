@@ -24,6 +24,8 @@
 <script type="text/javascript" src="/lzpt/js/locale/easyui-lang-zh_CN.js"></script>
 
 <script type="text/javascript" src="/lzpt/js/lzpt/project.js"></script>
+
+<script type="text/javascript" src="/lzpt/js/highcharts/highcharts.js"></script>
 <meta charset="UTF-8">
 <title>党风廉政建设责任制检查考核</title>
 
@@ -183,7 +185,10 @@ jQuery.prototype.serializeObject=function(){
 				}
 			},{
 				"icon":"/lzpt/images/gif_47_027.gif",
-				"title":"数据仪表盘"
+				"title":"数据仪表盘",
+				callbak:function(){
+					toPage("纪委主控台>>数据仪表盘","reportChar.jsp");
+				}
 			},{
 				"icon":"/lzpt/images/gif_47_078.gif",
 				"title":"随机抽查",
