@@ -44,13 +44,24 @@ public class WorkArchive {
 	//干部集合
 	private List<WorkArchive> subWorkArchives;
 	
+	private Integer order;
+	
 	public WorkArchive(){}
 	
-	public WorkArchive(String id,String wname){
+	public WorkArchive(String id,String wname,Integer order){
 		this.id=id;
 		this.wname=wname;
+		this.order=order;
 	}
 	
+
+	public Integer getOrder() {
+		return order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
 
 	public String getId() {
 		return id;

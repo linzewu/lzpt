@@ -24,7 +24,7 @@ public class UnitYearBudgetReportQuery extends SQLAbstract {
 		if(unitId!=null){
 			whereSql+=" and tq.t_waid=:unitId ";
 		}
-		String sql="SELECT tq.*,tu.c_year,tu.c_money*0.25 as quarterTotal,tu.c_money from tm_quarteroutlay tq LEFT JOIN tm_unityearbudget tu on tq.c_qoyear=tu.c_year and tq.t_waid = tu.c_unitId  where 1=1  "+whereSql +"  order by tq.c_qoyear desc,tq.c_qoquarter asc";
+		String sql="SELECT tq.*,tu.c_year,tu.c_money*0.25 as quarterTotal,tu.c_money from tm_quarteroutlay tq LEFT JOIN tm_unityearbudget tu on tq.c_qoyear=tu.c_year and tq.t_waid = tu.c_unitId  left join tm_workarchive wa on wa.c_id=tq.t_waid  where 1=1  "+whereSql +"  order by tq.c_qoyear desc,tq.c_qoquarter asc,wa.c_order asc";
 		
 		return sql;
 	}

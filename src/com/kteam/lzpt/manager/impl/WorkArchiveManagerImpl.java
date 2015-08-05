@@ -157,7 +157,7 @@ public class WorkArchiveManagerImpl extends HibernateDaoSupport implements
 	@Override
 	public List<WorkArchive> getSimpleUnits() {
 		
-		List<WorkArchive> workArchive = this.getHibernateTemplate().find("Select new WorkArchive(id,wname) from WorkArchive");
+		List<WorkArchive> workArchive = this.getHibernateTemplate().find("Select new WorkArchive(id,wname,order) from WorkArchive order by order asc");
 		
 		return workArchive;
 	}

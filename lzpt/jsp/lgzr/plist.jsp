@@ -4,7 +4,7 @@
 <div style="width: 100%;height: 90%;">
 	 <div id="proTab" class="easyui-tabs"  style="height:480px">
 	 <div title="项目列表" >
-		<table id="projectList" class="easyui-datagrid"   data-options="onDblClickRow:pClickRow,url:'/lzpt/project!getProjects.action',border:true,singleSelect:true,fit:true,fitColumns:true,queryParams:{'pro.projectType':projectTypeId},footer:'#ft',toolbar:'#tb'">
+		<table id="projectList" class="easyui-datagrid"   data-options="onDblClickRow:pClickRow,url:'/lzpt/project!getProjects.action',border:true,singleSelect:true,fit:true,fitColumns:true,queryParams:{'pro.projectType':projectTypeId,'pro.state':'0'},footer:'#ft',toolbar:'#tb'">
 			<thead>
 				<tr>
 					<th data-options="field:'year'" width="100">年份</th>

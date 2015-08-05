@@ -20,8 +20,7 @@ public class TaskProcessScoreQuery extends SQLAbstract {
 			whereSql+=" and tp.unit_id=:unit";
 		}
 		
-		String sql="SELECT year(t.c_startDate) as year, tp.unit_id as unit,t.workItem_id as type,t.c_title as title,concat(date_format(t.c_startDate,'%Y-%m-%d'),'到',date_format(t.c_endDate,'%Y-%m-%d')) as dt , date_format(t.c_lastDate,'%Y-%m-%d') as lastDate  ,date_format(tp.c_processDate,'%Y-%m-%d') as processDate ,tp.c_systemScore as systemScore FROM tm_taskprocess as tp LEFT JOIN tm_task t ON t.c_id=tp.task_id where 1=1  "+whereSql;
-		
+		String sql="SELECT year(t.c_startDate) as year, tp.unit_id as unit,t.workItem_id as type,t.c_title as title,concat(date_format(t.c_startDate,'%Y-%m-%d'),'到',date_format(t.c_endDate,'%Y-%m-%d')) as dt , date_format(t.c_lastDate,'%Y-%m-%d') as lastDate  ,date_format(tp.c_processDate,'%Y-%m-%d') as processDate ,tp.c_systemScore as systemScore FROM tm_taskprocess as tp LEFT JOIN tm_task t ON t.c_id=tp.task_id left join tm_workarchive twa on twa.c_id= tp.unit_id where 1=1  "+whereSql +" order by year(t.c_startDate) asc , twa.c_order asc";
 		return sql;
 	}
 

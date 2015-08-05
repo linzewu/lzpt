@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
  
 <div id="tt" class="easyui-tabs"  style="height: 480px">
 	<div title="年度考核综合表" >

@@ -51,6 +51,9 @@
             column="c_peoNum"
             length="100"
             type="java.lang.Integer" />
+       
+        <property
+            name="order"  column="c_order" type="java.lang.Integer"  />
             
        <bag name="caList" table="tm_WA_CA" inverse="true">
             <key column="c_waid"/>
@@ -73,7 +76,6 @@
         </bag>
             
      <!--<many-to-one name="wim" unique="true" cascade="all" column="c_wimid"></many-to-one>-->
-      
 
     </class>
 

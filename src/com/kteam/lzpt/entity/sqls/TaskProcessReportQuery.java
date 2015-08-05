@@ -20,7 +20,7 @@ public class TaskProcessReportQuery extends SQLAbstract {
 			whereSql+=" and tp.unit_id=:unit";
 		}
 		
-		String sql="SELECT YEAR(t.c_startDate) as year,unit_id as unit ,workItem_id as type ,AVG(c_systemScore) avgScore FROM tm_taskprocess as tp LEFT JOIN tm_task t ON t.c_id=tp.task_id  where 1=1 "+whereSql+"  GROUP BY YEAR(t.c_startDate),unit_id,workItem_id  ";
+		String sql="SELECT YEAR(t.c_startDate) as year,unit_id as unit ,workItem_id as type ,AVG(c_systemScore) avgScore FROM tm_taskprocess as tp LEFT JOIN tm_task t ON t.c_id=tp.task_id left join tm_workarchive twa on twa.c_id=tp.unit_id where 1=1 "+whereSql+"  GROUP BY YEAR(t.c_startDate),unit_id,workItem_id order by YEAR(t.c_startDate) asc,twa.c_order asc  ";
 		
 		return sql;
 	}

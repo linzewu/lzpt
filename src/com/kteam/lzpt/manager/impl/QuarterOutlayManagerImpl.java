@@ -102,6 +102,7 @@ public class QuarterOutlayManagerImpl extends HibernateDaoSupport implements IQu
 				}
 			}
 		}
+		sb.append("order by qoyear asc , qoquarter asc , qo.wa.order asc ");
 		final String sql = strsql + sb.toString();
 		
 		list = this.getHibernateTemplate().execute(new HibernateCallback<List<QuarterOutlay>>(){
@@ -230,6 +231,7 @@ public class QuarterOutlayManagerImpl extends HibernateDaoSupport implements IQu
 			}
 		}
 		sb.append(" group by tmq1.t_waid,tmq1.c_qoyear  ");
+		sb.append(" order by twa.c_order asc ");
 		final String sql = sb.toString();
 		list = this.getHibernateTemplate().execute(new HibernateCallback<List>(){
 

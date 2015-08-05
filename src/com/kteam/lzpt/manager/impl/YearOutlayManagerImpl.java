@@ -220,7 +220,7 @@ public class YearOutlayManagerImpl extends HibernateDaoSupport implements
 			paramMap.put("waid", waid);
 		}
 		sb.append(" group by tq.t_waid");
-		
+		sb.append(" order by twa.c_order ");
 		final String sql = sb.toString();
 		
 		list = this.getHibernateTemplate().execute(new HibernateCallback<List>(){
