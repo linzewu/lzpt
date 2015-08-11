@@ -130,7 +130,7 @@ function dataLoad(){
 		
 		var checkbox = "<tr>"+
 			"<td class=\"info_title\"><label for=\"check\">审核意见:</label></td>"+
-			"<td class=\"info2\"><input id=\"check\" type=\"text\" class=\"easyui-textbox\" style=\"width:600px;height: 50px;\" data-options=\"multiline:true\" prompt=\"请输入审核意见\" >"+
+			"<td class=\"info2\"><input id=\"check\" type=\"text\" class=\"easyui-textbox\" style=\"width:600px;height: 50px;\" data-options=\"multiline:true\" prompt=\"请输入审核意见\" ></td>"+
 		"</tr>";
 		
 		var numberbox="<tr><td class=\"info_title\"><label >审核得分:</label></td><td><input id=\"checkScore\" name=\"checkScore\" class=\"easyui-numberbox\" prompt=\"请输入审核得分\"  data-options=\"min:0,precision:2,max:"+maxScore+"\"></td></tr>";

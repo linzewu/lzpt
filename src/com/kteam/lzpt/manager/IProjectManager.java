@@ -35,4 +35,6 @@ public interface IProjectManager {
 	public List<ProjectConsole> getProjectConsole();
 	
 	public List<Project> getUncheckProjectList(Integer maxResults,Project project);
+	
+	public void saveProjectType(ProjectType projectType);
 }

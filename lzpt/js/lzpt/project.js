@@ -27,23 +27,89 @@ function formBind(formName){
 	    	//获取editor 的值
 	    	if(config){
 	    	 	var editorConifg  = config['edit'];
+	    	 	
+	    	 	var validateInfo={};
+	    	 	
+	    	 	if(currentProjectType.validateInfo){
+	    	 		validateInfo=$.parseJSON(currentProjectType.validateInfo)[formName];
+	    	 		
+	    	 	}
+	    	 	
 	    	 	if(editorConifg){
-	    	 		editorConifg=editorConifg.split(",")
+	    	 		editorConifg=editorConifg.split(",");
+	    	 		var isEmpty=false;
+	    	 		var isRigth=true;
+	    	 		
 	    	 		$.each(editorConifg,function(i,n){
 	    	 			var editor =  CKEDITOR.instances[n];
 	    		    	formData[n]=editor.document.getBody().getHtml();
+	    		    	
+	    		    	var editText=editor.document.getBody().getText();
+	    		    	
+	    		    	if($.trim(editText)==""){
+	    		    		isEmpty=true;
+	    		    		return false;
+	    		    	}
+	    		    	
+	    		    	console.log(validateInfo[n])
+	    		    	
+	    		    	if(validateInfo[n]){
+	    		    		var keys= validateInfo[n].split(",");
+		    		    	
+		    		    	$.each(keys,function(index,key){
+		    		    		if(editText.indexOf(key)==-1){
+		    		    			isRigth=false;
+		    		    			return false;
+		    		    		}
+		    		    	})
+	    		    	}
 	    	 		});
+	    	 		
+	    	 		if(isEmpty){
+	    	 			$.messager.alert("提示","文本内容不能为空！");
+	    	 			return false;
+	    	 		}
+	    	 		
+	    	 		if(!isRigth){
+	    	 			$.messager.alert("提示","您输入的内容似乎不符合该项目内容，请联系纪委进行确认。");
+    		    		return false;
+    		    	}
+    		    	
+	    	 		
 	    	 	}
 	    	 	
 		    	//获取grid value
 	    	 	var gridConfig=config['grid']
 	    	 	
+	    	 	var gridIsEmpty=false;
+	    	 	var gridErrorMessage;
 	    	 	if(gridConfig){
 	    	 		gridConfig=gridConfig.split(",");
 	    	 		$.each(gridConfig,function(i,n){
 	    	 			var griddata = $("#"+n).datagrid("getRows");
+	    	 			if(griddata.length==0){
+	    	 				gridIsEmpty=true;
+	    	 				gridErrorMessage=$("#"+n).datagrid("options").title+"不能为空！";
+	    	 				return false;
+	    	 			}
+	    	 			
+	    	 			$.each(griddata,function(j,k){
+	    	 				if(JSON.stringify(k)=="{}"){
+	    	 					gridIsEmpty=true;
+		    	 				gridErrorMessage=$("#"+n).datagrid("options").title+"存在未保存的记录，请先保存！！";
+	    	 					return false;
+	    	 				}
+	    	 				
+	    	 			});
+	    	 			
+	    	 			
 	    	 			formData[n]=JSON.stringify(griddata);
 	    	 		})
+	    	 	}
+	    	 	
+	    	 	if(gridIsEmpty){
+	    	 		$.messager.alert("提示",gridErrorMessage);
+	    	 		return false;
 	    	 	}
 	    	 	
 	    	 	var scoreConfig=config['score'];

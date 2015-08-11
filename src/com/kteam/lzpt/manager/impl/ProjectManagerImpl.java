@@ -282,4 +282,11 @@ public class ProjectManagerImpl implements IProjectManager {
 
 	}
 
+	@Override
+	public void saveProjectType(ProjectType projectType) {
+		
+		this.hibernateTemplate.save(projectType);
+		
+	}
+
 }

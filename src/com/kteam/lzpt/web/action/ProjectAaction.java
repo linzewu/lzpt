@@ -280,5 +280,22 @@ public class ProjectAaction {
 	
 		return Action.SUCCESS;
 	}
+	
+	public String saveProjectTypeSetting(){
+		
+		String validateInfo=pt.getValidateInfo();
+		
+		pt = this.getProjectManager().getProjectTypeObject(pt.getId());
+		
+		pt.setValidateInfo(validateInfo);
+		
+		this.getProjectManager().saveProjectType(pt);
+		
+		jsonMap=new HashMap();
+		jsonMap.put(Action.SUCCESS,true);
+		
+		
+		return Action.SUCCESS;
+	}
 
 }

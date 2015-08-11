@@ -16,9 +16,11 @@
 var projectType;
 var projectTypeId;
 var projectPage;
+var currentProjectType;
 
 function ptClickRow(index,row){
 	
+	currentProjectType=row;
 	projectType=row.name;
 	projectTypeId=row.id;
 	projectPage=row.page;

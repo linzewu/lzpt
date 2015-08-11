@@ -21,6 +21,27 @@ public class ProjectType  {
 	
 	private String page;
 	
+	private String validateItem;
+	
+	private String validateInfo;
+	
+	
+
+	public String getValidateItem() {
+		return validateItem;
+	}
+
+	public String getValidateInfo() {
+		return validateInfo;
+	}
+
+	public void setValidateItem(String validateItem) {
+		this.validateItem = validateItem;
+	}
+
+	public void setValidateInfo(String validateInfo) {
+		this.validateInfo = validateInfo;
+	}
 
 	public int getId() {
 		return id;
