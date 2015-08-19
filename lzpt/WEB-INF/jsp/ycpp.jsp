@@ -179,6 +179,7 @@ a:hover {color:#000000;text-decoration:none;}
 					if(roleName.equals("纪委")||roleName.equals("纪委工作人员")){ 
 				%>
 				<li><a href="javaScript:void(0);" onclick="showMenu('ycpp','baseManager!NoticeAndCriticismList!toPage.action')">远程大屏系统</a></li>
+				<li><a href="http://61.191.190.245:8082/geyi/login.aspx"  target="_blank">即时评价系统</a></li>
 				<%
 					}else{
 				%>

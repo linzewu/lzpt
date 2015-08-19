@@ -38,7 +38,7 @@ function formBind(formName){
 	    	 	if(editorConifg){
 	    	 		editorConifg=editorConifg.split(",");
 	    	 		var isEmpty=false;
-	    	 		var isRigth=true;
+	    	 		var isRigth=false;
 	    	 		
 	    	 		$.each(editorConifg,function(i,n){
 	    	 			var editor =  CKEDITOR.instances[n];
@@ -56,9 +56,13 @@ function formBind(formName){
 	    		    	if(validateInfo[n]){
 	    		    		var keys= validateInfo[n].split(",");
 		    		    	
+	    		    		if(keys.length==0){
+	    		    			isRigth=true;
+	    		    		}
+	    		    		
 		    		    	$.each(keys,function(index,key){
-		    		    		if(editText.indexOf(key)==-1){
-		    		    			isRigth=false;
+		    		    		if(editText.indexOf(key)>=0){
+		    		    			isRigth=true;
 		    		    			return false;
 		    		    		}
 		    		    	})

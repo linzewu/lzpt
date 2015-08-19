@@ -27,7 +27,7 @@ function loadData(data){
 	if(isreolad){
 		isreolad=false;
 		$('#'+tid).datagrid("loadData",data);
-		$('#'+tid).datagrid('reloadFooter',[{createUser: '合计', score: sumScore.toFixed(2)}]);
+		$('#'+tid).datagrid('reloadFooter',[{createUser: '合计', score: Number(sumScore).toFixed(2)}]);
 		
 	}
 	
