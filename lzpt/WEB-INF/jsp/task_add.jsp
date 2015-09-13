@@ -49,13 +49,13 @@ var workItems=${wis==""?"[]":wis};
 					style="width: 30px;" editable="false" required="true" missingMessage="请输入百分比"
 						type="text" name="task.percentage" />%<br /> <label>如果任务执行超过有效时段并在最后期限之前，则只得到相应百分比的分数。默认70%</label></td>
 				</tr>
-				
+				<!-- 
 				<tr>
 					<th><label for="task.lastDate">最后期限:</label></th>
 					<td><input class="easyui-datebox" id="lastDate" style="width: 200px;" editable="false" required="true" missingMessage="请填写结束时间"
 						type="text" name="task.lastDate" /><br /> <label>如果超过这个期限，任务将会过期，单位得分为0。</label></td>
 				</tr>
-				
+				 -->
 				<tr>
 					<th><label for="task.context">主要内容:</label></th>
 					<td><textarea cols="80" rows="10" id="context" name="task.context"></textarea><br> <label>纪检工作主要内容及说明，不超过500字，如内容较多请选择“附近”栏上传附件</label></td>

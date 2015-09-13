@@ -161,8 +161,13 @@ workUnit:[{label: '公安局',value: '0'},
           {label: '财政局',value: '26'},
           {label: '发改委',value: '27'},
           {label: '工信委',value: '28'}],
-irregularities:[{label: '上班时间聊天',value: '0'},
-                {label: '上班时间脱岗',value: '1'}],
+irregularities:[{label: '上班时间串岗聊天',value: '0'},
+                {label: '上班时间玩游戏',value: '1'},
+                {label: '上班时间看视频',value: '2'},
+                {label: '办事服务态度不好',value: '3'},
+                {label: '上班时间玩手机',value: '4'},
+                {label: '上班时间炒股',value: '5'},
+                {label: '其他违规行为',value: '6'}],
 taskType:[{label: '党风政风监督工作',value: '1'},
           {label: '纪律审查工作',value: '2'},
           {label: '宣调和干部工作',value: '4'},
@@ -177,7 +182,6 @@ quarter:[{label: '第一季度',value: '1'},
 isExist:[{label: '无',value: '0'},
          {label: '有',value: '1'}]
 };
-
 
 
 function getLabelByid(type,id){

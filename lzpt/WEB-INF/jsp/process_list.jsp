@@ -21,10 +21,21 @@
 <script type="text/javascript" src="${basePath }js/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="${basePath }js/lzpt/taskProcess.js"></script>
 <script type="text/javascript">
-	function test(data){
+	function loadOver(data){
 		var rows=data.rows;
 		
-		var now=new Date();
+		if(rows.length>0){
+			$.messager.show({
+	            title:'提醒',
+	            msg:'您有未完成的任务，请抓紧时间处理！',
+	            timeout:8000,
+	            showType:'show'
+	        });
+		}
+		
+	
+		
+	/* 	var now=new Date();
 		
 		var endTask=[];
 		
@@ -42,18 +53,17 @@
 			if(time<new Date().getTime()){
 				lastTask.push(rows[i]);
 			}
-		}
+		} */
 	//	alert(endTask.length);
 		
 	//	alert(lastTask.length);
-		
 	}
 
 </script>
 
 </head>
 <body type="list">
-	<table id="dg" class="easyui-datagrid" data-options="rownumbers:true,title:'待办任务列表',onDblClickRow:toInfo,onSelect:initTool,onLoadSuccess:test"
+	<table id="dg" class="easyui-datagrid" data-options="rownumbers:true,title:'待办任务列表',onDblClickRow:toInfo,onSelect:initTool,onLoadSuccess:loadOver"
 		toolbar="#toolbar" fitColumns="true" singleSelect="true" url="task!getTaskProcessByUserUnit.action?taskProcess.processState=0">
 		<thead>
 			<tr> 
@@ -62,7 +72,7 @@
 <!-- 				<th data-options="field:'cycle',width:40">任务周期</th> -->
 				<th data-options="field:'startDate',width:60,formatter:dateToStr">开始时间</th>
 				<th data-options="field:'endDate',width:60,formatter:dateToStr">结束时间</th>
-				<th data-options="field:'lastDate',width:60,formatter:dateToStr">最后时间</th>
+				<!-- <th data-options="field:'lastDate',width:60,formatter:dateToStr">最后时间</th> -->
 			</tr>
 		</thead>
 	</table>

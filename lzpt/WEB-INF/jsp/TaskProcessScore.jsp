@@ -76,7 +76,7 @@
 	            <th data-options="field:'type',width:30"  formatter="formattertaskType" >任务类型</th>
 	             <th data-options="field:'title',width:60"  >任务标题</th> 
 	            <th data-options="field:'dt',width:30" >执行时段</th>
-	            <th data-options="field:'lastDate',width:20" >最后期限</th>
+	          <!--  <th data-options="field:'lastDate',width:20" >最后期限</th> --> 
 	             <th data-options="field:'processDate',width:20" >完成时间</th>
 	            <th data-options="field:'systemScore',width:10" >得分</th>
 	        </tr>  

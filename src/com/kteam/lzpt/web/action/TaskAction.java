@@ -509,28 +509,23 @@ public class TaskAction extends BaseAction {
 		
 		Calendar endCalendar = Calendar.getInstance();
 		
-		Calendar lastCalendar = Calendar.getInstance();
+//		Calendar lastCalendar = Calendar.getInstance();
 		
 		
 		endCalendar.setTime(task.getEndDate());
 		
-		lastCalendar.setTime(task.getLastDate());
+//		lastCalendar.setTime(task.getLastDate());
 		
 		
-		lastCalendar.add(Calendar.DAY_OF_MONTH, 1);
+//		lastCalendar.add(Calendar.DAY_OF_MONTH, 1);
 		//最后期限的第二天凌晨，也就是超过期限的时刻
 		endCalendar.add(Calendar.DAY_OF_MONTH, 1);
 		
 		if(date.getTime() < endCalendar.getTime().getTime()){
 			systemScore=Task.SYSTEMSCORE;
-		}else if(date.getTime() >= endCalendar.getTime().getTime()
-				&&date.getTime()<lastCalendar.getTime().getTime()){
+		}else{
 			systemScore=((Double)(Task.SYSTEMSCORE*(task.getPercentage()/100.0))).intValue();
 		}
-		else{
-			systemScore=0;
-		}
-		
 		return systemScore;
 	}
 	
