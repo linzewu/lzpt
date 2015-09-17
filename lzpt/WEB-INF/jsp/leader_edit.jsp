@@ -175,6 +175,7 @@
 					</div>
 				</div>
 			</div>
+			<%-- 
 			<div title="领导干部有关事项报告表一" style="padding: 5px;">
 				<div id="leaderReport1" class="easyui-tabs"
 					data-options=" onSelect:leaderReport1TabSelect">
@@ -250,6 +251,7 @@
 					</div>
 				</div>
 			</div>
+			 --%>
 			<div title="工作及培训经历" style="padding: 5px;">
 				<div id="worktrainexperien" class="easyui-tabs"
 					data-options="onSelect:exprienceTabSelect">

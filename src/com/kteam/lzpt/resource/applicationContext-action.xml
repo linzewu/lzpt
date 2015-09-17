@@ -10,7 +10,12 @@
 			http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
            	http://www.springframework.org/schema/tx 
 			http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
-	    
+			
+    
+	   <bean id="dutyInfoAction" class="com.kteam.lzpt.web.action.DutyInfoAction" scope="prototype">
+	   </bean>
+	   
+	   
 	   <bean id="userAction" class="com.kteam.lzpt.web.action.UserAction" scope="prototype">
 	       <property name="userManager" ref="userManager"></property>
 	   </bean>

@@ -5,6 +5,21 @@ img{border: none;}
 input{height: 34px; width:245px; border: none;vertical-align: middle;text-indent: 35px; outline: none}
 .container{ position:absolute;width:100%; height: 100%;z-index:999; }
 .logo{width:794px; height:47px;position:relative;top: 22%; left:50%; margin-left: -397px; background: url("../images/logo.png") center  no-repeat; }
-.list {position:absolute; top:100px; }
+.list {position:absolute; top:30px; }
 .list ul li{width:135px; height: 117px;list-style: none;float: left; margin-right: 50px;}
 
+.f1{
+	position:absolute;top: 33%; left:200px; width: 600px; height: 300px;border:4px solid #1E7ACE;
+}
+
+.f2{
+	position:absolute;top: 33%; left:850px;  width: 400px;height: 300px;border:4px solid #1E7ACE;
+}
+
+fieldset legend {
+color:#1E7ACE;
+font-weight:bold;
+padding:3px 20px 3px 20px;
+border:4px solid #1E7ACE;
+background:#fff ;
+}

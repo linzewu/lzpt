@@ -203,10 +203,13 @@ a:hover {color:#000000;text-decoration:none;}
 				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('dzda','workArchive!toPage.action?pageName=list')">廉政电子档案系统</a></li> -->
 				<li><a href="javaScript:void(0);" onclick="showMenu('lzzsfx','baseManager!TaskProcessScore!toPage.action')">廉政评估系统</a></li>
 				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('sqpt','encourageAppeal!toPage.action?pageName=list')">廉政诉求平台</a></li> -->
-				<li><a href="javaScript:void(0);" onclick="showMenu('qlyg','keyWordsConfig!toPage.action?pageName=list')">网络舆情雷达</a></li>
+				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('qlyg','keyWordsConfig!toPage.action?pageName=list')">网络舆情雷达</a></li> -->
 				<li><a href="javaScript:void(0);" onclick="showMenu('tzfjjs','task!toPage.action?pageName=fileSearch')">台账附件管理</a></li>
 				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('tsjbpt','baseManager!ComplainList!toPage.action')">投诉举报平台</a></li> -->
 				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('jdypjred','baseManager!EvaluationSupervisionRead!toPage.action')">监督员评价</a></li> -->
+				<li><a href="javaScript:void(0);" onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li>
+				<li><a href="javaScript:void(0);" onclick="showMenu('jwlzqk','dutyInfo!toPage.action?pageName=dutyInfo')">镇纪委履职情况</a></li>
+				
 				<%
 					}
 					if(roleName.equals("乡镇单位管理员")){
@@ -216,6 +219,7 @@ a:hover {color:#000000;text-decoration:none;}
 				<li><a href="javaScript:void(0);" onclick="showMenu('dzda','cadreArchive!toPage.action?pageName=list')">廉政电子档案</a></li>
 				<li><a href="javaScript:void(0);" onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li>
 				<li><a href="javaScript:void(0);" onclick="showMenu('sjbg','baseManager!auditReport!toPage.action')">审计报告</a></li>
+				<li><a href="javaScript:void(0);" onclick="showMenu('jwlzqk','dutyInfo!toPage.action?pageName=dutyInfo')">镇纪委履职情况</a></li>
 				<%
 					}
 					if(roleName.equals("系统管理员")){
@@ -234,6 +238,7 @@ a:hover {color:#000000;text-decoration:none;}
 					<li><a href="javaScript:void(0);" onclick="showMenu('kpgl','task!toPage.action?pageName=list&workItem=10')">考评系统</a></li>
 					<li><a href="javaScript:void(0);" onclick="showMenu('lzzsfx','caseCheck!toPage.action?pageName=list9')">廉政评估系统</a></li>
 					<li><a href="javaScript:void(0);" onclick="showMenu('qlyg','keyWordsConfig!toPage.action?pageName=list')">网络舆情雷达</a></li>
+					<li><a href="javaScript:void(0);" onclick="showMenu('jwlzqk','dutyInfo!toPage.action?pageName=dutyInfo')">乡镇纪委履职情况</a></li>
 				<%
 					}
 				%>
@@ -241,6 +246,14 @@ a:hover {color:#000000;text-decoration:none;}
 		</div>
 	</div>
 	<div data-options="region:'west',title:'功能菜单'" style="width: 230px;">
+	
+		<div class="menus mpanel" id="jwlzqk"  style="display: none;">
+			<ul>
+			<li><a href="javascript:void(0)" onclick="topage('dutyInfo!toPage.action?pageName=dutyInfo',this)"><img
+						alt="乡镇纪委履职情况" src="${basePath}images/gif_47_030.gif" />乡镇纪委履职情况</a></li>
+			</ul>
+		</div>
+	
 		<div class="menus mpanel" id="dzda"  style="display: none;">
 			<ul>
 				<li><a href="javascript:void(0)" onclick="topage('cadreArchive!toPage.action?pageName=list',this)"><img
@@ -315,6 +328,16 @@ a:hover {color:#000000;text-decoration:none;}
 			<ul>
 				<li><a href="javascript:void(0)" onclick="topage('baseManager!SpecialManageList!toPage.action',this)"><img
 						alt="专项治理" src="${basePath}images/grda.png" />专项治理</a></li>
+			
+			
+			<%
+				if(roleName.equals("纪委")||roleName.equals("纪委工作人员")){
+			%>
+				<li><a href="javascript:void(0)" onclick="topage('baseManager!SpecialManageReport!toPage.action',this)"><img
+						alt="专项治理" src="${basePath}images/gif_47_084.gif" />统计报表</a></li>
+			<%
+			}
+			%>
 			</ul>
 		</div>
 		

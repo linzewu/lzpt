@@ -203,7 +203,7 @@ a:hover {color:#000000;text-decoration:none;}
 			<ul>
 				<li><a href="javascript:void(0)" onclick="topage('cadreArchive!toPage.action?pageName=list',this)"><img
 						alt="干部廉政档案" src="${basePath}images/grda.png" />干部廉政档案</a></li>
-			 <li><a href="javascript:void(0)" onclick="topage('workArchive!toPage.action?pageName=list',this)"><img
+			 	<li><a href="javascript:void(0)" onclick="topage('workArchive!toPage.action?pageName=list',this)"><img
 						alt="单位机构廉政档案" src="${basePath}images/bmda.png" />单位机构廉政档案</a></li>
 			</ul>
 		</div>

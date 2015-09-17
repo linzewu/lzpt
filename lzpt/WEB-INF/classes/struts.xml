@@ -39,6 +39,12 @@
 				WEB-INF/jsp/tsjb.jsp
             </result>
         </action>
+        
+		<action name="wlyq" >
+            <result>
+				WEB-INF/jsp/wlyq.jsp
+            </result>
+        </action>
 
 		<action name="user!*" class="userAction" method="{1}">
 			<result name="list">WEB-INF/jsp/user_list.jsp</result>
@@ -63,6 +69,10 @@
 			<result name="addLeader">WEB-INF/jsp/leader_add.jsp</result>
 			<result name="leaderInfo">WEB-INF/jsp/leader_info.jsp</result>
 			<result name="updateleader">WEB-INF/jsp/leader_edit.jsp</result>
+		</action>
+		
+		<action name="dutyInfo!*" class="dutyInfoAction" method="{1}">
+			<result name="dutyInfo">WEB-INF/jsp/dutyInfo.jsp</result>
 		</action>
 
 		<action name="task!*" class="taskAction" method="{1}">
