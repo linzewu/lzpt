@@ -207,8 +207,8 @@ a:hover {color:#000000;text-decoration:none;}
 				<li><a href="javaScript:void(0);" onclick="showMenu('tzfjjs','task!toPage.action?pageName=fileSearch')">台账附件管理</a></li>
 				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('tsjbpt','baseManager!ComplainList!toPage.action')">投诉举报平台</a></li> -->
 				<!-- <li><a href="javaScript:void(0);" onclick="showMenu('jdypjred','baseManager!EvaluationSupervisionRead!toPage.action')">监督员评价</a></li> -->
-				<li><a href="javaScript:void(0);" onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li>
-				<li><a href="javaScript:void(0);" onclick="showMenu('jwlzqk','dutyInfo!toPage.action?pageName=dutyInfo')">镇纪委履职情况</a></li>
+<!-- 				<li><a href="javaScript:void(0);" onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li> -->
+				<li><a href="javaScript:void(0);" onclick="showMenu('jwlzqk','dutyInfo!toPage.action?pageName=dutyInfo')">乡镇纪委履职情况</a></li>
 				
 				<%
 					}

@@ -183,7 +183,7 @@ a:hover {color:#000000;text-decoration:none;}
 				<li><a href="javaScript:void(0);" onclick="showMenu('sgjf','quarterOutlay!toPage.action?pageName=list')">三公经费</a></li>
 				<li><a href="javaScript:void(0);" onclick="showMenu('sjbg','baseManager!auditReport!toPage.action')">审计报告</a></li>
 				<li><a href="javaScript:void(0);" onclick="showMenu('jdypjred','baseManager!EvaluationSupervisionRead!toPage.action')">监督员评价</a></li>
-<!-- 				<li><a href="javaScript:void(0);"  onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li> -->
+				<li><a href="javaScript:void(0);"  onclick="showMenu('zxzl','baseManager!SpecialManageList!toPage.action')">专项治理</a></li> 
 				
 				<li><a href="http://203.171.235.222:8089/sanzi/?pid=360830"  target="_blank">井冈阳光农廉网</a></li>
 				<li><a href="http://10.177.10.88:8008/yxxecgap"  target="_blank">行政审批</a></li>

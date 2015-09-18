@@ -40,7 +40,7 @@ public class LoginFilter implements Filter {
 			
 			if("GET".equalsIgnoreCase(req.getMethod())&&(uri.contains("index.action")||
 					uri.contains("tsjb.action")||uri.contains("dfzfjd.action")||uri.contains("gbdn.action")
-					||uri.contains("ycpp.action")
+					||uri.contains("ycpp.action")||uri.contains("wlyq.action")
 					)){
 				req.getSession().setAttribute("gotoPage", req.getRequestURL().toString());
 			}
