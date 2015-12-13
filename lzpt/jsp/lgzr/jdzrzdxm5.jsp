@@ -4,11 +4,7 @@
 	<div title="插手干预工程建设项目" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi60" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
-				<tr>
-					<td class="info_title"><label for="date">时间:</label></td>
-					<td class="info2"><input name="date"
-						class="easyui-datebox" required="required" /></td>
-				</tr>
+				
 				<tr>
 					<td class="info_title"><label for="plan">违纪违规查处:</label></td>
 					

@@ -13,23 +13,33 @@
 				
 				
 				<tr>
-					<td class="info_title"><label for="fund1">民生资金执行情况:</label></td>
+					<td class="info_title"><label for="fund1">成立工作机构，健全工作机制:</label></td>
 					<td class="info2"><textarea  id="fund1" name="fund1"></textarea></td>
 				</tr>
 				
 				<tr>
-					<td class="info_title"><label for="fund2">民生资金专账管理情况:</label></td>
+					<td class="info_title"><label for="fund2">民生资金分配履行工作程序:</label></td>
 					<td class="info2"><textarea  id="fund2" name="fund2"></textarea></td>
 				</tr>
 				
 				<tr>
-					<td class="info_title"><label for="fund3">存在问题及改进措施:</label></td>
+					<td class="info_title"><label for="fund3">开展自查自纠,督促自查发现的问题逐项整改落实:</label></td>
 					<td class="info2"><textarea  id="fund3" name="fund3"></textarea></td>
 				</tr>
 				
 				<tr>
-					<td class="info_title"><label for="fund4">民政专项资金管理使用情况自检自查报告:</label></td>
+					<td class="info_title"><label for="fund4">认真开展重点检查,对发现的问题依法依规进行处理处罚:</label></td>
 					<td class="info2"><textarea  id="fund4" name="fund4"></textarea></td>
+				</tr>
+				
+				<tr>
+					<td class="info_title"><label for="fund5">公布举报电话、邮箱及地址，指定专人负责受理群众来信来访:</label></td>
+					<td class="info2"><textarea  id="fund5" name="fund5"></textarea></td>
+				</tr>
+				
+				<tr>
+					<td class="info_title"><label for="fund6">坚持问题导向，针对存在的问题，深入分析原因，研究制定民生资金监管办法、规定:</label></td>
+					<td class="info2"><textarea  id="fund6" name="fund6"></textarea></td>
 				</tr>
 				
 				<tr>
@@ -50,7 +60,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="10">
+			<input type="hidden" name="pi.score" value="5">
 			<input type="hidden" name="pi.piname" value="pi42">
 		</form> 
 	</div>
@@ -58,13 +68,12 @@
 	
 </div>
 
-<div class="projectTitle">评分标准：此项工作由县财政局负责评分，并上报到本系统。</div>
 
 
 <script type="text/javascript">
 
 var pconfig={
-		"pi42":{"uploadfile":"uploadFile","edit":"fund1,fund2,fund3,fund4"}
+		"pi42":{"uploadfile":"uploadFile","edit":"fund1,fund2,fund3,fund4,fund5,fund6"}
 	}; 
 	
 

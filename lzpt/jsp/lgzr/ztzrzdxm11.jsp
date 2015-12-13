@@ -1,36 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-<script type="text/javascript">
-	var sf=[{label:'支部党员大会',value:'支部党员大会'},{label:'支部委员会',value:'支部委员会'},{label:'党小组会',value:'党小组会'}];
-</script>
-
 <div class="easyui-tabs">
-	<div title="落实两个责任" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
-		<form id="pi27" method="post">
+	<div title="警示教育" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+		<form id="pi88" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				
 				<tr>
-					<td class="info_title"><label for="plan">两个责任、党章党纪党规教育落实情况:</label></td>
+					<td class="info_title"><label for="plan">警示教育:</label></td>
 					
 					<td class="info2">
-							<table id="lzjz" class="easyui-datagrid" title="三会一课" style="width:850px;height:auto"
-				            data-options="singleSelect: true,toolbar:'#sb3'">
+							<table id="rwfg" class="easyui-datagrid" title="警示教育" style="width:850px;height:auto"
+				            data-options="singleSelect: true,toolbar:'#sb'">
 						        <thead>
 						            <tr>
-						                <th data-options="field:'f4',width:100, editor:{type:'datebox',options:{ required:true}}" >会议时间</th>
-						      	        <th data-options="field:'f5',width:120, editor:{type:'combobox',options:{ required:true,valueField:'value',textField:'label',data:sf}}">会议类型</th>
-						      	        <th data-options="field:'f6',width:180, editor:{type:'textbox',options:{ required:false}}">会议主题</th>
-						      	        <th data-options="field:'f7',width:400, editor:{type:'textbox',options:{ required:false}}">两个责任、党章党纪党规教育落实情况（详细上传附件）</th>
+						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >时间</th>
+						      	        <th data-options="field:'f2',width:200, editor:{type:'textbox',options:{ required:true}}">会议主持人</th>
+						      	        <th data-options="field:'f3',width:450, editor:{type:'textbox',options:{ required:false}}">警示教育内容（详细上传附件）</th>
 						            </tr>
 						        </thead>
 						    </table>
-						    <div id="sb3" style="height:auto">
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append('lzjz')">新增</a>
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept('lzjz')">保存</a>
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit('lzjz')">删除</a>
+						    <div id="sb" style="height:auto">
+						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append('rwfg')">新增</a>
+						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept('rwfg')">保存</a>
+						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit('rwfg')">删除</a>
 						    </div>
-						    <input type="hidden" name="lzjz">
+						    <input type="hidden" name="rwfg">
 					</td>
 				</tr>
 				
@@ -46,19 +40,19 @@
 				
 			</table>
 			<div align="center">
-					<a href="javascript:void(0);" onclick="$('#pi27').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+					<a href="javascript:void(0);" onclick="$('#pi88').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
 			</div>
 			<input type="hidden" name="pro.id">
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
 			<input type="hidden" name="pi.score" value="1">
-			<input type="hidden" name="pi.piname" value="pi27">
+			<input type="hidden" name="pi.piname" value="pi88">
 		</form> 
 	</div>
 	
-	<!-- <div title="廉政讲座" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
-		<form id="pi28" method="post">
+	<div title="廉政讲座" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+		<form id="pi87" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				
 				<tr>
@@ -95,19 +89,19 @@
 				</tr>
 			</table>
 			<div align="center">
-					<a href="javascript:void(0);" onclick="$('#pi28').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+					<a href="javascript:void(0);" onclick="$('#pi87').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
 			</div>
 			<input type="hidden" name="pro.id">
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="0.2">
-			<input type="hidden" name="pi.piname" value="pi28">
+			<input type="hidden" name="pi.score" value="1">
+			<input type="hidden" name="pi.piname" value="pi87">
 		</form> 
 	</div>
 	
 	<div title="廉政文化点" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
-			<form id="pi29" method="post">
+			<form id="pi86" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				
 				<tr>
@@ -133,29 +127,29 @@
 				
 			</table>
 			<div align="center">
-					<a href="javascript:void(0);" onclick="$('#pi29').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+					<a href="javascript:void(0);" onclick="$('#pi86').submit()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
 			</div>
 			<input type="hidden" name="pro.id">
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="0.2">
-			<input type="hidden" name="pi.piname" value="pi29">
+			<input type="hidden" name="pi.score" value="2">
+			<input type="hidden" name="pi.piname" value="pi86">
 		</form> 
 		
-	</div> -->
+	</div>
 	
 </div>
 
-<script type="text/javascript">
 
+<script type="text/javascript">
 var pconfig={
-		"pi27":{"uploadfile":"uploadFile","grid":"lzjz"}
+		"pi88":{"uploadfile":"uploadFile","grid":"rwfg"},
+		"pi87":{"uploadfile":"uploadFile3","grid":"lzjz"},
+		"pi86":{"uploadfile":"uploadFile2","edit":"jsqk"}
 	}; 
 	
-
 	
-
 $(function(){
 	$.each(pconfig,function(key,data){
 		formBind(key);
@@ -172,5 +166,4 @@ $(function(){
 		loadProjectInfo();
 	}
 });
-
 </script>

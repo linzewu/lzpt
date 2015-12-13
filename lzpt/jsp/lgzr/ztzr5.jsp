@@ -5,22 +5,26 @@
 
 </script>
 <div class="easyui-tabs">
-	<div title="廉政承诺" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+	<div title="主体责任具体清单" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi11" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
 				<tr>
-					<td class="info_title"><label for="date">时间:</label></td>
+					<td class="info_title"><label for="date">上报时间:</label></td>
 					<td class="info2"><input name="date"
 						class="easyui-datebox" required="required" /></td>
 				</tr>
+				
 				<tr>
-					<td class="info_title"><label for="date">主要负责人:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
+					<td class="info_title"><label for="organization">党委（党组织）主体责任清单:</label></td>
+					<td class="info2"><textarea  id="organization" name="organization"></textarea></td>
 				</tr>
 				<tr>
-					<td class="info_title"><label for="honest">廉政承诺书:</label></td>
-					<td class="info2"><textarea  id="honest" name="honest"></textarea></td>
+					<td class="info_title"><label for="leaders">班子主要领导主体责任清单:</label></td>
+					<td class="info2"><textarea  id="leaders" name="leaders"></textarea></td>
+				</tr>
+				<tr>
+					<td class="info_title"><label for="incharge">分管领导主体责任清单:</label></td>
+					<td class="info2"><textarea  id="incharge" name="incharge"></textarea></td>
 				</tr>
 				<tr>
 					<td class="info_title">附件：</td>
@@ -45,32 +49,26 @@
 		</form> 
 	</div>
 	
-	<div title="违纪案件" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+	<div title="监督责任具体清单" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi12" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
-				
+				<tr>
+					<td class="info_title"><label for="date">上报时间:</label></td>
+					<td class="info2"><input name="date"
+						class="easyui-datebox" required="required" /></td>
+				</tr>
 				
 				<tr>
-					<td class="info_title"><label for="plan">违纪案件:</label></td>
-					
-					<td class="info2">
-							<table id="rwfg" class="easyui-datagrid" title="立案记录" style="width:850px;height:auto"
-				            data-options="singleSelect: true,toolbar:'#sb'">
-						        <thead>
-						            <tr>
-						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >案件时间</th>
-						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:false}}">违纪人员</th>
-						      	        <th data-options="field:'f3',width:550, editor:{type:'textbox',options:{ required:false}}">案件记录（详情上传附件,填写附件名）</th>
-						            </tr>
-						        </thead>
-						    </table>
-						    <div id="sb" style="height:auto">
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append('rwfg')">新增</a>
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept('rwfg')">保存</a>
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit('rwfg')">删除</a>
-						    </div>
-						    <input type="hidden" name="rwfg">
-					</td>
+					<td class="info_title"><label for="inspection">纪委（纪检组）监督责任清单:</label></td>
+					<td class="info2"><textarea  id="inspection" name="inspection"></textarea></td>
+				</tr>
+				<tr>
+					<td class="info_title"><label for="commission">纪委书记（纪检组长）监督责任清单:</label></td>
+					<td class="info2"><textarea  id="commission" name="commission"></textarea></td>
+				</tr>
+				<tr>
+					<td class="info_title"><label for="branched">分管领导监督责任清单:</label></td>
+					<td class="info2"><textarea  id="branched" name="branched"></textarea></td>
 				</tr>
 				
 				
@@ -100,13 +98,18 @@
 	
 </div>
 
-<div class="projectTitle">评分标准：党政主要负责人作出廉政承若（0.2分），单位没有违反廉洁从政规定案件（0.3分），有1件案件扣0.3分，每多1件扣0.3分，扣完为止</div>
+<!-- <div class="projectTitle">评分标准：党政主要负责人作出廉政承若（0.2分），单位没有违反廉洁从政规定案件（0.3分），有1件案件扣0.3分，每多1件扣0.3分，扣完为止</div> -->
 
 <script type="text/javascript">
 
+/* var pconfig={
+		"pi11":{"uploadfile":"uploadFile","edit":"organization,leaders,incharge"},
+		"pi12":{"uploadfile":"uploadFile3","edit":"rwfg","score":{"type":"count","grid":"rwfg","score":-0.3}}
+	}; */
+	
 var pconfig={
-		"pi11":{"uploadfile":"uploadFile","edit":"honest"},
-		"pi12":{"uploadfile":"uploadFile3","grid":"rwfg","score":{"type":"count","grid":"rwfg","score":-0.3}}
+		"pi11":{"uploadfile":"uploadFile","edit":"organization,leaders,incharge"},
+		"pi12":{"uploadfile":"uploadFile3","edit":"inspection,commission,branched"}
 	};
 	
 

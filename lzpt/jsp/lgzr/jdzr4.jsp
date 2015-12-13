@@ -3,80 +3,40 @@
 <div class="easyui-tabs">
 	
 	
-	<div title="规范纪检组织设置情况" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+	<div title="党纪执行情况监督检查" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 			<form id="pi51" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
-				<tr>
-					<td class="info_title"><label for="date">时间:</label></td>
-					<td class="info2"><input name="date"
-						class="easyui-datebox" required="required" /></td>
-				</tr>
 				
 				<tr>
-					<td class="info_title"><label for="device1">纪委副书记姓名:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device2">是否有单独办公室:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device3">是否有电脑:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device4">是否有举报电话:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device5">是否有录音笔:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device6">是否有摄像机:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device7">是否有照相机:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device8">是否有机构牌子:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="device9">是否有档案柜:</label></td>
-					<td class="info2"><input name="title"
-						class="easyui-textbox" required="required" /></td>
-				</tr>
-				
-				<tr>
-					<td class="info_title"><label for="plan1">纪检工作制度:</label></td>
-					<td class="info2"><textarea  id="plan1" name="plan1"></textarea></td>
+					<td class="info_title"><label for="plan">党纪执行监督:</label></td>
+					
+					<td class="info2">
+							<table id="rwfg" class="easyui-datagrid" title="党纪执行监督" style="width:850px;height:auto"
+				            data-options="singleSelect: true,toolbar:'#sb'">
+						        <thead>
+						            <tr>
+						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >开展时间</th>
+						      	        <th data-options="field:'f2',width:150, editor:{type:'textbox',options:{ required:false}}">开展地点</th>
+						      	        <th data-options="field:'f3',width:250, editor:{type:'textbox',options:{ required:false}}">检查监督主题</th>
+						      	        <th data-options="field:'f4',width:400, editor:{type:'textbox',options:{ required:false}}">党纪执行监督检查情况（详细上传附件）</th>
+						            </tr>
+						        </thead>
+						    </table>
+						    <div id="sb" style="height:auto">
+						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append('rwfg')">新增</a>
+						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept('rwfg')">保存</a>
+						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit('rwfg')">删除</a>
+						    </div>
+						    <input type="hidden" name="rwfg">
+					</td>
 				</tr>
 				
 				<tr>
 					<td class="info_title">附件：</td>
 					<td class="info2">
 						<div class="fileInfo" id="fileInfo"></div> <input type="file"  
-						name="uploadFile" alt="文件上传" id="uploadFile3" onchange="ajaxFileUpload2('uploadFile3')" /> <pre>
-						<input type="hidden"  name="uploadFileJson" id="uploadFile3Json" value="data_[] ">
+						name="uploadFile" alt="文件上传" id="uploadFile" onchange="ajaxFileUpload2('uploadFile')" /> <pre>
+						<input type="hidden"  name="uploadFileJson" id="uploadFileJson" value="data_[] ">
 						</pre>
 					</td>
 				</tr>
@@ -99,12 +59,11 @@
 	
 </div>
 
-<div class="projectTitle">评分标准：乡镇纪委达到“十有”（ 即配备有纪委副书记，有单独的办公室、机构牌子、制度以及电脑、举报电话、录音笔、摄像机、照相机、档案柜等办案设备）标准，每少一项扣0.05分，扣完为止。</div>
 
 <script type="text/javascript">
 
 var pconfig={
-		"pi51":{"uploadfile":"uploadFile3","edit":"plan1"}
+		"pi51":{"uploadfile":"uploadFile3","grid":"rwfg"}
 	};
 	
 

@@ -167,7 +167,7 @@ public class ProjectManagerImpl implements IProjectManager {
 	public void saveProjectConsole(final ProjectConsole pc, final User user) {
 		this.hibernateTemplate.merge(pc);
 		if (pc.getState() == pc.STATE_OPEN) {
-			List<WorkArchive> was = this.hibernateTemplate.find("Select new WorkArchive(id,wname) From WorkArchive");
+			List<WorkArchive> was = this.hibernateTemplate.find("Select new WorkArchive(id,wname,order) From WorkArchive");
 
 			for (WorkArchive wa : was) {
 

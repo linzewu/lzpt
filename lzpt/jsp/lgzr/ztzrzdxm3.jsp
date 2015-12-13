@@ -2,30 +2,30 @@
 	pageEncoding="UTF-8"%>
 	
 <script type="text/javascript">
-	var sf=[{label:'主要负责人违纪',value:'主要负责人违纪',score:-3},{label:'主要负责人违纪并移送司法',value:'主要负责人违纪并移送司法',score:-6},{label:'其他科级干部违纪',value:'其他科级干部违纪',score:-2},{label:'其他科级干部违纪并移送司法',value:'其他科级干部违纪并移送司法',score:-4}];
+var sf=[{label:'未组织开展选人用人工作方面自查或监督检查',value:'未组织开展选人用人工作方面自查或监督检查',score:-2},
+        {label:'市委组织部选人用人工作专项检查反馈意见中的主要问题整改落实不及时、不到位',value:'市委组织部选人用人工作专项检查反馈意见中的主要问题整改落实不及时、不到位',score:-0.5},
+        {label:'上级组织部门批转的涉及选人用人问题要查核并报结果的举报件，未按时上报查核结果或者经查核举报问题属实',value:'上级组织部门批转的涉及选人用人问题要查核并报结果的举报件，未按时上报查核结果或者经查核举报问题属实',score:-0.5},
+        {label:'发生选人用人方面违规违纪违法案件，被上级组织部门直接查处',value:'发生选人用人方面违规违纪违法案件，被上级组织部门直接查处',score:-3},
+        {label:'破格提拔、领导干部近亲属及身边工作人员提拔、问责干部复出、公务员调任等应当事先报告上级组织部门审批的事项，未报告或者报告后不按上级组织部门答复意见办理',value:'破格提拔、领导干部近亲属及身边工作人员提拔、问责干部复出、公务员调任等应当事先报告上级组织部门审批的事项，未报告或者报告后不按上级组织部门答复意见办理',score:-1},
+        {label:'存在超职数配备干部问题的单位，在调整干部前，未报经上级组织人事部门进行职数预审',value:'存在超职数配备干部问题的单位，在调整干部前，未报经上级组织人事部门进行职数预审',score:-2}
+        ];
 </script>
 <div class="easyui-tabs">
-	<div title="管好班子带好队伍" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+	<div title="选好用好干部情况" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi36" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
+				
 				<tr>
-					<td class="info_title"><label for="date">时间:</label></td>
-					<td class="info2"><input name="date"
-						class="easyui-datebox" required="required" /></td>
-				</tr>
-				<tr>
-					<td class="info_title"><label for="plan">违纪查处:</label></td>
+					<td class="info_title"><label for="plan">选好用好干部情况:</label></td>
 					
 					<td class="info2">
-							<table id="rwfg" class="easyui-datagrid" title="违纪查处" style="width:850px;height:auto"
+							<table id="rwfg" class="easyui-datagrid" title="选好用好干部情况" style="width:850px;height:auto"
 				            data-options="singleSelect: true,toolbar:'#sb'">
 						        <thead>
 						            <tr>
-						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >查处时间</th>
-						      	        <th data-options="field:'f2',width:100, editor:{type:'textbox',options:{ required:true}}">查处人员</th>
-						      	        <th data-options="field:'f3',width:100, editor:{type:'textbox',options:{ required:false}}">查处人员职务</th>
-						      	        <th data-options="field:'f4',width:200, editor:{type:'combobox',options:{ required:true,valueField:'value',textField:'label',data:sf}}">是否负责人(移送司法)</th>
-						      	        <th data-options="field:'f6',width:300, editor:{type:'textbox',options:{ required:false,multiline:true,height:100}}">查处结果</th>
+						      	        <th data-options="field:'f2',width:400, editor:{type:'combobox',options:{ required:true,valueField:'value',textField:'label',data:sf}}">违规类型</th>
+						      	        <th data-options="field:'f3',width:200, editor:{type:'textbox',options:{ required:false}}">涉及人员</th>
+						      	        <th data-options="field:'f4',width:300, editor:{type:'textbox',options:{ required:false}}">违规情况描述(详情上传附件,填写附件名)</th>
 						            </tr>
 						        </thead>
 						    </table>
@@ -56,6 +56,7 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
+			<!-- 扣分制，则pi.score=0 -->
 			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi36">
 		</form> 
@@ -64,12 +65,11 @@
 	
 </div>
 
-<div class="projectTitle">评分标准：党政主要负责人当年因违纪违规受查处的，一人次扣3分，移送司法的，一人次扣6分。其他科级干部当年受查处的，一人次扣2分，移送司法的，一人次扣4分。主动提供案件线索，并积极配合上级查处的，或者主动查处的不扣分。扣完为止。</div>
 
 <script type="text/javascript">
 
 var pconfig={
-		"pi36":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f4",data:sf}}
+		"pi36":{"uploadfile":"uploadFile","grid":"rwfg","score":{"type":"colunm","grid":"rwfg","colunm":"f2",data:sf}}
 	}; 
 	
 

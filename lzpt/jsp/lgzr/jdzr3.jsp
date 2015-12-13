@@ -3,37 +3,30 @@
 <div class="easyui-tabs">
 	
 	
-	<div title="党风廉政建设日常监督检查" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+	<div title="履行监督责任情况" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 			<form id="pi50" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
+				
 				<tr>
 					<td class="info_title"><label for="date">时间:</label></td>
 					<td class="info2"><input name="date"
 						class="easyui-datebox" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="info_title"><label for="plan">日常监督检查:</label></td>
-					
-					<td class="info2">
-							<table id="rwfg" class="easyui-datagrid" title="日常监督检查" style="width:850px;height:auto"
-				            data-options="singleSelect: true,toolbar:'#sb'">
-						        <thead>
-						            <tr>
-						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >督查时间</th>
-						      	        <th data-options="field:'f2',width:200, editor:{type:'textbox',options:{ required:false}}">督查分工(详情上传附件,填写附件名)</th>
-						      	        <th data-options="field:'f3',width:200, editor:{type:'textbox',options:{ required:false}}">督查方法(详情上传附件,填写附件名)</th>
-						      	        <th data-options="field:'f4',width:250, editor:{type:'textbox',options:{ required:false}}">督查主要内容(详情上传附件,填写附件名)</th>
-						            </tr>
-						        </thead>
-						    </table>
-						    <div id="sb" style="height:auto">
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append('rwfg')">新增</a>
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept('rwfg')">保存</a>
-						        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit('rwfg')">删除</a>
-						    </div>
-						    <input type="hidden" name="rwfg">
-					</td>
+					<td class="info_title"><label for="deci">推进作风建设:</label></td>
+					<td class="info2"><textarea  id="deci" name="deci"></textarea></td>
 				</tr>
+				
+				<tr>
+					<td class="info_title"><label for="rule">强化服务意识，创优发展环境:</label></td>
+					<td class="info2"><textarea  id="rule" name="rule"></textarea></td>
+				</tr>
+				
+				<tr>
+					<td class="info_title"><label for="prevention">执纪监督情况:</label></td>
+					<td class="info2"><textarea  id="prevention" name="prevention"></textarea></td>
+				</tr>
+				
 				<tr>
 					<td class="info_title">附件：</td>
 					<td class="info2">
@@ -62,12 +55,12 @@
 	
 </div>
 
-<div class="projectTitle">评分标准：全年组织开展了1次督查（0.2分），开展了2次以上（0.5分）。</div>
+
 
 <script type="text/javascript">
 
 var pconfig={
-		"pi50":{"uploadfile":"uploadFile3","grid":"rwfg"}
+		"pi50":{"uploadfile":"uploadFile3","edit":"deci,rule,prevention"}
 	};
 	
 

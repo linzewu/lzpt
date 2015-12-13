@@ -2,31 +2,35 @@
 	pageEncoding="UTF-8"%>
 
 <script type="text/javascript">
-	var sf=[{label:'中央部委查办',value:'中央部委查办',score:-5},{label:'省委、省政府、省纪委直接查办',value:'省委、省政府、省纪委直接查办',score:-5},{label:'省委、省政府、省纪委督办,市纪委直接查办',value:'省委、省政府、省纪委督办,市纪委直接查办',score:-3},{label:'市纪委、市委、市政府督办，县纪委直接查办',value:'市纪委、市委、市政府督办，县纪委直接查办',score:-2}];
+	var sf=[{label:'未根据实际情况逐项分解落实责任，制定具体措施和操作办法，并开展落实情况监督检查',value:'未根据实际情况逐项分解落实责任，制定具体措施和操作办法，并开展落实情况监督检查',score:-3},
+	        {label:'个人违反组织程序、议事决策规则直接决定应由党委(党组)或集体讨论决定事项',value:'个人违反组织程序、议事决策规则直接决定应由党委(党组)或集体讨论决定事项',score:-1},
+	        {label:'没有执行领导干部外出报备和个人有关事项报告规定',value:'没有执行领导干部外出报备和个人有关事项报告规定',score:-1},
+	        {label:'擅自修改或强令虚报、伪造、篡改经济社会发展统计数据',value:'擅自修改或强令虚报、伪造、篡改经济社会发展统计数据',score:-1},
+	        {label:'瞒报、漏报、迟报重大突发公共事件信息',value:'瞒报、漏报、迟报重大突发公共事件信息',score:-1},
+	        {label:'没有按照《党政领导干部选拔任用工作条例》规定的原则、程序和要求办事，擅自改变或拖延执行党委(党组)决定的干部任免事项，违规干预干部任免工作',value:'没有按照《党政领导干部选拔任用工作条例》规定的原则、程序和要求办事，擅自改变或拖延执行党委(党组)决定的干部任免事项，违规干预干部任免工作',score:-1},
+	        {label:'对提交党委(党组)书记议事会研究的拟任人选，没有按照“一事一结论”要求如实反映拟任人选廉政情况及纪检监察机关意见的，或者对有问题反映尚未核查清楚就提交党委(党组)讨论决定的',value:'对提交党委(党组)书记议事会研究的拟任人选，没有按照“一事一结论”要求如实反映拟任人选廉政情况及纪检监察机关意见的，或者对有问题反映尚未核查清楚就提交党委(党组)讨论决定',score:-1},
+	        {label:'向上级报送拟提拔或重用人选时，未对人选廉洁自律情况作出结论性评价，相关单位责任人没有就人选廉政情况和对有关信访调查核实结果签字背书的',value:'向上级报送拟提拔或重用人选时，未对人选廉洁自律情况作出结论性评价，相关单位责任人没有就人选廉政情况和对有关信访调查核实结果签字背书',score:-1},
+	        {label:'擅自修改或强令虚报、伪造、篡改经济社会发展统计数据',value:'擅自修改或强令虚报、伪造、篡改经济社会发展统计数据',score:-1},
+	        {label:'违法干预司法活动、插手具体案件处理，以言代法、以权压法、徇私枉法',value:'违法干预司法活动、插手具体案件处理，以言代法、以权压法、徇私枉法',score:-1}
+	        ];
 </script>	
 	
 <div class="easyui-tabs">
-	<div title="治理损害群众利益的突出问题" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
+	<div title="落实情况" style="padding: 10px 10px 10px 10px; height: 100%;width: 100%;" >
 		<form id="pi34" method="post">
 			<table class="base_table" cellpadding="0"  cellspacing="0">
+				
 				<tr>
-					<td class="info_title"><label for="date">时间:</label></td>
-					<td class="info2"><input name="date"
-						class="easyui-datebox" required="required" /></td>
-				</tr>
-				<tr>
-					<td class="info_title"><label for="plan">重大事件或事故:</label></td>
+					<td class="info_title"><label for="plan">落实情况:</label></td>
 					
 					<td class="info2">
-							<table id="rwfg" class="easyui-datagrid" title="重大事件或事故" style="width:850px;height:auto"
+							<table id="rwfg" class="easyui-datagrid" title="落实情况" style="width:850px;height:auto"
 				            data-options="singleSelect: true,toolbar:'#sb'">
 						        <thead>
 						            <tr>
-						                <th data-options="field:'f1',width:100, editor:{type:'datebox',options:{ required:true}}" >发生时间</th>
-						      	        <th data-options="field:'f2',width:250, editor:{type:'combobox',options:{ required:true,valueField:'value',textField:'label',data:sf}}">事件查办级别</th>
-						      	        <th data-options="field:'f3',width:350, editor:{type:'textbox',options:{ required:false}}">事件描述(详情上传附件,填写附件名)</th>
-						      	        <th data-options="field:'f4',width:100, editor:{type:'datebox',options:{ required:false}}">处理时间</th>
-						      	        <th data-options="field:'f5',width:350, editor:{type:'textbox',options:{ required:false}}">事件处理结果(详情上传附件,填写附件名)</th>
+						      	        <th data-options="field:'f2',width:400, editor:{type:'combobox',options:{ required:true,valueField:'value',textField:'label',data:sf}}">未落实项</th>
+						      	        <th data-options="field:'f3',width:300, editor:{type:'textbox',options:{ required:false}}">未落实原因(详情上传附件,填写附件名)</th>
+						      	        <th data-options="field:'f4',width:200, editor:{type:'textbox',options:{ required:false}}">备注(详情上传附件,填写附件名)</th>
 						            </tr>
 						        </thead>
 						    </table>
@@ -57,15 +61,14 @@
 			<input type="hidden" name="pro.projectType">
 			<input type="hidden" name="pi.data">
 			<input type="hidden" name="pi.id">
-			<input type="hidden" name="pi.score" value="5">
+			<!-- 扣分制，则pi.score=0 -->
+			<input type="hidden" name="pi.score" value="0">
 			<input type="hidden" name="pi.piname" value="pi34">
 		</form> 
 	</div>
 	
 	
 </div>
-
-<div class="projectTitle">评分标准：玩忽职守或滥用职权造成重大事故、重大事件，由中央纪委或者中央、国家部委办直接查办的，发现1起扣5分；由省纪委或者省委、省政府部门直接查办的，发现1起扣5分；由中央纪委或者中央、国家部委办督办或者省纪委直接查办的，发现1起扣5分；由省纪委或者省委、省政府部门督办或者市纪委直接查办的，发现1起扣3分；由市纪委或者市委、市政府部门督办或者县纪委直接查办的，发现1起扣2分。县纪委督办后仍处理不到位的，发现1起扣2分。对损害群众利益的突出问题，没有及时有效处理，或被媒体曝光并造成恶劣影响的，发现1起扣3分。扣完为止。</div>
 
 
 <script type="text/javascript">
